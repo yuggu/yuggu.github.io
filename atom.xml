@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuggu.github.io/"/>
-  <updated>2019-05-01T13:17:51.859Z</updated>
+  <updated>2019-05-01T16:00:10.482Z</updated>
   <id>https://yuggu.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://yuggu.github.io/2019/05/01/Test/"/>
     <id>https://yuggu.github.io/2019/05/01/Test/</id>
     <published>2019-05-01T12:03:24.000Z</published>
-    <updated>2019-05-01T13:17:51.859Z</updated>
+    <updated>2019-05-01T16:00:10.482Z</updated>
     
     <content type="html"><![CDATA[<p>This is an article for test.</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"Hello World!"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -35,6 +35,10 @@
     
     </summary>
     
+      <category term="其他" scheme="https://yuggu.github.io/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="其他" scheme="https://yuggu.github.io/tags/%E5%85%B6%E4%BB%96/"/>
     
   </entry>
   
