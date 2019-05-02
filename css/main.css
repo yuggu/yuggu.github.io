@@ -1775,7 +1775,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #83ff14;
+  background: #be374e;
 }
 .feed-link,
 .chat {
@@ -1962,13 +1962,10 @@ pre .javascript .function {
 .footer-inner {
   text-align: center;
 }
-#animate {
-  animation: iconAnimate 1.33s ease-in-out infinite;
-}
 .with-love {
   display: inline-block;
   margin: 0 5px;
-  color: #00CC00;
+  color: #009900;
 }
 .powered-by,
 .theme-info {
