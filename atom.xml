@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuggu.github.io/"/>
-  <updated>2019-06-05T04:25:52.200Z</updated>
+  <updated>2019-07-18T12:07:50.966Z</updated>
   <id>https://yuggu.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>背包模板</title>
+    <link href="https://yuggu.github.io/2019/07/18/%E8%83%8C%E5%8C%85%E6%A8%A1%E6%9D%BF/"/>
+    <id>https://yuggu.github.io/2019/07/18/背包模板/</id>
+    <published>2019-07-18T11:53:31.000Z</published>
+    <updated>2019-07-18T12:07:50.966Z</updated>
+    
+    <content type="html"><![CDATA[<p>&emsp;&emsp;01背包模板，复杂度$O(V*N)$</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">​<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = V; j &gt;= w[i]; j--)</span><br><span class="line">        f[j] = max(f[j], f[j - w[i]] + v[i]);</span><br></pre></td></tr></table></figure><p>&emsp;&emsp;一个常数优化如下<br><a id="more"></a><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">int</span> bound = max(V - sum&#123;w[i]...w[n]&#125;, v[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = V; j &gt;= bound, j--)</span><br><span class="line">        f[j] = max(f[j], f[j - w[i]] + v[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>&emsp;&emsp;完全背包模板，复杂度$O(V*N)$</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = w[i]; j &lt;= V; j++)</span><br><span class="line">        f[j] = max(f[j], f[j - w[i]] + v[i]);</span><br></pre></td></tr></table></figure><p>&emsp;&emsp;二进制拆分多重背包模板，复杂度$O(V*\sum log(p[i]))$</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">int</span> num = min(number[i], V / w[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; num &gt; <span class="number">0</span>; k &lt;&lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (k &gt; num) k = num;</span><br><span class="line">        num -= k;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = V; j &gt;= w[i] * k; j--)</span><br><span class="line">            f[j] = max(f[j], f[j - w[i] * k] + v[i] * k);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>&emsp;&emsp;单调队列优化多重背包模板，复杂度$O(V*N)$</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//p：某类物品数量，w：某类物品花费，v：某类物品价值，V:商品总价值</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MultiPack</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> w, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; w; j++) &#123; <span class="comment">//j为w的所有组</span></span><br><span class="line">        <span class="keyword">int</span> head = <span class="number">1</span>, tail = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = j, i = <span class="number">0</span>; k &lt;= V / <span class="number">2</span>; k += w, i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> r = f[k] - i * v;</span><br><span class="line">            <span class="keyword">while</span> (head &lt;= tail <span class="keyword">and</span> r &gt;= q[tail].v) tail--;</span><br><span class="line">            q[++tail] = node(i, r);</span><br><span class="line">            <span class="keyword">while</span> (q[head].id &lt; i - p) head++; <span class="comment">//需要的物品数目</span></span><br><span class="line">            f[k] = q[head].v + i * v;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;emsp;&amp;emsp;01背包模板，复杂度$O(V*N)$&lt;/p&gt;
+&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;​&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; i &amp;lt;= n; i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j = V; j &amp;gt;= w[i]; j--)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        f[j] = max(f[j], f[j - w[i]] + v[i]);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&amp;emsp;&amp;emsp;一个常数优化如下&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="dp" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/dp/"/>
+    
+      <category term="背包" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/dp/%E8%83%8C%E5%8C%85/"/>
+    
+    
+      <category term="算法" scheme="https://yuggu.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
+    
+  </entry>
   
   <entry>
     <title>连接不了https://account.jetbrains.com/ 网站或者idea通过帐号激活失败</title>
