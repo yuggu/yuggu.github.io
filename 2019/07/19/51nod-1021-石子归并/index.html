@@ -103,18 +103,18 @@
 
 
 
-  <meta name="description" content="链接51nod - 1021 题意&amp;emsp;&amp;emsp;有$N$堆石子排成一排，其中第$i$堆石子的质量为$A_i$，每次都可以选择其中相邻的两堆石子合并成一堆，形成的新石子堆的重量以及消耗的体力都是两堆石子的重量之和。求把全部$N$堆石子合成一堆最少需要消耗多少体力。$1\leq N\leq 300$。">
+  <meta name="description" content="链接$\text{51nod - 1021}$ 题意&amp;emsp;&amp;emsp;有$N$堆石子排成一排，其中第$i$堆石子的质量为$A_i$，每次都可以选择其中相邻的两堆石子合并成一堆，形成的新石子堆的重量以及消耗的体力都是两堆石子的重量之和。求把全部$N$堆石子合成一堆最少需要消耗多少体力。$1\leq N\leq 300$。">
 <meta name="keywords" content="算法,dp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[51nod - 1021] 石子归并">
 <meta property="og:url" content="https://yuggu.github.io/2019/07/19/51nod-1021-石子归并/index.html">
 <meta property="og:site_name" content="yuggu">
-<meta property="og:description" content="链接51nod - 1021 题意&amp;emsp;&amp;emsp;有$N$堆石子排成一排，其中第$i$堆石子的质量为$A_i$，每次都可以选择其中相邻的两堆石子合并成一堆，形成的新石子堆的重量以及消耗的体力都是两堆石子的重量之和。求把全部$N$堆石子合成一堆最少需要消耗多少体力。$1\leq N\leq 300$。">
+<meta property="og:description" content="链接$\text{51nod - 1021}$ 题意&amp;emsp;&amp;emsp;有$N$堆石子排成一排，其中第$i$堆石子的质量为$A_i$，每次都可以选择其中相邻的两堆石子合并成一堆，形成的新石子堆的重量以及消耗的体力都是两堆石子的重量之和。求把全部$N$堆石子合成一堆最少需要消耗多少体力。$1\leq N\leq 300$。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-19T12:53:01.010Z">
+<meta property="og:updated_time" content="2019-07-19T14:25:08.587Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[51nod - 1021] 石子归并">
-<meta name="twitter:description" content="链接51nod - 1021 题意&amp;emsp;&amp;emsp;有$N$堆石子排成一排，其中第$i$堆石子的质量为$A_i$，每次都可以选择其中相邻的两堆石子合并成一堆，形成的新石子堆的重量以及消耗的体力都是两堆石子的重量之和。求把全部$N$堆石子合成一堆最少需要消耗多少体力。$1\leq N\leq 300$。">
+<meta name="twitter:description" content="链接$\text{51nod - 1021}$ 题意&amp;emsp;&amp;emsp;有$N$堆石子排成一排，其中第$i$堆石子的质量为$A_i$，每次都可以选择其中相邻的两堆石子合并成一堆，形成的新石子堆的重量以及消耗的体力都是两堆石子的重量之和。求把全部$N$堆石子合成一堆最少需要消耗多少体力。$1\leq N\leq 300$。">
 
 
 
@@ -393,7 +393,7 @@
                 
               
 
-              <time title="创建时间：2019-07-19 20:48:55 / 修改时间：20:53:01" itemprop="dateCreated datePublished" datetime="2019-07-19T20:48:55+08:00">2019-07-19</time>
+              <time title="创建时间：2019-07-19 20:48:55 / 修改时间：22:25:08" itemprop="dateCreated datePublished" datetime="2019-07-19T20:48:55+08:00">2019-07-19</time>
             
 
             
@@ -458,7 +458,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">702</span>
+                <span title="本文字数">711</span>
               
 
               
@@ -482,7 +482,7 @@
       
 
       
-        <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="https://www.51nod.com/Challenge/Problem.html#problemId=1021" target="_blank" rel="noopener">51nod - 1021</a></p>
+        <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="https://www.51nod.com/Challenge/Problem.html#problemId=1021" target="_blank" rel="noopener">$\text{51nod - 1021}$</a></p>
 <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>&emsp;&emsp;有$N$堆石子排成一排，其中第$i$堆石子的质量为$A_i$，每次都可以选择其中相邻的两堆石子合并成一堆，形成的新石子堆的重量以及消耗的体力都是两堆石子的重量之和。求把全部$N$堆石子合成一堆最少需要消耗多少体力。$1\leq N\leq 300$。<br><a id="more"></a></p>
 <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><blockquote>
 <p>&emsp;&emsp;这是一个区间$dp$入门题目。<br>&emsp;&emsp;若最初的第$l$堆石子和第$r$堆石子被合并成一堆，则说明$l$~$r$之间的每堆石子也已经被合并，这样$l$和$r$才有可能相邻。因此，在任意时刻，任意一堆石子均可以用一个闭区间$[l, r]$来描述，表示这堆石子是由最初的第$l$~$r$堆石子合并而成的，其重量为$\sum_{i=l}^r A_i$。另外一定存在一个整数$k(l\leq k&lt;r)$，在这堆石子形成之前，现有第$l$~$k$堆石子（闭区间$[l, r]$）被合并成一堆，第$k+1$~$r$堆石子（闭区间$[k+1, r]$）被合并成一堆，然后这两堆石子才合并成$[l, r]$。<br>&emsp;&emsp;对应到动态规划中，就意味着两个长度较小的区间上的信息向一个更长的区间发生了转移，划分点$k$就是转移的决策，自然地，应该把区间$len$作为$DP$的阶段，区间长度可以由左右端点表示出，我们可以使用左右端点表示$DP$的状态。<br>&emsp;&emsp;$dp[l, r]$表示把最初的第$l$堆到第$r$堆合并到一堆，需要消耗的最少体力。状态转移方程如下：<script type="math/tex">dp[l,\ r]=\displaystyle \min_{l\leq k<r}\{dp[l,\ k]+dp[k+1,\ r]\}+\sum_{i=l}^rA_i</script><br>&emsp;&emsp;$dp[l][l]=A_l$，其余为$\infty$，最终结果为$dp[1, N]$，对于$\sum_{i=l}^rA_i$可用前缀和计算。</p>
