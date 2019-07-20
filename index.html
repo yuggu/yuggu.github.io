@@ -394,7 +394,7 @@
                 
               
 
-              <time title="创建时间：2019-07-20 18:59:22 / 修改时间：19:00:04" itemprop="dateCreated datePublished" datetime="2019-07-20T18:59:22+08:00">2019-07-20</time>
+              <time title="创建时间：2019-07-20 18:59:22 / 修改时间：19:03:52" itemprop="dateCreated datePublished" datetime="2019-07-20T18:59:22+08:00">2019-07-20</time>
             
 
             
@@ -484,14 +484,8 @@
 
       
         
-          
-            <p>
-              链接$\text{POJ - 1651}$
-题意&emsp;&emsp; 给你一个长度为$n$的序列$a$，现在你将要把序列$a$中除开头和结尾外的所有元素都删除掉， 你每次删除一个数$ai$时，你将会得到的分数为$a{i-1}a_ia_{i+1}$，你需要获得最少的分数，问这个分数最小为多少。&emsp;&emsp;比如对于序列${10,1,50,20,5}$，你依次删除$50、20、1$，得到的分数分别为$15020、1205、1015$，总共为1150，这样你就能获得最少的分数。
-分析
-&emsp;&emsp;这是一道区间$\text{DP}$题目，依旧是枚举区间长度与起点，求出小区间的最优决策，然后得到大区间的解。状态转移方程为：dp[i][j]=min(dp[i][j],dp[i][k]+dp[k][j]+a[i]*a[k]*a[j])&emsp;&emsp;$dp[i][j]$
-              ...
-            </p>
+          <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="http://poj.org/problem?id=1651" target="_blank" rel="noopener">$\text{POJ - 1651}$</a></p>
+<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>&emsp;&emsp; 给你一个长度为$n$的序列$a$，现在你将要把序列$a$中除开头和结尾外的所有元素都删除掉， 你每次删除一个数$a<em>i$时，你将会得到的分数为$a</em>{i-1}<em>a_i</em>a_{i+1}$，你需要获得最少的分数，问这个分数最小为多少。<br>&emsp;&emsp;比如对于序列${10,1,50,20,5}$，你依次删除$50、20、1$，得到的分数分别为$1<em>50</em>20、1<em>20</em>5、10<em>1</em>5$，总共为1150，这样你就能获得最少的分数。<br>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -503,7 +497,7 @@
           <!--/noindex-->
         
       
-    </div>
+    </p></div>
 
     
 
