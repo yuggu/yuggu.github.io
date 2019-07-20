@@ -103,18 +103,18 @@
 
 
 
-  <meta name="description" content="链接$\text{POJ - 2955}$ 题意&amp;emsp;&amp;emsp;给你包含小括号和中括号括号序列，求最长合法括号子序列的长度。合法的括号序列满足如下条件： &amp;emsp;&amp;ensp;$1$.&amp;ensp;空的括号序列是合法的；&amp;emsp;&amp;ensp;$2$.&amp;ensp;如果一个括号序列$s$是合法的，那么$(s)、[s]$也都是合法；&amp;emsp;&amp;ensp;$3$.&amp;ensp;如果$a、b$是合">
+  <meta name="description" content="链接$\text{POJ - 2955}$ 题意&amp;emsp;&amp;emsp;给你包含小括号和中括号括号序列，求最长合法括号子序列的长度。合法的括号序列满足如下条件：  空的括号序列是合法的； 如果一个括号序列$s$是合法的，那么$(s)、[s]$也都是合法；&amp;emsp;&amp;ensp;$3$.&amp;ensp;如果$a、b$是合法的，那么$ab$也是合法的；&amp;emsp;&amp;ensp;$4$.&amp;ensp;其他括号序">
 <meta name="keywords" content="算法,区间dp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="POJ - 2955 Brackets">
 <meta property="og:url" content="https://yuggu.github.io/2019/07/20/POJ-2955-Brackets/index.html">
 <meta property="og:site_name" content="yuggu">
-<meta property="og:description" content="链接$\text{POJ - 2955}$ 题意&amp;emsp;&amp;emsp;给你包含小括号和中括号括号序列，求最长合法括号子序列的长度。合法的括号序列满足如下条件： &amp;emsp;&amp;ensp;$1$.&amp;ensp;空的括号序列是合法的；&amp;emsp;&amp;ensp;$2$.&amp;ensp;如果一个括号序列$s$是合法的，那么$(s)、[s]$也都是合法；&amp;emsp;&amp;ensp;$3$.&amp;ensp;如果$a、b$是合">
+<meta property="og:description" content="链接$\text{POJ - 2955}$ 题意&amp;emsp;&amp;emsp;给你包含小括号和中括号括号序列，求最长合法括号子序列的长度。合法的括号序列满足如下条件：  空的括号序列是合法的； 如果一个括号序列$s$是合法的，那么$(s)、[s]$也都是合法；&amp;emsp;&amp;ensp;$3$.&amp;ensp;如果$a、b$是合法的，那么$ab$也是合法的；&amp;emsp;&amp;ensp;$4$.&amp;ensp;其他括号序">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-20T09:43:32.233Z">
+<meta property="og:updated_time" content="2019-07-20T11:56:47.505Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="POJ - 2955 Brackets">
-<meta name="twitter:description" content="链接$\text{POJ - 2955}$ 题意&amp;emsp;&amp;emsp;给你包含小括号和中括号括号序列，求最长合法括号子序列的长度。合法的括号序列满足如下条件： &amp;emsp;&amp;ensp;$1$.&amp;ensp;空的括号序列是合法的；&amp;emsp;&amp;ensp;$2$.&amp;ensp;如果一个括号序列$s$是合法的，那么$(s)、[s]$也都是合法；&amp;emsp;&amp;ensp;$3$.&amp;ensp;如果$a、b$是合">
+<meta name="twitter:description" content="链接$\text{POJ - 2955}$ 题意&amp;emsp;&amp;emsp;给你包含小括号和中括号括号序列，求最长合法括号子序列的长度。合法的括号序列满足如下条件：  空的括号序列是合法的； 如果一个括号序列$s$是合法的，那么$(s)、[s]$也都是合法；&amp;emsp;&amp;ensp;$3$.&amp;ensp;如果$a、b$是合法的，那么$ab$也是合法的；&amp;emsp;&amp;ensp;$4$.&amp;ensp;其他括号序">
 
 
 
@@ -393,7 +393,7 @@
                 
               
 
-              <time title="创建时间：2019-07-20 15:00:19 / 修改时间：17:43:32" itemprop="dateCreated datePublished" datetime="2019-07-20T15:00:19+08:00">2019-07-20</time>
+              <time title="创建时间：2019-07-20 15:00:19 / 修改时间：19:56:47" itemprop="dateCreated datePublished" datetime="2019-07-20T15:00:19+08:00">2019-07-20</time>
             
 
             
@@ -484,7 +484,11 @@
       
         <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="http://poj.org/problem?id=2955" target="_blank" rel="noopener">$\text{POJ - 2955}$</a></p>
 <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>&emsp;&emsp;给你包含小括号和中括号括号序列，求最长合法括号子序列的长度。合法的括号序列满足如下条件：</p>
-<p>&emsp;&ensp;$1$.&ensp;空的括号序列是合法的；<br>&emsp;&ensp;$2$.&ensp;如果一个括号序列$s$是合法的，那么$(s)、[s]$也都是合法；<br>&emsp;&ensp;$3$.&ensp;如果$a、b$是合法的，那么$ab$也是合法的；<br>&emsp;&ensp;$4$.&ensp;其他括号序列都是不合法的；<br> <a id="more"></a></p>
+<ol>
+<li>空的括号序列是合法的；</li>
+<li>如果一个括号序列$s$是合法的，那么$(s)、[s]$也都是合法；<br>&emsp;&ensp;$3$.&ensp;如果$a、b$是合法的，那么$ab$也是合法的；<br>&emsp;&ensp;$4$.&ensp;其他括号序列都是不合法的；<a id="more"></a>
+</li>
+</ol>
 <p>&emsp;&emsp;括号序列长度$\text N$，$1\leq \text{N}\leq100$。</p>
 <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><blockquote>
 <p>&emsp;&emsp;这是一道区间$\text{DP}$题目，对于某个序列，如$[xxx]oooo$，它被分成两部分，$xxx$和$oooo$；<br>&emsp;&emsp;设$dp[i][j]$表示$[i,j]$之间的最长合法括号子序列的长度，那么如果$[i+1,j]$内没有与$i$匹配的括号，则$dp[i][j]=dp[i+1][j]$，若存在一个$k$与之匹配，那么$dp[i][j]=\max{dp[i+1][j],dp[i+1][k-1]+dp[k+1][j]+2}$($i$与$k$匹配)，区间长度从小到大枚举，最终$dp[1][\text{N}]$即是答案。</p>
