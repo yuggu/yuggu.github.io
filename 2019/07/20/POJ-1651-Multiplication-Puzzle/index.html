@@ -103,18 +103,18 @@
 
 
 
-  <meta name="description" content="链接$\text{POJ - 1651}$ 题意&amp;emsp;&amp;emsp; 给你一个长度为$n$的序列$a$，现在你将要把序列$a$中除开头和结尾外的所有元素都删除掉， 你每次删除一个数$ai$时，你将会得到的分数为$a{i-1}a_ia_{i+1}$，你需要获得最少的分数，问这个分数最小为多少。&amp;emsp;&amp;emsp;比如对于序列${10,1,50,20,5}$，你依次删除$50、20、1$，得到">
+  <meta name="description" content="链接$\text{POJ - 1651}$ 题意&amp;emsp;&amp;emsp; 给你一个长度为$n$的序列$a$，现在你将要把序列$a$中除开头和结尾外的所有元素都删除掉,你每次删除一个数$ai$时，你将会得到的分数为$a{i-1}*ai*a{i+1}$，你需要获得最少的分数，问这个分数最小为多少。&amp;emsp;&amp;emsp;比如对于序列${10,1,50,20,5}$，你依次删除$50、20、1$，得到的">
 <meta name="keywords" content="算法,dp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="POJ - 1651 Multiplication Puzzle">
 <meta property="og:url" content="https://yuggu.github.io/2019/07/20/POJ-1651-Multiplication-Puzzle/index.html">
 <meta property="og:site_name" content="yuggu">
-<meta property="og:description" content="链接$\text{POJ - 1651}$ 题意&amp;emsp;&amp;emsp; 给你一个长度为$n$的序列$a$，现在你将要把序列$a$中除开头和结尾外的所有元素都删除掉， 你每次删除一个数$ai$时，你将会得到的分数为$a{i-1}a_ia_{i+1}$，你需要获得最少的分数，问这个分数最小为多少。&amp;emsp;&amp;emsp;比如对于序列${10,1,50,20,5}$，你依次删除$50、20、1$，得到">
+<meta property="og:description" content="链接$\text{POJ - 1651}$ 题意&amp;emsp;&amp;emsp; 给你一个长度为$n$的序列$a$，现在你将要把序列$a$中除开头和结尾外的所有元素都删除掉,你每次删除一个数$ai$时，你将会得到的分数为$a{i-1}*ai*a{i+1}$，你需要获得最少的分数，问这个分数最小为多少。&amp;emsp;&amp;emsp;比如对于序列${10,1,50,20,5}$，你依次删除$50、20、1$，得到的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-20T11:03:52.428Z">
+<meta property="og:updated_time" content="2019-07-20T11:05:53.315Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="POJ - 1651 Multiplication Puzzle">
-<meta name="twitter:description" content="链接$\text{POJ - 1651}$ 题意&amp;emsp;&amp;emsp; 给你一个长度为$n$的序列$a$，现在你将要把序列$a$中除开头和结尾外的所有元素都删除掉， 你每次删除一个数$ai$时，你将会得到的分数为$a{i-1}a_ia_{i+1}$，你需要获得最少的分数，问这个分数最小为多少。&amp;emsp;&amp;emsp;比如对于序列${10,1,50,20,5}$，你依次删除$50、20、1$，得到">
+<meta name="twitter:description" content="链接$\text{POJ - 1651}$ 题意&amp;emsp;&amp;emsp; 给你一个长度为$n$的序列$a$，现在你将要把序列$a$中除开头和结尾外的所有元素都删除掉,你每次删除一个数$ai$时，你将会得到的分数为$a{i-1}*ai*a{i+1}$，你需要获得最少的分数，问这个分数最小为多少。&amp;emsp;&amp;emsp;比如对于序列${10,1,50,20,5}$，你依次删除$50、20、1$，得到的">
 
 
 
@@ -393,7 +393,7 @@
                 
               
 
-              <time title="创建时间：2019-07-20 18:59:22 / 修改时间：19:03:52" itemprop="dateCreated datePublished" datetime="2019-07-20T18:59:22+08:00">2019-07-20</time>
+              <time title="创建时间：2019-07-20 18:59:22 / 修改时间：19:05:53" itemprop="dateCreated datePublished" datetime="2019-07-20T18:59:22+08:00">2019-07-20</time>
             
 
             
@@ -483,7 +483,7 @@
 
       
         <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="http://poj.org/problem?id=1651" target="_blank" rel="noopener">$\text{POJ - 1651}$</a></p>
-<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>&emsp;&emsp; 给你一个长度为$n$的序列$a$，现在你将要把序列$a$中除开头和结尾外的所有元素都删除掉， 你每次删除一个数$a<em>i$时，你将会得到的分数为$a</em>{i-1}<em>a_i</em>a_{i+1}$，你需要获得最少的分数，问这个分数最小为多少。<br>&emsp;&emsp;比如对于序列${10,1,50,20,5}$，你依次删除$50、20、1$，得到的分数分别为$1<em>50</em>20、1<em>20</em>5、10<em>1</em>5$，总共为1150，这样你就能获得最少的分数。<br><a id="more"></a></p>
+<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>&emsp;&emsp; 给你一个长度为$n$的序列$a$，现在你将要把序列$a$中除开头和结尾外的所有元素都删除掉,你每次删除一个数$a<em>i$时，你将会得到的分数为$a</em>{i-1}*a<em>i*a</em>{i+1}$，你需要获得最少的分数，问这个分数最小为多少。<br>&emsp;&emsp;比如对于序列${10,1,50,20,5}$，你依次删除$50、20、1$，得到的分数分别为$1*50*20、1*20*5、10*1*5$，总共为1150，这样你就能获得最少的分数。<br><a id="more"></a></p>
 <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><blockquote>
 <p>&emsp;&emsp;这是一道区间$\text{DP}$题目，依旧是枚举区间长度与起点，求出小区间的最优决策，然后得到大区间的解。状态转移方程为：<script type="math/tex">dp[i][j]=min(dp[i][j],dp[i][k]+dp[k][j]+a[i]*a[k]*a[j])</script><br>&emsp;&emsp;$dp[i][j]$即为区间$[i,j]$所能获得的最小分数。<br>&emsp;&emsp;另外，如果是获得最大分数，只需要将数组初始化为0即可。<br>&emsp;&emsp;区间$dp$一般基本套路即是枚举区间长度与起点，然后求接小区间解，进而合并得到大区间的解，关键是转移方程。</p>
 <h3 id="区间-dp-基本模板"><a href="#区间-dp-基本模板" class="headerlink" title="区间$dp$基本模板"></a>区间$dp$基本模板</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> len = <span class="number">1</span>;len&lt;=n;len++)&#123;<span class="comment">//枚举长度</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j+len&lt;=n+<span class="number">1</span>;j++)&#123;<span class="comment">//枚举起点，ends&lt;=n</span></span><br><span class="line">            <span class="keyword">int</span> ends = j+len - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = j;i&lt;ends;i++)&#123;<span class="comment">//枚举分割点，更新小区间最优解</span></span><br><span class="line">                dp[j][ends] = min(dp[j][ends],dp[j][i]+dp[i+<span class="number">1</span>][ends]+something);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
