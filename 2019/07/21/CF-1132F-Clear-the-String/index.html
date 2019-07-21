@@ -103,18 +103,18 @@
 
 
 
-  <meta name="description" content="链接$\text{CF - 1132F}$ 题意&amp;emsp;&amp;emsp;给你一个长度为$\text{N}$的由小写字母组成的字符串$s$，你需要对它进行删除操作，你每次可以删除一个连续的、只含一种字母的子串，现在问你最少需要多少次可以把它含有的字符全部删除掉。&amp;emsp;&amp;emsp;数据范围：$1\leq \text{N} \leq 500$. 分析 &amp;emsp;&amp;emsp;这是一道区间$dp$的">
+  <meta name="description" content="链接$\text{CF - 1132F}$ 题意&amp;emsp;&amp;emsp;给你一个长度为$\text{N}$的由小写字母组成的字符串$s$，你需要对它进行删除操作，你每次可以删除一个连续的、只含一种字母的子串，现在问你最少需要多少次可以把它含有的字符全部删除掉。&amp;emsp;&amp;emsp;数据范围：$1\leq \text{N} \leq 500$.">
 <meta name="keywords" content="算法,dp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CF - 1132F Clear the String">
 <meta property="og:url" content="https://yuggu.github.io/2019/07/21/CF-1132F-Clear-the-String/index.html">
 <meta property="og:site_name" content="yuggu">
-<meta property="og:description" content="链接$\text{CF - 1132F}$ 题意&amp;emsp;&amp;emsp;给你一个长度为$\text{N}$的由小写字母组成的字符串$s$，你需要对它进行删除操作，你每次可以删除一个连续的、只含一种字母的子串，现在问你最少需要多少次可以把它含有的字符全部删除掉。&amp;emsp;&amp;emsp;数据范围：$1\leq \text{N} \leq 500$. 分析 &amp;emsp;&amp;emsp;这是一道区间$dp$的">
+<meta property="og:description" content="链接$\text{CF - 1132F}$ 题意&amp;emsp;&amp;emsp;给你一个长度为$\text{N}$的由小写字母组成的字符串$s$，你需要对它进行删除操作，你每次可以删除一个连续的、只含一种字母的子串，现在问你最少需要多少次可以把它含有的字符全部删除掉。&amp;emsp;&amp;emsp;数据范围：$1\leq \text{N} \leq 500$.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-21T08:20:20.936Z">
+<meta property="og:updated_time" content="2019-07-21T08:24:47.448Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CF - 1132F Clear the String">
-<meta name="twitter:description" content="链接$\text{CF - 1132F}$ 题意&amp;emsp;&amp;emsp;给你一个长度为$\text{N}$的由小写字母组成的字符串$s$，你需要对它进行删除操作，你每次可以删除一个连续的、只含一种字母的子串，现在问你最少需要多少次可以把它含有的字符全部删除掉。&amp;emsp;&amp;emsp;数据范围：$1\leq \text{N} \leq 500$. 分析 &amp;emsp;&amp;emsp;这是一道区间$dp$的">
+<meta name="twitter:description" content="链接$\text{CF - 1132F}$ 题意&amp;emsp;&amp;emsp;给你一个长度为$\text{N}$的由小写字母组成的字符串$s$，你需要对它进行删除操作，你每次可以删除一个连续的、只含一种字母的子串，现在问你最少需要多少次可以把它含有的字符全部删除掉。&amp;emsp;&amp;emsp;数据范围：$1\leq \text{N} \leq 500$.">
 
 
 
@@ -393,7 +393,7 @@
                 
               
 
-              <time title="创建时间：2019-07-21 16:19:40 / 修改时间：16:20:20" itemprop="dateCreated datePublished" datetime="2019-07-21T16:19:40+08:00">2019-07-21</time>
+              <time title="创建时间：2019-07-21 16:19:40 / 修改时间：16:24:47" itemprop="dateCreated datePublished" datetime="2019-07-21T16:19:40+08:00">2019-07-21</time>
             
 
             
@@ -483,7 +483,7 @@
 
       
         <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="http://codeforces.com/problemset/problem/1132/F" target="_blank" rel="noopener">$\text{CF - 1132F}$</a></p>
-<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>&emsp;&emsp;给你一个长度为$\text{N}$的由小写字母组成的字符串$s$，你需要对它进行删除操作，你每次可以删除一个连续的、只含一种字母的子串，现在问你最少需要多少次可以把它含有的字符全部删除掉。<br>&emsp;&emsp;数据范围：$1\leq \text{N} \leq 500$.</p>
+<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>&emsp;&emsp;给你一个长度为$\text{N}$的由小写字母组成的字符串$s$，你需要对它进行删除操作，你每次可以删除一个连续的、只含一种字母的子串，现在问你最少需要多少次可以把它含有的字符全部删除掉。<br>&emsp;&emsp;数据范围：$1\leq \text{N} \leq 500$.<br><a id="more"></a></p>
 <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><blockquote>
 <p>&emsp;&emsp;这是一道区间$dp$的题目；<br>&emsp;&emsp;首先$dp[i][j]$表示把$[i, j]$的字符全部删除需要进行的最少操作次数，正常情况下，我们需要枚举区间长度、起点及终点；对于一个区间$[l,r]$,，如果$s[l]==s[r]$，那么$dp[l][r]$，一定等于$dp[l+1][r]$、$dp[l][r-1]$二者中较小者，如果$s[l]!=s[r]$，我们就需要枚举划分点作为转移决策，有转移方程：$dp[i][j]=\displaystyle \min_{i\leq k &lt; j}{dp[i][k]+dp[k+1][j]}$。<br>&emsp;&emsp;对于$dp[i][j]$的初值应该初始化为$i-j+1$。</p>
 </blockquote>
