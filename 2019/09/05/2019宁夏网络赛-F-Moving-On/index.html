@@ -104,14 +104,14 @@
 
 
   <meta name="description" content="链接$\text{2019宁夏网络赛-F.Moving On}$ 题意&amp;emsp;&amp;emsp;有$n$个城市，城市$i$有一个犯罪值$r_i$，城市u和v之间的距离是$d[i][j]$(无向图)，现在有$q$次查询，每次查询询问从城市$u$到$v$，在中途经过的任意城市的犯罪值不超过$w$的情况下(中途城市不包括$i$和$j$)的最短路径是多少。">
-<meta name="keywords" content="图论,Floyd,dp">
+<meta name="keywords" content="dp,图论,Floyd">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[2019宁夏网络赛-F] Moving On">
 <meta property="og:url" content="https://yuggu.github.io/2019/09/05/2019宁夏网络赛-F-Moving-On/index.html">
 <meta property="og:site_name" content="yuggu">
 <meta property="og:description" content="链接$\text{2019宁夏网络赛-F.Moving On}$ 题意&amp;emsp;&amp;emsp;有$n$个城市，城市$i$有一个犯罪值$r_i$，城市u和v之间的距离是$d[i][j]$(无向图)，现在有$q$次查询，每次查询询问从城市$u$到$v$，在中途经过的任意城市的犯罪值不超过$w$的情况下(中途城市不包括$i$和$j$)的最短路径是多少。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-05T09:19:19.283Z">
+<meta property="og:updated_time" content="2019-09-05T09:23:53.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[2019宁夏网络赛-F] Moving On">
 <meta name="twitter:description" content="链接$\text{2019宁夏网络赛-F.Moving On}$ 题意&amp;emsp;&amp;emsp;有$n$个城市，城市$i$有一个犯罪值$r_i$，城市u和v之间的距离是$d[i][j]$(无向图)，现在有$q$次查询，每次查询询问从城市$u$到$v$，在中途经过的任意城市的犯罪值不超过$w$的情况下(中途城市不包括$i$和$j$)的最短路径是多少。">
@@ -393,7 +393,7 @@
                 
               
 
-              <time title="创建时间：2019-09-05 13:09:04 / 修改时间：17:19:19" itemprop="dateCreated datePublished" datetime="2019-09-05T13:09:04+08:00">2019-09-05</time>
+              <time title="创建时间：2019-09-05 13:09:04 / 修改时间：17:23:53" itemprop="dateCreated datePublished" datetime="2019-09-05T13:09:04+08:00">2019-09-05</time>
             
 
             
@@ -487,7 +487,7 @@
 <p>&emsp;&emsp;数据范围：$t&lt;50,1≤ri_​≤10^5,1≤d_{i,j}​≤10^5(ij),d_{i,i}​=0,d_{i,j}=d_{j,i},1\leq u,v\leq n,1\leq w\leq 10^5$.</p>
 <p>&emsp;&emsp;输出格式：每个测试样例的第一行输出<strong>Case #x:</strong>，x代表第x个测试样例，接下来的每一行输出一个询问结果。</p>
 <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>&emsp;&emsp;题目给出了$n$个点，整个图是一个稠密图，并且有$q$次查询，即使每次查询都使用复杂度为$\text{O((N+M)logN)}$的堆优化的$\text{Dijstra}$也会超时。</p>
-<p>&emsp;&emsp;这里使用$\text{floyd}$，对于$\text{floyd}$求最短路来说，$f[k][i][j]$表示从$i$到$j$中途经过$k$的最短路，那么我们可以把城市按照犯罪值$r[i]$升序排列，那么$f[k][i][j]$则就是从$i$到$j$中途经过犯罪值前$k$小城市（意思是经过前$k$小城市中的一部分）的最短路，那么我们需要求出所有的答案，我们的$f[k][i][j]$可以通过<code>从i到j中途经过犯罪值前k-1小城市（同上）的最短路</code>以及<code>从i到k和从k到j中途经过前k-1小城市（同上）的最短路的和</code>，这二者更新得到。<br>&emsp;&emsp;之后对于每个询问$(u,v,w)$，二分找到满足犯罪值小于等于$w$的犯罪值最大的城市编号$k$，f[k][u][v]即使查询结果。<br>&emsp;</p>
+<p>&emsp;&emsp;这里使用$\text{floyd}$，对于$\text{floyd}$求最短路来说，$f[k][i][j]$表示从$i$到$j$中途经过$k$的最短路，那么我们可以把城市按照犯罪值$r[i]$升序排列，那么$f[k][i][j]$则就是从$i$到$j$中途经过犯罪值前$k$小城市（意思是经过前$k$小城市中的一部分）的最短路，那么我们需要求出所有的答案，我们的$f[k][i][j]$可以通过<code>从i到j中途经过犯罪值前k-1小城市（同上）的最短路</code>以及<code>从i到k和从k到j中途经过前k-1小城市（同上）的最短路的和</code>，这二者更新得到。<br>&emsp;&emsp;之后对于每个询问$(u,v,w)$，二分找到满足犯罪值小于等于$w$的犯罪值最大的城市编号$k$，$f[k][u][v]$即是查询结果。<br>&emsp;</p>
 <ol>
 <li>当图是个稠密图，并且询问多次两点之间最短路的时候可以使用Floyd算法；</li>
 <li>注意使用Floyd的任何变形；</li>
@@ -539,11 +539,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/dp/" rel="tag"><i class="fa fa-tags"></i> dp</a>
+          
             <a href="/tags/图论/" rel="tag"><i class="fa fa-tags"></i> 图论</a>
           
             <a href="/tags/Floyd/" rel="tag"><i class="fa fa-tags"></i> Floyd</a>
-          
-            <a href="/tags/dp/" rel="tag"><i class="fa fa-tags"></i> dp</a>
           
         </div>
       
