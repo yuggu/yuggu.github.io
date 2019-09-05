@@ -103,18 +103,18 @@
 
 
 
-  <meta name="description" content="链接$\text{POJ - 3280}$ 题意&amp;emsp;&amp;emsp;给你一个长度为$\text{M}$的由小写字母组成的字符串$s$，你希望通过插入字符或者删除字符的操作来得到一个回文串，你希望操作次数最少；同时对于$26$种字符中的字符$i$，有对应的删除该字符需要的花费$cost_1$和插入该字符需要的$cost_2$，所以你希望通过插入和删除操作并且花费尽量少的钱来获取一个回文串。 &amp;e">
-<meta name="keywords" content="算法,dp">
+  <meta name="description" content="链接$\text{2019宁夏网络赛-F.Moving On}$ 题意&amp;emsp;&amp;emsp;有$n$个城市，城市$i$有一个犯罪值$r_i$，城市u和v之间的距离是$d[i][j]$(无向图)，现在有$q$次查询，每次查询询问从城市$u$到$v$，在中途经过的任意城市的犯罪值不超过$w$的情况下(中途城市不包括$i$和$j$)的最短路径是多少。">
+<meta name="keywords" content="dp,图论,Floyd">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[POJ - 3280] Cheapest Palindrome">
-<meta property="og:url" content="https://yuggu.github.io/2019/07/23/POJ-3280-Cheapest-Palindrome/index.html">
+<meta property="og:title" content="[2019宁夏网络赛-F] Moving On">
+<meta property="og:url" content="https://yuggu.github.io/2019/09/05/2019宁夏网络赛-F-Moving-On/index.html">
 <meta property="og:site_name" content="yuggu">
-<meta property="og:description" content="链接$\text{POJ - 3280}$ 题意&amp;emsp;&amp;emsp;给你一个长度为$\text{M}$的由小写字母组成的字符串$s$，你希望通过插入字符或者删除字符的操作来得到一个回文串，你希望操作次数最少；同时对于$26$种字符中的字符$i$，有对应的删除该字符需要的花费$cost_1$和插入该字符需要的$cost_2$，所以你希望通过插入和删除操作并且花费尽量少的钱来获取一个回文串。 &amp;e">
+<meta property="og:description" content="链接$\text{2019宁夏网络赛-F.Moving On}$ 题意&amp;emsp;&amp;emsp;有$n$个城市，城市$i$有一个犯罪值$r_i$，城市u和v之间的距离是$d[i][j]$(无向图)，现在有$q$次查询，每次查询询问从城市$u$到$v$，在中途经过的任意城市的犯罪值不超过$w$的情况下(中途城市不包括$i$和$j$)的最短路径是多少。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-23T04:53:55.136Z">
+<meta property="og:updated_time" content="2019-09-05T05:11:41.526Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[POJ - 3280] Cheapest Palindrome">
-<meta name="twitter:description" content="链接$\text{POJ - 3280}$ 题意&amp;emsp;&amp;emsp;给你一个长度为$\text{M}$的由小写字母组成的字符串$s$，你希望通过插入字符或者删除字符的操作来得到一个回文串，你希望操作次数最少；同时对于$26$种字符中的字符$i$，有对应的删除该字符需要的花费$cost_1$和插入该字符需要的$cost_2$，所以你希望通过插入和删除操作并且花费尽量少的钱来获取一个回文串。 &amp;e">
+<meta name="twitter:title" content="[2019宁夏网络赛-F] Moving On">
+<meta name="twitter:description" content="链接$\text{2019宁夏网络赛-F.Moving On}$ 题意&amp;emsp;&amp;emsp;有$n$个城市，城市$i$有一个犯罪值$r_i$，城市u和v之间的距离是$d[i][j]$(无向图)，现在有$q$次查询，每次查询询问从城市$u$到$v$，在中途经过的任意城市的犯罪值不超过$w$的情况下(中途城市不包括$i$和$j$)的最短路径是多少。">
 
 
 
@@ -124,7 +124,7 @@
 
   
   
-  <link rel="canonical" href="https://yuggu.github.io/2019/07/23/POJ-3280-Cheapest-Palindrome/">
+  <link rel="canonical" href="https://yuggu.github.io/2019/09/05/2019宁夏网络赛-F-Moving-On/">
 
 
 
@@ -134,7 +134,7 @@
   };
 </script>
 
-  <title>[POJ - 3280] Cheapest Palindrome | yuggu</title>
+  <title>[2019宁夏网络赛-F] Moving On | yuggu</title>
   
 
 
@@ -350,7 +350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuggu.github.io/2019/07/23/POJ-3280-Cheapest-Palindrome/">
+    <link itemprop="mainEntityOfPage" href="https://yuggu.github.io/2019/09/05/2019宁夏网络赛-F-Moving-On/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yuggu">
@@ -367,7 +367,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[POJ - 3280] Cheapest Palindrome
+          <h1 class="post-title" itemprop="name headline">[2019宁夏网络赛-F] Moving On
 
               
             
@@ -393,7 +393,7 @@
                 
               
 
-              <time title="创建时间：2019-07-23 11:39:24 / 修改时间：12:53:55" itemprop="dateCreated datePublished" datetime="2019-07-23T11:39:24+08:00">2019-07-23</time>
+              <time title="创建时间：2019-09-05 13:09:04 / 修改时间：13:11:41" itemprop="dateCreated datePublished" datetime="2019-09-05T13:09:04+08:00">2019-09-05</time>
             
 
             
@@ -422,14 +422,14 @@
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/dp/" itemprop="url" rel="index"><span itemprop="name">dp</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/图论/" itemprop="url" rel="index"><span itemprop="name">图论</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/dp/区间dp/" itemprop="url" rel="index"><span itemprop="name">区间dp</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/图论/最短路/" itemprop="url" rel="index"><span itemprop="name">最短路</span></a></span>
 
                 
                 
@@ -482,13 +482,17 @@
       
 
       
-        <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="http://poj.org/problem?id=3280" target="_blank" rel="noopener">$\text{POJ - 3280}$</a></p>
-<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>&emsp;&emsp;给你一个长度为$\text{M}$的由小写字母组成的字符串$s$，你希望通过插入字符或者删除字符的操作来得到一个回文串，你希望操作次数最少；同时对于$26$种字符中的字符$i$，有对应的删除该字符需要的花费$cost_1$和插入该字符需要的$cost_2$，所以你希望通过插入和删除操作并且花费尽量少的钱来获取一个回文串。</p>
-<p>&emsp;&emsp;数据范围：$1\leq \text{M} \leq 500$，$0\le cost\le 10000$.<br><a id="more"></a></p>
-<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><blockquote>
-<p>&emsp;&emsp;这是一道区间$dp$的题目；<br>&emsp;&emsp;通过对字符串的插入、删除、修改来获取一<br>个回文串，然后求最少次数，这是一类比较典型且常见的区间$dp$题目；<br>&emsp;&emsp;区间$dp$即是小区间状态到大区间状态的合并或者说转移，一般我们都会枚举小区间，然后枚举起始点；<br>&emsp;&emsp;如对于一个串$aba$，假设区间长度为$2$的阶段的所有状态我们已经求出来了，那么此时区间长度为$3$，对于这个串来说，我们肯定需要看它的两个短点$i$与$j$，$s[i]==s[j]$，我们就得出了$dp[i][j]=dp[i+1][j-1]$，这是很显然的；那么对于一个串$aab$，如果我们也已经求出来了它的区间长度为$2$的状态，那么此时对于区间长度为$3$的状态，我们观察它的$s[i]!=s[j]$，如果同时把这两个字符都给删掉或者给两个字符均插入一个匹配的字符，那么这显然是糟糕的选择，所以我们不能这样做；最终我们可以得出$dp[i][j]=min(dp[i+1][j]+cost[i],dp[i][j-1]+cost[j])$<br>&emsp;&emsp;对于价格来说，其实都是一样的，不论插入和删除本质上都是一样的，所以我们仅需要考虑价格即可，对于每个字符，使用价格低的操作，初始状态$dp[i][i]=0$。</p>
-</blockquote>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x7f7f7f7f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 100005</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 200005</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> P 2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MOD 99991</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> fastIO &#123;</span><br><span class="line">	<span class="comment">//#define getchar() (p1 == p2 &amp;&amp; (p2 = (p1 = buf) + fread(buf, 1, 1&lt;&lt;22, stdin), p1 == p2) ? EOF : *p1++)</span></span><br><span class="line">	<span class="comment">//char buf[(1 &lt;&lt; 22)], *p1 = buf, *p2 = buf;</span></span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">char</span> c = getchar(); <span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>) &#123; <span class="keyword">if</span> (c == <span class="string">'-'</span>) f = <span class="number">-1</span>; c = getchar(); &#125;</span><br><span class="line">		<span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>) x = x * <span class="number">10</span> + c - <span class="string">'0'</span>, c = getchar();</span><br><span class="line">		<span class="keyword">return</span> x * f;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> fastIO;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> t, n, m, a[<span class="number">300</span>], dp[<span class="number">2005</span>][<span class="number">2004</span>];</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">		<span class="keyword">int</span> x, y;</span><br><span class="line">		<span class="keyword">char</span> t;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; t &gt;&gt; x &gt;&gt; y;</span><br><span class="line">			a[t] = min(x, y);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> len = <span class="number">2</span>; len &lt;= m; len++)</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i + len - <span class="number">1</span> &lt;= m; i++) &#123;</span><br><span class="line">				<span class="keyword">int</span> j = i + len - <span class="number">1</span>;</span><br><span class="line">				dp[i][j] = INF;</span><br><span class="line">				<span class="keyword">if</span> (s[i - <span class="number">1</span>] == s[j - <span class="number">1</span>])</span><br><span class="line">					dp[i][j] = dp[i + <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line">				<span class="keyword">else</span> &#123;</span><br><span class="line">					dp[i][j] = min(dp[i][j], dp[i + <span class="number">1</span>][j] + a[s[i - <span class="number">1</span>]]);</span><br><span class="line">					dp[i][j] = min(dp[i][j], dp[i][j - <span class="number">1</span>] + a[s[j - <span class="number">1</span>]]);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; dp[<span class="number">1</span>][m] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="https://nanti.jisuanke.com/t/41290" target="_blank" rel="noopener">$\text{2019宁夏网络赛-F.Moving On}$</a></p>
+<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>&emsp;&emsp;有$n$个城市，城市$i$有一个犯罪值$r_i$，城市u和v之间的距离是$d[i][j]$(无向图)，现在有$q$次查询，每次查询询问从城市$u$到$v$，在中途经过的任意城市的犯罪值不超过$w$的情况下(中途城市不包括$i$和$j$)的最短路径是多少。<br><a id="more"></a><br>&emsp;&emsp;输入格式：共$t$组样例，每个测试样例的第一行$n,q$，代表$n$个城市，共$q$次查询，接下来一行$n$个整数$r_1,r_2…r_n$，接下来是一个$n\times n$的矩阵$d$，接下来$q$行代表$q$次查询，每行三个数$u,v,w$.</p>
+<p>&emsp;&emsp;数据范围：$t&lt;50,1≤ri_​≤10^5,1≤d_{i,j}​≤10^5(ij),d_{i,i}​=0,d_{i,j}=d_{j,i},1\leq u,v\leq n,1\leq w\leq 10^5$.</p>
+<p>&emsp;&emsp;输出格式：每个测试样例的第一行输出<strong>Case #x:</strong>，x代表第x个测试样例，接下来的每一行输出一个询问结果。</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>&emsp;&emsp;题目给出了$n$个点，整个图是一个稠密图，并且有$q$次查询，即使每次查询都使用复杂度为$\text{O((N+M)logN)}$的堆优化的$\text{Dijstra}$也会超时。</p>
+<p>&emsp;&emsp;这里使用$\text{floyd}$，对于$\text{floyd}$求最短路来说，$f[k][i][j]$表示从$i$到$j$中途经过$k$的最短路，那么我们可以把城市按照犯罪值$r[i]$升序排列，那么$f[k][i][j]$则就是从$i$到$j$中途经过犯罪值前$k$小城市（意思是经过前$k$小城市中的一部分）的最短路，那么我们需要求出所有的答案，我们的$f[k][i][j]$可以通过<code>从i到j中途经过犯罪值前k-1小城市（同上）的最短路</code>以及<code>从i到k和从k到j中途经过前k-1小城市（同上）的最短路的和</code>，这二者更新得到。<br>&emsp;</p>
+<ol>
+<li>当图是个稠密图，并且询问多次两点之间最短路的时候可以使用Floyd算法；</li>
+<li>注意使用Floyd的任何变形；</li>
+</ol>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> t, n, q, u, v, w;</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">205</span>][<span class="number">205</span>][<span class="number">205</span>];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">roberry</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> va, id;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> roberry &amp; a)<span class="keyword">const</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a.va &gt; va;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;r[<span class="number">205</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> w, <span class="keyword">int</span> l1, <span class="keyword">int</span> r1)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (l1 + <span class="number">1</span>&lt; r1) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (l1 + r1) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (r[mid].va &lt;= w)l1 = mid;</span><br><span class="line">        <span class="keyword">else</span> r1 = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l1;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> cnt;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line">    <span class="keyword">while</span> (t--) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Case #%d:\n"</span>, ++cnt);</span><br><span class="line">        <span class="built_in">memset</span>(dp, <span class="number">0</span>, <span class="keyword">sizeof</span>(dp));</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;q);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;r[i].va);</span><br><span class="line">            r[i].id = i;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(r + <span class="number">1</span>, r + <span class="number">1</span> + n);</span><br><span class="line">        <span class="keyword">int</span> x;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)&#123;</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);    </span><br><span class="line">                dp[<span class="number">0</span>][i][j] = x;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> p = r[i].id;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; k++)</span><br><span class="line">                    dp[i][j][k] = min(dp[i - <span class="number">1</span>][j][k], dp[i - <span class="number">1</span>][j][p] + dp[i - <span class="number">1</span>][p][k]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (q--) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;u, &amp;v, &amp;w);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,dp[find(w, <span class="number">0</span>, n + <span class="number">1</span>)][u][v]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -522,7 +526,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://yuggu.github.io/2019/07/23/POJ-3280-Cheapest-Palindrome/" title="[POJ - 3280] Cheapest Palindrome">https://yuggu.github.io/2019/07/23/POJ-3280-Cheapest-Palindrome/</a>
+    <a href="https://yuggu.github.io/2019/09/05/2019宁夏网络赛-F-Moving-On/" title="[2019宁夏网络赛-F] Moving On">https://yuggu.github.io/2019/09/05/2019宁夏网络赛-F-Moving-On/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -535,9 +539,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"><i class="fa fa-tags"></i> 算法</a>
-          
             <a href="/tags/dp/" rel="tag"><i class="fa fa-tags"></i> dp</a>
+          
+            <a href="/tags/图论/" rel="tag"><i class="fa fa-tags"></i> 图论</a>
+          
+            <a href="/tags/Floyd/" rel="tag"><i class="fa fa-tags"></i> Floyd</a>
           
         </div>
       
@@ -550,8 +556,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/22/LightOJ-1422-Halloween-Costumes/" rel="next" title="[LightOJ - 1422] Halloween Costumes">
-                <i class="fa fa-chevron-left"></i> [LightOJ - 1422] Halloween Costumes
+              <a href="/2019/09/04/2019宁夏网络赛-A-Maximum-Element-In-A-Stack/" rel="next" title="[2019宁夏网络赛-A] Maximum Element In A Stack">
+                <i class="fa fa-chevron-left"></i> [2019宁夏网络赛-A] Maximum Element In A Stack
               </a>
             
           </div>
@@ -559,10 +565,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/23/POJ-3661-Running/" rel="prev" title="[POJ - 3661] Running">
-                [POJ - 3661] Running <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
