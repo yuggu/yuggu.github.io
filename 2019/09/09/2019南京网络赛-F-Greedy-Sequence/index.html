@@ -103,18 +103,18 @@
 
 
 
-  <meta name="description" content="链接$\text{hihoCoder - 1323}$ 题意&amp;emsp;&amp;emsp;给定一个字符串$\text S$ ，最少需要几次增删改操作可以把$\text S$变成一个回文字符串？一次操作可以在任意位置插入一个字符，或者删除任意一个字符，或者把任意一个字符修改成任意其他字符。输出最少的操作次数。 &amp;emsp;&amp;emsp;数据范围：字符串$\text S$。$\text S$的长度不超过$10">
-<meta name="keywords" content="算法,dp">
+  <meta name="description" content="链接$\text{2019南京网络赛-F.Greedy Sequence}$ 题意&amp;emsp;&amp;emsp;给你一个从1到$n$，$n$个数的排列，对于$i\in [1,n]$，你需要构造一个序列$s_i$，所以你需要构造$n$个序列。构造的规则如下  $s_i[1]=i$； $s_i$的长度是$n$，并且对于每个$j\in [2,n],s_i[j]\leq s_i[j-1]$； 对于$s_i[j]">
+<meta name="keywords" content="思维,二分">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[hihoCoder - 1323] 回文字符串">
-<meta property="og:url" content="https://yuggu.github.io/2019/07/23/HC-1323-回文字符串/index.html">
+<meta property="og:title" content="2019南京网络赛-F Greedy Sequence">
+<meta property="og:url" content="https://yuggu.github.io/2019/09/09/2019南京网络赛-F-Greedy-Sequence/index.html">
 <meta property="og:site_name" content="yuggu">
-<meta property="og:description" content="链接$\text{hihoCoder - 1323}$ 题意&amp;emsp;&amp;emsp;给定一个字符串$\text S$ ，最少需要几次增删改操作可以把$\text S$变成一个回文字符串？一次操作可以在任意位置插入一个字符，或者删除任意一个字符，或者把任意一个字符修改成任意其他字符。输出最少的操作次数。 &amp;emsp;&amp;emsp;数据范围：字符串$\text S$。$\text S$的长度不超过$10">
+<meta property="og:description" content="链接$\text{2019南京网络赛-F.Greedy Sequence}$ 题意&amp;emsp;&amp;emsp;给你一个从1到$n$，$n$个数的排列，对于$i\in [1,n]$，你需要构造一个序列$s_i$，所以你需要构造$n$个序列。构造的规则如下  $s_i[1]=i$； $s_i$的长度是$n$，并且对于每个$j\in [2,n],s_i[j]\leq s_i[j-1]$； 对于$s_i[j]">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-23T05:02:43.477Z">
+<meta property="og:updated_time" content="2019-09-09T03:16:18.647Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[hihoCoder - 1323] 回文字符串">
-<meta name="twitter:description" content="链接$\text{hihoCoder - 1323}$ 题意&amp;emsp;&amp;emsp;给定一个字符串$\text S$ ，最少需要几次增删改操作可以把$\text S$变成一个回文字符串？一次操作可以在任意位置插入一个字符，或者删除任意一个字符，或者把任意一个字符修改成任意其他字符。输出最少的操作次数。 &amp;emsp;&amp;emsp;数据范围：字符串$\text S$。$\text S$的长度不超过$10">
+<meta name="twitter:title" content="2019南京网络赛-F Greedy Sequence">
+<meta name="twitter:description" content="链接$\text{2019南京网络赛-F.Greedy Sequence}$ 题意&amp;emsp;&amp;emsp;给你一个从1到$n$，$n$个数的排列，对于$i\in [1,n]$，你需要构造一个序列$s_i$，所以你需要构造$n$个序列。构造的规则如下  $s_i[1]=i$； $s_i$的长度是$n$，并且对于每个$j\in [2,n],s_i[j]\leq s_i[j-1]$； 对于$s_i[j]">
 
 
 
@@ -124,7 +124,7 @@
 
   
   
-  <link rel="canonical" href="https://yuggu.github.io/2019/07/23/HC-1323-回文字符串/">
+  <link rel="canonical" href="https://yuggu.github.io/2019/09/09/2019南京网络赛-F-Greedy-Sequence/">
 
 
 
@@ -134,7 +134,7 @@
   };
 </script>
 
-  <title>[hihoCoder - 1323] 回文字符串 | yuggu</title>
+  <title>2019南京网络赛-F Greedy Sequence | yuggu</title>
   
 
 
@@ -350,7 +350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuggu.github.io/2019/07/23/HC-1323-回文字符串/">
+    <link itemprop="mainEntityOfPage" href="https://yuggu.github.io/2019/09/09/2019南京网络赛-F-Greedy-Sequence/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yuggu">
@@ -367,7 +367,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[hihoCoder - 1323] 回文字符串
+          <h1 class="post-title" itemprop="name headline">2019南京网络赛-F Greedy Sequence
 
               
             
@@ -393,7 +393,7 @@
                 
               
 
-              <time title="创建时间：2019-07-23 13:01:21 / 修改时间：13:02:43" itemprop="dateCreated datePublished" datetime="2019-07-23T13:01:21+08:00">2019-07-23</time>
+              <time title="创建时间：2019-09-09 11:13:39 / 修改时间：11:16:18" itemprop="dateCreated datePublished" datetime="2019-09-09T11:13:39+08:00">2019-09-09</time>
             
 
             
@@ -422,14 +422,7 @@
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/dp/" itemprop="url" rel="index"><span itemprop="name">dp</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/dp/区间dp/" itemprop="url" rel="index"><span itemprop="name">区间dp</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
 
                 
                 
@@ -458,7 +451,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.1k</span>
+                <span title="本文字数">2.4k</span>
               
 
               
@@ -482,13 +475,19 @@
       
 
       
-        <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="https://hihocoder.com/problemset/problem/1323" target="_blank" rel="noopener">$\text{hihoCoder - 1323}$</a></p>
-<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>&emsp;&emsp;给定一个字符串$\text S$ ，最少需要几次增删改操作可以把$\text S$变成一个回文字符串？一次操作可以在任意位置插入一个字符，或者删除任意一个字符，或者把任意一个字符修改成任意其他字符。输出最少的操作次数。</p>
-<p>&emsp;&emsp;数据范围：字符串$\text S$。$\text S$的长度不超过$100$, 只包含$\text{A-Z}$。<br><a id="more"></a></p>
-<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><blockquote>
-<p>&emsp;&emsp;这是一道区间$dp$的题目；也是经典的最少操作次数变成回文串的问题；对于<br>&emsp;&emsp;$dp[i][j]$表示$[i,j]$区间的子串变成回文串最少操作次数，对于一个串$bab$，我们已经知道区间长度为$2$的所有状态，对于区间长度为$3$的阶段，此时$s[i]==s[j]$，那么显然有$dp[i][j]=dp[i+1][j-1]$，对于一个串$bba$，此时$s[i]!=s[j]$，此时来说，我们只需要修改$s[i]$为$s[j]$或者修改$s[j]$为$s[i]$即可，所以我们有$dp[i][j]=\min{dp[i+1][j]+1,dp[i][j-1]+1}$。<br>&emsp;&emsp;初始状态$dp[i][i]=0$。</p>
-</blockquote>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x7f7f7f7f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 100005</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 200005</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> P 2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MOD 99991</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> fastIO &#123;</span><br><span class="line">	<span class="comment">//#define getchar() (p1 == p2 &amp;&amp; (p2 = (p1 = buf) + fread(buf, 1, 1&lt;&lt;22, stdin), p1 == p2) ? EOF : *p1++)</span></span><br><span class="line">	<span class="comment">//char buf[(1 &lt;&lt; 22)], *p1 = buf, *p2 = buf;</span></span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">char</span> c = getchar(); <span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>) &#123; <span class="keyword">if</span> (c == <span class="string">'-'</span>) f = <span class="number">-1</span>; c = getchar(); &#125;</span><br><span class="line">		<span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>) x = x * <span class="number">10</span> + c - <span class="string">'0'</span>, c = getchar();</span><br><span class="line">		<span class="keyword">return</span> x * f;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> fastIO;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> segment_Tree &#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Tree</span> &#123;</span></span><br><span class="line">		<span class="keyword">int</span> l, r, max;</span><br><span class="line">	&#125; tree[<span class="number">4</span> * MAXN];</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">		tree[x].max = max(tree[x &lt;&lt; <span class="number">1</span>].max, tree[x &lt;&lt; <span class="number">1</span> | <span class="number">1</span>].max);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">		tree[x].l = l, tree[x].r = r;</span><br><span class="line">		<span class="keyword">if</span> (l == r) &#123;</span><br><span class="line">			tree[x].max = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">		build(x &lt;&lt; <span class="number">1</span>, l, mid);</span><br><span class="line">		build(x &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r);</span><br><span class="line">		push_up(x);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> pos, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> l = tree[x].l, r = tree[x].r;</span><br><span class="line">		<span class="keyword">if</span> (l == r) &#123;</span><br><span class="line">			tree[x].max = max(tree[x].max, val);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> (pos &lt;= mid)update(x &lt;&lt; <span class="number">1</span>, pos, val);</span><br><span class="line">		<span class="keyword">else</span> update(x &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, pos, val);</span><br><span class="line">		push_up(x);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> le = tree[x].l, ri = tree[x].r;</span><br><span class="line">		<span class="keyword">if</span> (l &lt;= le &amp;&amp; ri &lt;= r) &#123;</span><br><span class="line">			<span class="keyword">return</span> tree[x].max;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> mid = (le + ri) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> maxm = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> (l &lt;= mid) maxm = max(maxm, query(x &lt;&lt; <span class="number">1</span>, l, r));</span><br><span class="line">		<span class="keyword">if</span> (r &gt; mid) maxm = max(maxm, query(x &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, l, r));</span><br><span class="line">		<span class="keyword">return</span> maxm;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> t, n, m, a[<span class="number">10005</span>], dp[<span class="number">10009</span>][<span class="number">509</span>];</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">			dp[i][j] = dp[i - <span class="number">1</span>][j - <span class="number">1</span>] + a[i];</span><br><span class="line">		dp[i][<span class="number">0</span>] = dp[i - <span class="number">1</span>][<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i &amp;&amp; j &lt;= m; j++)</span><br><span class="line">			dp[i][<span class="number">0</span>] = max(dp[i][<span class="number">0</span>], dp[i - j][j]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; dp[n][<span class="number">0</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="https://nanti.jisuanke.com/t/41303" target="_blank" rel="noopener">$\text{2019南京网络赛-F.Greedy Sequence}$</a></p>
+<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>&emsp;&emsp;给你一个从1到$n$，$n$个数的排列，对于$i\in [1,n]$，你需要构造一个序列$s_i$，所以你需要构造$n$个序列。构造的规则如下</p>
+<ol>
+<li>$s_i[1]=i$；</li>
+<li>$s_i$的长度是$n$，并且对于每个$j\in [2,n],s_i[j]\leq s_i[j-1]$；</li>
+<li>对于$s_i[j]$在序列中的位置是$pos[j]$，对于任意的$j\geq 2$，$\left |pos[j]-pos[j-1]\right |\leq k(1\leq 10^5)$，并且对于任意一个$s_i$，它的任意一个元素在$a$中最多出现一次；</li>
+<li>对于$s_i$，如果它已经将$a$中满足要求的元素全部选择了，但是它的长度小于$n$，那么它的其他元素都为0；</li>
+<li>对于任意一个$s_i$，我们希望它的权值越大越好，(对于任意的两个序列$c,d$，如果存在$k$，$1\leq k\leq n,c_i=d_i\space for\space all\space 1\leq i &lt; k,\space and\space c_k&gt;d_k$，我们则说$c_i$的权值大于$d_i$)。<br>&emsp;&emsp;输入格式：第一行一个$t$，代表$t$组测试样例，每个测试样例第一行$n,k$，第二行$n$个数代表序列$a$.</li>
+</ol>
+<p>&emsp;&emsp;数据范围：$1\leq t\leq 20,1\leq n,k\leq 10^5,1\leq a_i\leq n$.</p>
+<p>&emsp;&emsp;输出格式：每个测试样例输出一行$n$个数，第$i$个数代表序列$s_i$中的非零元素的个数.</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>&emsp;&emsp;对于任意的$s_i$，如果某一次我们选了$a$中的元素$a[j]$，那么我们下一次选的数一定是$[j-k,j+k]$中的小于$a[j]$的最大值，这样做能保证我们的$s_i$的权值最大以及$s_i$的非零元素最多；<br>&emsp;&emsp;那么对于序列$a$中的元素$a_i$，我们就用$set$维护一个$[i-k,i+k]$的窗口，之后$set$内二分找到选了$a_i$之后会选的那个元素，对于每个$a_i$，我们都记录下这个值$c_i$，并且显然的，当选择$a_i$为s[1]时序列的非零元素个数等于选择$c_i$为s[1]时序列非零元素个数基础上加1，所以这个我们递推一下就可以了。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"bits/stdc++.h"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> t, n, k, a[<span class="number">1000005</span>], c[<span class="number">1000005</span>], pos[<span class="number">100005</span>];</span><br><span class="line"><span class="keyword">int</span> len[<span class="number">1000005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t--) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">        <span class="built_in">memset</span>(pos, <span class="number">0</span>, <span class="keyword">sizeof</span>(pos));</span><br><span class="line">        <span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="keyword">sizeof</span>(a));</span><br><span class="line">        <span class="built_in">memset</span>(len, <span class="number">0</span>, <span class="keyword">sizeof</span>(len));</span><br><span class="line">        <span class="built_in">memset</span>(c, <span class="number">0</span>, <span class="keyword">sizeof</span>(c));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">            pos[a[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;s;</span><br><span class="line">        s.clear();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; i++)&#123;</span><br><span class="line">            s.insert(a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n;i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> pos1 = i - k - <span class="number">1</span>, pos2 = i + k;</span><br><span class="line">            <span class="keyword">if</span>(pos1 &gt; <span class="number">0</span>)s.erase(a[pos1]);</span><br><span class="line">            <span class="keyword">if</span>(pos2 &lt;= n)s.insert(a[pos2]);</span><br><span class="line">            <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;::iterator it  = s.lower_bound(a[i]);</span><br><span class="line">            <span class="keyword">if</span>(it != s.begin())c[a[i]] = *--it;</span><br><span class="line">            <span class="comment">//cout &lt;&lt; c[a[i]] &lt;&lt; " " &lt;&lt; a[i] &lt;&lt; endl;</span></span><br><span class="line">        &#125;</span><br><span class="line">        len[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            len[i] = len[c[i]] + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n - <span class="number">1</span>; i++)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; len[i]&lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; len[n] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -522,7 +521,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://yuggu.github.io/2019/07/23/HC-1323-回文字符串/" title="[hihoCoder - 1323] 回文字符串">https://yuggu.github.io/2019/07/23/HC-1323-回文字符串/</a>
+    <a href="https://yuggu.github.io/2019/09/09/2019南京网络赛-F-Greedy-Sequence/" title="2019南京网络赛-F Greedy Sequence">https://yuggu.github.io/2019/09/09/2019南京网络赛-F-Greedy-Sequence/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -535,9 +534,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"><i class="fa fa-tags"></i> 算法</a>
+            <a href="/tags/思维/" rel="tag"><i class="fa fa-tags"></i> 思维</a>
           
-            <a href="/tags/dp/" rel="tag"><i class="fa fa-tags"></i> dp</a>
+            <a href="/tags/二分/" rel="tag"><i class="fa fa-tags"></i> 二分</a>
           
         </div>
       
@@ -550,8 +549,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/23/POJ-3661-Running/" rel="next" title="[POJ - 3661] Running">
-                <i class="fa fa-chevron-left"></i> [POJ - 3661] Running
+              <a href="/2019/09/06/2019南京网络赛-B-super-log/" rel="next" title="[2019南京网络赛-B] super_log">
+                <i class="fa fa-chevron-left"></i> [2019南京网络赛-B] super_log
               </a>
             
           </div>
@@ -559,10 +558,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/23/CF-607B-Zuma/" rel="prev" title="[CodeForces - 607B] Zuma">
-                [CodeForces - 607B] Zuma <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

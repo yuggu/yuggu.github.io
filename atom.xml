@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuggu.github.io/"/>
-  <updated>2019-09-06T11:17:26.357Z</updated>
+  <updated>2019-09-09T03:16:18.647Z</updated>
   <id>https://yuggu.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2019南京网络赛-F Greedy Sequence</title>
+    <link href="https://yuggu.github.io/2019/09/09/2019%E5%8D%97%E4%BA%AC%E7%BD%91%E7%BB%9C%E8%B5%9B-F-Greedy-Sequence/"/>
+    <id>https://yuggu.github.io/2019/09/09/2019南京网络赛-F-Greedy-Sequence/</id>
+    <published>2019-09-09T03:13:39.000Z</published>
+    <updated>2019-09-09T03:16:18.647Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="https://nanti.jisuanke.com/t/41303" target="_blank" rel="noopener">$\text{2019南京网络赛-F.Greedy Sequence}$</a></p><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>&emsp;&emsp;给你一个从1到$n$，$n$个数的排列，对于$i\in [1,n]$，你需要构造一个序列$s_i$，所以你需要构造$n$个序列。构造的规则如下</p><ol><li>$s_i[1]=i$；</li><li>$s_i$的长度是$n$，并且对于每个$j\in [2,n],s_i[j]\leq s_i[j-1]$；</li><li>对于$s_i[j]$在序列中的位置是$pos[j]$，对于任意的$j\geq 2$，$\left |pos[j]-pos[j-1]\right |\leq k(1\leq 10^5)$，并且对于任意一个$s_i$，它的任意一个元素在$a$中最多出现一次；</li><li>对于$s_i$，如果它已经将$a$中满足要求的元素全部选择了，但是它的长度小于$n$，那么它的其他元素都为0；</li><li>对于任意一个$s_i$，我们希望它的权值越大越好，(对于任意的两个序列$c,d$，如果存在$k$，$1\leq k\leq n,c_i=d_i\space for\space all\space 1\leq i &lt; k,\space and\space c_k&gt;d_k$，我们则说$c_i$的权值大于$d_i$)。<br>&emsp;&emsp;输入格式：第一行一个$t$，代表$t$组测试样例，每个测试样例第一行$n,k$，第二行$n$个数代表序列$a$.</li></ol><p>&emsp;&emsp;数据范围：$1\leq t\leq 20,1\leq n,k\leq 10^5,1\leq a_i\leq n$.</p><p>&emsp;&emsp;输出格式：每个测试样例输出一行$n$个数，第$i$个数代表序列$s_i$中的非零元素的个数.</p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>&emsp;&emsp;对于任意的$s_i$，如果某一次我们选了$a$中的元素$a[j]$，那么我们下一次选的数一定是$[j-k,j+k]$中的小于$a[j]$的最大值，这样做能保证我们的$s_i$的权值最大以及$s_i$的非零元素最多；<br>&emsp;&emsp;那么对于序列$a$中的元素$a_i$，我们就用$set$维护一个$[i-k,i+k]$的窗口，之后$set$内二分找到选了$a_i$之后会选的那个元素，对于每个$a_i$，我们都记录下这个值$c_i$，并且显然的，当选择$a_i$为s[1]时序列的非零元素个数等于选择$c_i$为s[1]时序列非零元素个数基础上加1，所以这个我们递推一下就可以了。</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"bits/stdc++.h"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> t, n, k, a[<span class="number">1000005</span>], c[<span class="number">1000005</span>], pos[<span class="number">100005</span>];</span><br><span class="line"><span class="keyword">int</span> len[<span class="number">1000005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t--) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">        <span class="built_in">memset</span>(pos, <span class="number">0</span>, <span class="keyword">sizeof</span>(pos));</span><br><span class="line">        <span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="keyword">sizeof</span>(a));</span><br><span class="line">        <span class="built_in">memset</span>(len, <span class="number">0</span>, <span class="keyword">sizeof</span>(len));</span><br><span class="line">        <span class="built_in">memset</span>(c, <span class="number">0</span>, <span class="keyword">sizeof</span>(c));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">            pos[a[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;s;</span><br><span class="line">        s.clear();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; i++)&#123;</span><br><span class="line">            s.insert(a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n;i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> pos1 = i - k - <span class="number">1</span>, pos2 = i + k;</span><br><span class="line">            <span class="keyword">if</span>(pos1 &gt; <span class="number">0</span>)s.erase(a[pos1]);</span><br><span class="line">            <span class="keyword">if</span>(pos2 &lt;= n)s.insert(a[pos2]);</span><br><span class="line">            <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;::iterator it  = s.lower_bound(a[i]);</span><br><span class="line">            <span class="keyword">if</span>(it != s.begin())c[a[i]] = *--it;</span><br><span class="line">            <span class="comment">//cout &lt;&lt; c[a[i]] &lt;&lt; " " &lt;&lt; a[i] &lt;&lt; endl;</span></span><br><span class="line">        &#125;</span><br><span class="line">        len[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            len[i] = len[c[i]] + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n - <span class="number">1</span>; i++)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; len[i]&lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; len[n] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;链接&quot;&gt;&lt;a href=&quot;#链接&quot; class=&quot;headerlink&quot; title=&quot;链接&quot;&gt;&lt;/a&gt;链接&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://nanti.jisuanke.com/t/41303&quot; target=&quot;_blank&quot; rel=&quot;noop
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="其他" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="思维" scheme="https://yuggu.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
+    
+      <category term="二分" scheme="https://yuggu.github.io/tags/%E4%BA%8C%E5%88%86/"/>
+    
+  </entry>
   
   <entry>
     <title>[2019南京网络赛-B] super_log</title>
@@ -73,9 +102,9 @@
       <category term="树状数组" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
     
     
-      <category term="树状数组" scheme="https://yuggu.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
-    
       <category term="思维" scheme="https://yuggu.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
+    
+      <category term="树状数组" scheme="https://yuggu.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
@@ -565,29 +594,6 @@
       <category term="算法" scheme="https://yuggu.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>连接不了https://account.jetbrains.com/ 网站或者idea通过帐号激活失败</title>
-    <link href="https://yuggu.github.io/2019/06/05/%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%BA%86https-account-jetbrains-com-%E7%BD%91%E7%AB%99%E6%88%96%E8%80%85idea%E9%80%9A%E8%BF%87%E5%B8%90%E5%8F%B7%E6%BF%80%E6%B4%BB%E5%A4%B1%E8%B4%A5/"/>
-    <id>https://yuggu.github.io/2019/06/05/连接不了https-account-jetbrains-com-网站或者idea通过帐号激活失败/</id>
-    <published>2019-06-05T04:11:58.000Z</published>
-    <updated>2019-06-05T04:25:52.200Z</updated>
-    
-    <content type="html"><![CDATA[<p>&emsp;使用学生邮箱申请jetbrains时，发现进不去<a href="https://account.jetbrains.com/" target="_blank" rel="noopener">https://account.jetbrains.com/</a> 发现不是被墙的原因，最后发现可能是以前破解idea时使用注册码时修改了hosts文件。</p><h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><h5 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim/etc/hosts</span><br></pre></td></tr></table></figure><a id="more"></a><h5 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h5><p>&emsp;进入C:\Windows\System32\drivers\etc，打开hosts文件将<code>0.0.0.0 account.jetbrains.com</code>注释掉</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;emsp;使用学生邮箱申请jetbrains时，发现进不去&lt;a href=&quot;https://account.jetbrains.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://account.jetbrains.com/&lt;/a&gt; 发现不是被墙的原因，最后发现可能是以前破解idea时使用注册码时修改了hosts文件。&lt;/p&gt;
-&lt;h4 id=&quot;解决方法&quot;&gt;&lt;a href=&quot;#解决方法&quot; class=&quot;headerlink&quot; title=&quot;解决方法&quot;&gt;&lt;/a&gt;解决方法&lt;/h4&gt;&lt;h5 id=&quot;linux&quot;&gt;&lt;a href=&quot;#linux&quot; class=&quot;headerlink&quot; title=&quot;linux&quot;&gt;&lt;/a&gt;linux&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo vim/etc/hosts&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="https://yuggu.github.io/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="jetbrains" scheme="https://yuggu.github.io/tags/jetbrains/"/>
     
   </entry>
   
