@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuggu.github.io/"/>
-  <updated>2019-09-09T03:16:18.647Z</updated>
+  <updated>2019-09-09T04:06:45.709Z</updated>
   <id>https://yuggu.github.io/</id>
   
   <author>
@@ -21,16 +21,14 @@
     <link href="https://yuggu.github.io/2019/09/09/2019%E5%8D%97%E4%BA%AC%E7%BD%91%E7%BB%9C%E8%B5%9B-F-Greedy-Sequence/"/>
     <id>https://yuggu.github.io/2019/09/09/2019南京网络赛-F-Greedy-Sequence/</id>
     <published>2019-09-09T03:13:39.000Z</published>
-    <updated>2019-09-09T03:16:18.647Z</updated>
+    <updated>2019-09-09T04:06:45.709Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="https://nanti.jisuanke.com/t/41303" target="_blank" rel="noopener">$\text{2019南京网络赛-F.Greedy Sequence}$</a></p><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>&emsp;&emsp;给你一个从1到$n$，$n$个数的排列，对于$i\in [1,n]$，你需要构造一个序列$s_i$，所以你需要构造$n$个序列。构造的规则如下</p><ol><li>$s_i[1]=i$；</li><li>$s_i$的长度是$n$，并且对于每个$j\in [2,n],s_i[j]\leq s_i[j-1]$；</li><li>对于$s_i[j]$在序列中的位置是$pos[j]$，对于任意的$j\geq 2$，$\left |pos[j]-pos[j-1]\right |\leq k(1\leq 10^5)$，并且对于任意一个$s_i$，它的任意一个元素在$a$中最多出现一次；</li><li>对于$s_i$，如果它已经将$a$中满足要求的元素全部选择了，但是它的长度小于$n$，那么它的其他元素都为0；</li><li>对于任意一个$s_i$，我们希望它的权值越大越好，(对于任意的两个序列$c,d$，如果存在$k$，$1\leq k\leq n,c_i=d_i\space for\space all\space 1\leq i &lt; k,\space and\space c_k&gt;d_k$，我们则说$c_i$的权值大于$d_i$)。<br>&emsp;&emsp;输入格式：第一行一个$t$，代表$t$组测试样例，每个测试样例第一行$n,k$，第二行$n$个数代表序列$a$.</li></ol><p>&emsp;&emsp;数据范围：$1\leq t\leq 20,1\leq n,k\leq 10^5,1\leq a_i\leq n$.</p><p>&emsp;&emsp;输出格式：每个测试样例输出一行$n$个数，第$i$个数代表序列$s_i$中的非零元素的个数.</p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>&emsp;&emsp;对于任意的$s_i$，如果某一次我们选了$a$中的元素$a[j]$，那么我们下一次选的数一定是$[j-k,j+k]$中的小于$a[j]$的最大值，这样做能保证我们的$s_i$的权值最大以及$s_i$的非零元素最多；<br>&emsp;&emsp;那么对于序列$a$中的元素$a_i$，我们就用$set$维护一个$[i-k,i+k]$的窗口，之后$set$内二分找到选了$a_i$之后会选的那个元素，对于每个$a_i$，我们都记录下这个值$c_i$，并且显然的，当选择$a_i$为s[1]时序列的非零元素个数等于选择$c_i$为s[1]时序列非零元素个数基础上加1，所以这个我们递推一下就可以了。</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"bits/stdc++.h"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> t, n, k, a[<span class="number">1000005</span>], c[<span class="number">1000005</span>], pos[<span class="number">100005</span>];</span><br><span class="line"><span class="keyword">int</span> len[<span class="number">1000005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t--) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">        <span class="built_in">memset</span>(pos, <span class="number">0</span>, <span class="keyword">sizeof</span>(pos));</span><br><span class="line">        <span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="keyword">sizeof</span>(a));</span><br><span class="line">        <span class="built_in">memset</span>(len, <span class="number">0</span>, <span class="keyword">sizeof</span>(len));</span><br><span class="line">        <span class="built_in">memset</span>(c, <span class="number">0</span>, <span class="keyword">sizeof</span>(c));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">            pos[a[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;s;</span><br><span class="line">        s.clear();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; i++)&#123;</span><br><span class="line">            s.insert(a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n;i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> pos1 = i - k - <span class="number">1</span>, pos2 = i + k;</span><br><span class="line">            <span class="keyword">if</span>(pos1 &gt; <span class="number">0</span>)s.erase(a[pos1]);</span><br><span class="line">            <span class="keyword">if</span>(pos2 &lt;= n)s.insert(a[pos2]);</span><br><span class="line">            <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;::iterator it  = s.lower_bound(a[i]);</span><br><span class="line">            <span class="keyword">if</span>(it != s.begin())c[a[i]] = *--it;</span><br><span class="line">            <span class="comment">//cout &lt;&lt; c[a[i]] &lt;&lt; " " &lt;&lt; a[i] &lt;&lt; endl;</span></span><br><span class="line">        &#125;</span><br><span class="line">        len[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            len[i] = len[c[i]] + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n - <span class="number">1</span>; i++)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; len[i]&lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; len[n] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="https://nanti.jisuanke.com/t/41303" target="_blank" rel="noopener">$\text{2019南京网络赛-F.Greedy Sequence}$</a></p><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>&emsp;&emsp;给你一个从1到$n$，$n$个数的排列，对于$i\in [1,n]$，你需要构造一个序列$s_i$，所以你需要构造$n$个序列。构造的规则如下<br>&emsp;&ensp;$1$.&ensp;$s_i[1]=i$；<br>&emsp;&ensp;$2$.&ensp;$s_i$的长度是$n$，并且对于每个$j\in [2,n],s_i[j]\leq s_i[j-1]$；<br>&emsp;&ensp;$3$.&ensp;对于$s_i[j]$在序列中的位置是$pos[j]$，对于任意的$j\geq 2$，$\left |pos[j]-pos[j-1]\right |\leq k(1\leq 10^5)$，并且对于任意一个$s_i$，它的任意一个元素在$a$中最多出现一次；<br>&emsp;&ensp;$4$.&ensp;对于$s_i$，如果它已经将$a$中满足要求的元素全部选择了，但是它的长度小于$n$，那么它的其他元素都为0；<br>&emsp;&ensp;$5$.&ensp;对于任意一个$s_i$，我们希望它的权值越大越好，(对于任意的两个序列$c,d$，如果存在$k$，$1\leq k\leq n,c_i=d_i\space for\space all\space 1\leq i &lt; k,\space and\space c_k&gt;d_k$，我们则说$c_i$的权值大于$d_i$)。<br><a id="more"></a><br>&emsp;&emsp;输入格式：第一行一个$t$，代表$t$组测试样例，每个测试样例第一行$n,k$，第二行$n$个数代表序列$a$.</p><p>&emsp;&emsp;数据范围：$1\leq t\leq 20,1\leq n,k\leq 10^5,1\leq a_i\leq n$.</p><p>&emsp;&emsp;输出格式：每个测试样例输出一行$n$个数，第$i$个数代表序列$s_i$中的非零元素的个数.</p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>&emsp;&emsp;对于任意的$s_i$，如果某一次我们选了$a$中的元素$a[j]$，那么我们下一次选的数一定是$[j-k,j+k]$中的小于$a[j]$的最大值，这样做能保证我们的$s_i$的权值最大以及$s_i$的非零元素最多；<br>&emsp;&emsp;那么对于序列$a$中的元素$a_i$，我们就用$set$维护一个$[i-k,i+k]$的窗口，之后$set$内二分找到选了$a_i$之后会选的那个元素，对于每个$a_i$，我们都记录下这个值$c_i$，并且显然的，当选择$a_i$为s[1]时序列的非零元素个数等于选择$c_i$为s[1]时序列非零元素个数基础上加1，所以这个我们递推一下就可以了。</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"bits/stdc++.h"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> t, n, k, a[<span class="number">1000005</span>], c[<span class="number">1000005</span>], pos[<span class="number">100005</span>];</span><br><span class="line"><span class="keyword">int</span> len[<span class="number">1000005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t--) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">        <span class="built_in">memset</span>(pos, <span class="number">0</span>, <span class="keyword">sizeof</span>(pos));</span><br><span class="line">        <span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="keyword">sizeof</span>(a));</span><br><span class="line">        <span class="built_in">memset</span>(len, <span class="number">0</span>, <span class="keyword">sizeof</span>(len));</span><br><span class="line">        <span class="built_in">memset</span>(c, <span class="number">0</span>, <span class="keyword">sizeof</span>(c));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">            pos[a[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;s;</span><br><span class="line">        s.clear();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; i++)&#123;</span><br><span class="line">            s.insert(a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n;i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> pos1 = i - k - <span class="number">1</span>, pos2 = i + k;</span><br><span class="line">            <span class="keyword">if</span>(pos1 &gt; <span class="number">0</span>)s.erase(a[pos1]);</span><br><span class="line">            <span class="keyword">if</span>(pos2 &lt;= n)s.insert(a[pos2]);</span><br><span class="line">            <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;::iterator it  = s.lower_bound(a[i]);</span><br><span class="line">            <span class="keyword">if</span>(it != s.begin())c[a[i]] = *--it;</span><br><span class="line">            <span class="comment">//cout &lt;&lt; c[a[i]] &lt;&lt; " " &lt;&lt; a[i] &lt;&lt; endl;</span></span><br><span class="line">        &#125;</span><br><span class="line">        len[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            len[i] = len[c[i]] + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n - <span class="number">1</span>; i++)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; len[i]&lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; len[n] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h3 id=&quot;链接&quot;&gt;&lt;a href=&quot;#链接&quot; class=&quot;headerlink&quot; title=&quot;链接&quot;&gt;&lt;/a&gt;链接&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://nanti.jisuanke.com/t/41303&quot; target=&quot;_blank&quot; rel=&quot;noop
-      
+      &lt;h3 id=&quot;链接&quot;&gt;&lt;a href=&quot;#链接&quot; class=&quot;headerlink&quot; title=&quot;链接&quot;&gt;&lt;/a&gt;链接&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://nanti.jisuanke.com/t/41303&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;$\text{2019南京网络赛-F.Greedy Sequence}$&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h3&gt;&lt;p&gt;&amp;emsp;&amp;emsp;给你一个从1到$n$，$n$个数的排列，对于$i\in [1,n]$，你需要构造一个序列$s_i$，所以你需要构造$n$个序列。构造的规则如下&lt;br&gt;&amp;emsp;&amp;ensp;$1$.&amp;ensp;$s_i[1]=i$；&lt;br&gt;&amp;emsp;&amp;ensp;$2$.&amp;ensp;$s_i$的长度是$n$，并且对于每个$j\in [2,n],s_i[j]\leq s_i[j-1]$；&lt;br&gt;&amp;emsp;&amp;ensp;$3$.&amp;ensp;对于$s_i[j]$在序列中的位置是$pos[j]$，对于任意的$j\geq 2$，$\left |pos[j]-pos[j-1]\right |\leq k(1\leq 10^5)$，并且对于任意一个$s_i$，它的任意一个元素在$a$中最多出现一次；&lt;br&gt;&amp;emsp;&amp;ensp;$4$.&amp;ensp;对于$s_i$，如果它已经将$a$中满足要求的元素全部选择了，但是它的长度小于$n$，那么它的其他元素都为0；&lt;br&gt;&amp;emsp;&amp;ensp;$5$.&amp;ensp;对于任意一个$s_i$，我们希望它的权值越大越好，(对于任意的两个序列$c,d$，如果存在$k$，$1\leq k\leq n,c_i=d_i\space for\space all\space 1\leq i &amp;lt; k,\space and\space c_k&amp;gt;d_k$，我们则说$c_i$的权值大于$d_i$)。&lt;br&gt;
     
     </summary>
     
@@ -131,11 +129,11 @@
       <category term="最短路" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
     
     
+      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
+    
       <category term="图论" scheme="https://yuggu.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
     
       <category term="Floyd" scheme="https://yuggu.github.io/tags/Floyd/"/>
-    
-      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
     
   </entry>
   
@@ -265,9 +263,9 @@
       <category term="区间dp" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/dp/%E5%8C%BA%E9%97%B4dp/"/>
     
     
-      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
-    
       <category term="算法" scheme="https://yuggu.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
     
   </entry>
   
@@ -295,9 +293,9 @@
       <category term="区间dp" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/dp/%E5%8C%BA%E9%97%B4dp/"/>
     
     
-      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
-    
       <category term="算法" scheme="https://yuggu.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
     
   </entry>
   
@@ -325,9 +323,9 @@
       <category term="区间dp" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/dp/%E5%8C%BA%E9%97%B4dp/"/>
     
     
-      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
-    
       <category term="算法" scheme="https://yuggu.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
     
   </entry>
   
@@ -355,9 +353,9 @@
       <category term="区间dp" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/dp/%E5%8C%BA%E9%97%B4dp/"/>
     
     
-      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
-    
       <category term="算法" scheme="https://yuggu.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
     
   </entry>
   
@@ -384,9 +382,9 @@
       <category term="区间dp" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/dp/%E5%8C%BA%E9%97%B4dp/"/>
     
     
-      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
-    
       <category term="算法" scheme="https://yuggu.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
     
   </entry>
   
@@ -413,9 +411,9 @@
       <category term="区间dp" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/dp/%E5%8C%BA%E9%97%B4dp/"/>
     
     
-      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
-    
       <category term="算法" scheme="https://yuggu.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
     
   </entry>
   
@@ -442,9 +440,9 @@
       <category term="区间dp" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/dp/%E5%8C%BA%E9%97%B4dp/"/>
     
     
-      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
-    
       <category term="算法" scheme="https://yuggu.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
     
   </entry>
   
@@ -501,9 +499,9 @@
       <category term="LCA" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/LCA/"/>
     
     
-      <category term="图论" scheme="https://yuggu.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
-    
       <category term="算法" scheme="https://yuggu.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="图论" scheme="https://yuggu.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
     
       <category term="LCA" scheme="https://yuggu.github.io/tags/LCA/"/>
     
@@ -532,9 +530,9 @@
       <category term="最短路" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
     
     
-      <category term="图论" scheme="https://yuggu.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
-    
       <category term="算法" scheme="https://yuggu.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="图论" scheme="https://yuggu.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
     
   </entry>
   
@@ -561,9 +559,9 @@
       <category term="区间dp" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/dp/%E5%8C%BA%E9%97%B4dp/"/>
     
     
-      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
-    
       <category term="算法" scheme="https://yuggu.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
     
   </entry>
   
@@ -591,9 +589,9 @@
       <category term="背包" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/dp/%E8%83%8C%E5%8C%85/"/>
     
     
-      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
-    
       <category term="算法" scheme="https://yuggu.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
     
   </entry>
   
