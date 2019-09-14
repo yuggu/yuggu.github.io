@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="yuggu">
 <meta property="og:description" content="链接$\text{POJ - 1155 TELE}$ 题意&amp;emsp;&amp;emsp;这里有$m$个用户想要使用电视，然而它们需要电视网络信号进行传播信号，整个电视网络由信号发射器和用户组成，它的形状是一棵树，用户是叶子结点，现在给出了连接发射器与发射器或用户之间的信号所需要花费的金钱，$m$个用户每个用户使用电视都会支付一些金钱，问可以观看电视的用户的数量最大是多少，以致电视网络的搭建不会亏损金钱；">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-13T05:02:54.884Z">
+<meta property="og:updated_time" content="2019-09-14T10:05:56.358Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="POJ-1155 TELE">
 <meta name="twitter:description" content="链接$\text{POJ - 1155 TELE}$ 题意&amp;emsp;&amp;emsp;这里有$m$个用户想要使用电视，然而它们需要电视网络信号进行传播信号，整个电视网络由信号发射器和用户组成，它的形状是一棵树，用户是叶子结点，现在给出了连接发射器与发射器或用户之间的信号所需要花费的金钱，$m$个用户每个用户使用电视都会支付一些金钱，问可以观看电视的用户的数量最大是多少，以致电视网络的搭建不会亏损金钱；">
@@ -393,12 +393,24 @@
                 
               
 
-              <time title="创建时间：2019-09-13 13:01:41 / 修改时间：13:02:54" itemprop="dateCreated datePublished" datetime="2019-09-13T13:01:41+08:00">2019-09-13</time>
+              <time title="创建时间：2019-09-13 13:01:41" itemprop="dateCreated datePublished" datetime="2019-09-13T13:01:41+08:00">2019-09-13</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-14 18:05:56" itemprop="dateModified" datetime="2019-09-14T18:05:56+08:00">2019-09-14</time>
               
             
           </span>
@@ -484,7 +496,9 @@
       
         <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="http://poj.org/problem?id=1155" target="_blank" rel="noopener">$\text{POJ - 1155 TELE}$</a></p>
 <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>&emsp;&emsp;这里有$m$个用户想要使用电视，然而它们需要电视网络信号进行传播信号，整个电视网络由信号发射器和用户组成，它的形状是一棵树，用户是叶子结点，现在给出了连接发射器与发射器或用户之间的信号所需要花费的金钱，$m$个用户每个用户使用电视都会支付一些金钱，问可以观看电视的用户的数量最大是多少，以致电视网络的搭建不会亏损金钱；整颗树共$n$个节点，</p>
-<p>&emsp;&emsp;输入格式：第一行两个整数$n,m$，表示树中结点个数和叶子结点个数，树根一定是1，其他发射器编号从2到$n-m$，用户即叶子结点编号从$n-m+1$到$n$，接下来$n-m$行，第$i$行<code>K A1 C1...AK CK</code>，表示与$i$个发射器相连接的结点有$k$个，对应编号是$a_j$，连接$i$与$a_j$需要花费的费用是$c_j$，最后一行$m$个整数，表示$m$个用户使用电视会支付的金钱。</p>
+<ol>
+<li>ertqejieqwji wqeq$we$<br>&emsp;&emsp;输入格式：第一行两个整数$n,m$，表示树中结点个数和叶子结点个数，树根一定是1，其他发射器编号从2到$n-m$，用户即叶子结点编号从$n-m+1$到$n$，接下来$n-m$行，第$i$行<code>K A1 C1...AK CK</code>，表示与$i$个发射器相连接的结点有$k$个，对应编号是$a_j$，连接$i$与$a_j$需要花费的费用是$c_j$，最后一行$m$个整数，表示$m$个用户使用电视会支付的金钱。</li>
+</ol>
 <p>&emsp;&emsp;数据范围：$2\leq n\leq 3000,1\leq m\leq n-1$.</p>
 <p>&emsp;&emsp;输出格式：输出一行，表示电视网络搭建不亏损情况下，最多可以使用电视的用户的数量。<br><a id="more"></a></p>
 <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>&emsp;&emsp;对于某一棵子树，假设我们考虑他的亏损情况，如果它是亏损的我们就切掉它，那么这种想法显然是不正确的，如果他有兄弟结点，并且兄弟结点不亏损，那么它们的父亲的那颗子树，显然是未知的；</p>
