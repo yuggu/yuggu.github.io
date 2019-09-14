@@ -59,10 +59,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/head.ico?v=7.1.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/t4.ico?v=7.1.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/head.ico?v=7.1.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/t4.ico?v=7.1.1">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
@@ -103,18 +103,18 @@
 
 
 
-  <meta name="description" content="数据库之范式 &amp;emsp;&amp;emsp;范式来自英文$\text{Normal form}$，简称$\text{NF}$。设计关系数据库时，遵从不同的规范要求，设计出合理的关系型数据库，这些不同的规范要求被称为不同的范式，各种范式呈递次规范，越高的范式数据库冗余越小。满足这些规范的数据库是简洁的、结构明晰的，同时，不会发生插入、删除和更新操作异常。反之则是乱七八糟。">
+  <meta name="description" content="### 数据库之范式   范式来自英文\(\text{Normal form}\)，简称\(\text{NF}\)。设计关系数据库时，遵从不同的规范要求，设计出合理的关系型数据库，这些不同的规范要求被称为不同的范式，各种范式呈递次规范，越高的范式数据库冗余越小。满足这些规范的数据库是简洁的、结构明晰的，同时，不会发生插入、删除和更新操作异常。反之则是乱七八糟。">
 <meta name="keywords" content="数据库,范式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库之范式">
 <meta property="og:url" content="https://yuggu.github.io/2019/08/28/数据库之范式/index.html">
 <meta property="og:site_name" content="yuggu">
-<meta property="og:description" content="数据库之范式 &amp;emsp;&amp;emsp;范式来自英文$\text{Normal form}$，简称$\text{NF}$。设计关系数据库时，遵从不同的规范要求，设计出合理的关系型数据库，这些不同的规范要求被称为不同的范式，各种范式呈递次规范，越高的范式数据库冗余越小。满足这些规范的数据库是简洁的、结构明晰的，同时，不会发生插入、删除和更新操作异常。反之则是乱七八糟。">
+<meta property="og:description" content="### 数据库之范式   范式来自英文\(\text{Normal form}\)，简称\(\text{NF}\)。设计关系数据库时，遵从不同的规范要求，设计出合理的关系型数据库，这些不同的规范要求被称为不同的范式，各种范式呈递次规范，越高的范式数据库冗余越小。满足这些规范的数据库是简洁的、结构明晰的，同时，不会发生插入、删除和更新操作异常。反之则是乱七八糟。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-08-28T10:09:15.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库之范式">
-<meta name="twitter:description" content="数据库之范式 &amp;emsp;&amp;emsp;范式来自英文$\text{Normal form}$，简称$\text{NF}$。设计关系数据库时，遵从不同的规范要求，设计出合理的关系型数据库，这些不同的规范要求被称为不同的范式，各种范式呈递次规范，越高的范式数据库冗余越小。满足这些规范的数据库是简洁的、结构明晰的，同时，不会发生插入、删除和更新操作异常。反之则是乱七八糟。">
+<meta name="twitter:description" content="### 数据库之范式   范式来自英文\(\text{Normal form}\)，简称\(\text{NF}\)。设计关系数据库时，遵从不同的规范要求，设计出合理的关系型数据库，这些不同的规范要求被称为不同的范式，各种范式呈递次规范，越高的范式数据库冗余越小。满足这些规范的数据库是简洁的、结构明晰的，同时，不会发生插入、删除和更新操作异常。反之则是乱七八糟。">
 
 
 
@@ -451,7 +451,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.5k</span>
+                <span title="本文字数">1.4k</span>
               
 
               
@@ -475,43 +475,68 @@
       
 
       
-        <h3 id="数据库之范式"><a href="#数据库之范式" class="headerlink" title="数据库之范式"></a>数据库之范式</h3><hr>
-<p>&emsp;&emsp;范式来自英文$\text{Normal form}$，简称$\text{NF}$。设计关系<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%BA%93" target="_blank" rel="noopener">数据库</a>时，遵从不同的规范<a href="https://baike.baidu.com/item/%E8%A6%81%E6%B1%82/3598753" target="_blank" rel="noopener">要求</a>，设计出合理的关系型数据库，这些不同的规范要求被称为不同的范式，各种范式呈递次规范，越高的范式数据库冗余越小。满足这些规范的数据库是简洁的、结构明晰的，同时，不会发生插入、删除和更新操作异常。反之则是乱七八糟。<br><a id="more"></a><br>&emsp;&emsp;在介绍范式之前先介绍一些必要的概念。</p>
-<h4 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h4><p>&emsp;&emsp;在一个关系模式R(U)下，X、Y是U的子集。若对于R(U)的任意一个关系r，r中不可能存在两个元组在X上的属性值相等，而在Y上的属性值不等，即由X可唯一确定Y，则有X函数确定Y或Y函数依赖于X，记作X→Y。</p>
-<p>&emsp;&emsp;若X→Y，并且对于X的任意一个真子集Z，都得不到Y函数依赖于X，则有Y对于X完全函数依赖，否则成Y对X部分函数依赖。若X→Y（Y→X不成立），且Y→Z，则有Z对X传递函数依赖。<br>(以下范式均按照个人理解给出阐述)</p>
-<h4 id="码"><a href="#码" class="headerlink" title="码"></a>码</h4><p>&emsp;&emsp;候选码码是可以唯一标识关系的属性或属性组（又称为码），可从候选码中任选一个当作主码，而包含在任意一个码中的属性称为主属性，不包含在任意一个码中的属性称非主属性。</p>
-<h4 id="第一范式"><a href="#第一范式" class="headerlink" title="第一范式"></a>第一范式</h4><p>&emsp;&emsp;即$\text{1NF}$在关系模型中，对于数据库中的每一列均是不能再分割的。</p>
+        <h2 id="数据库之范式">### 数据库之范式</h2>
+<p>  范式来自英文<span class="math inline">\(\text{Normal form}\)</span>，简称<span class="math inline">\(\text{NF}\)</span>。设计关系<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%BA%93" target="_blank" rel="noopener">数据库</a>时，遵从不同的规范<a href="https://baike.baidu.com/item/%E8%A6%81%E6%B1%82/3598753" target="_blank" rel="noopener">要求</a>，设计出合理的关系型数据库，这些不同的规范要求被称为不同的范式，各种范式呈递次规范，越高的范式数据库冗余越小。满足这些规范的数据库是简洁的、结构明晰的，同时，不会发生插入、删除和更新操作异常。反之则是乱七八糟。 <a id="more"></a>   在介绍范式之前先介绍一些必要的概念。 #### 函数依赖   在一个关系模式R(U)下，X、Y是U的子集。若对于R(U)的任意一个关系r，r中不可能存在两个元组在X上的属性值相等，而在Y上的属性值不等，即由X可唯一确定Y，则有X函数确定Y或Y函数依赖于X，记作X→Y。</p>
+<p>  若X→Y，并且对于X的任意一个真子集Z，都得不到Y函数依赖于X，则有Y对于X完全函数依赖，否则成Y对X部分函数依赖。若X→Y（Y→X不成立），且Y→Z，则有Z对X传递函数依赖。 (以下范式均按照个人理解给出阐述)</p>
+<h4 id="码">码</h4>
+<p>  候选码码是可以唯一标识关系的属性或属性组（又称为码），可从候选码中任选一个当作主码，而包含在任意一个码中的属性称为主属性，不包含在任意一个码中的属性称非主属性。</p>
+<h4 id="第一范式">第一范式</h4>
+<p>  即<span class="math inline">\(\text{1NF}\)</span>在关系模型中，对于数据库中的每一列均是不能再分割的。</p>
 <html>
 <table>
-    <tr>
-        <td rowspan="2" colspan="1"><b>商品编号</b></td>
-        <td rowspan="2" colspan="1"><b>商品名</b></td>
-        <td rowspan="1" colspan="2"><b>销售</b></td>    
-    </tr>
-    <tr>
-        <td><b>数量/个</b></td>
-        <td><b>单价/元<b></b></b></td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>牙膏</td>
-        <td>20</td>
-        <td>10</td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>矿泉水</td>
-        <td>50</td>
-        <td>2</td>
-    </tr>
+<tr>
+<td rowspan="2" colspan="1">
+<b>商品编号</b>
+</td>
+<td rowspan="2" colspan="1">
+<b>商品名</b>
+</td>
+<td rowspan="1" colspan="2">
+<b>销售</b>
+</td>
+</tr>
+<tr>
+<td>
+<b>数量/个</b>
+</td>
+<td>
+<b>单价/元<b>
+</b></b></td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+牙膏
+</td>
+<td>
+20
+</td>
+<td>
+10
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+矿泉水
+</td>
+<td>
+50
+</td>
+<td>
+2
+</td>
+</tr>
 </table>
 </html>
-
-<p>&emsp;&emsp;如该关系即不满足第一范式，销售属性可再分，修改后如下。修改后即满足第一范式。</p>
-<div class="table-container">
+<p>  如该关系即不满足第一范式，销售属性可再分，修改后如下。修改后即满足第一范式。</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>商品编号</th>
 <th>商品名</th>
 <th>销售数量/个</th>
@@ -519,13 +544,13 @@
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>1</td>
 <td>牙膏</td>
 <td>20</td>
 <td>10</td>
 </tr>
-<tr>
+<tr class="even">
 <td>2</td>
 <td>矿泉水</td>
 <td>50</td>
@@ -533,10 +558,12 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="第二范式"><a href="#第二范式" class="headerlink" title="第二范式"></a>第二范式</h4><p>&emsp;&emsp;即$\text{2NF}$，$\text{2NF}$在$\text{1NF}$的基础上消除了非主属性对于码的部分函数依赖；如关系R(A,B,C,D)，其中(A,B)→C、A→D，那么(A,B)可以唯一标识整个关系，所以(A,B)即是码，且存在非主属性D对于码(A,B)的部分函数依赖，所以它不满足第二范式，满足第一范式，所以为$\text{1NF}$。</p>
-<h4 id="第三范式"><a href="#第三范式" class="headerlink" title="第三范式"></a>第三范式</h4><p>&emsp;&emsp;即$\text{3NF}$，$\text{2NF}$在$\text{2NF}$的基础上消除了非主属性对于码的传递函数依赖；如关系R(A,B,C)，其中A→B，B→C，则码为A，存在非主属性C对于码A的传递函数依赖，所以它不满足第三范式，且满足$\text{2NF}$，所以为$\text{2NF}$。</p>
-<h4 id="text-BC-范式"><a href="#text-BC-范式" class="headerlink" title="$\text{BC}$范式"></a>$\text{BC}$范式</h4><p>&emsp;&emsp;即$\text{BCNF}$，$\text{BCNF}$在$\text{3NF}$的基础上消除了主属性对于码的传递函数依赖和部分函数依赖；如关系R(A,B,C)，其中(A,B)→C，且C→A，那么显然的(A,B)、(C,B)是码，那么A、B、C均是主属性，存在主属性C对于码(A,B)的依赖，且它满足$\text{3NF}$，所以它是$\text{3NF}$。</p>
+<h4 id="第二范式">第二范式</h4>
+<p>  即<span class="math inline">\(\text{2NF}\)</span>，<span class="math inline">\(\text{2NF}\)</span>在<span class="math inline">\(\text{1NF}\)</span>的基础上消除了非主属性对于码的部分函数依赖；如关系R(A,B,C,D)，其中(A,B)→C、A→D，那么(A,B)可以唯一标识整个关系，所以(A,B)即是码，且存在非主属性D对于码(A,B)的部分函数依赖，所以它不满足第二范式，满足第一范式，所以为<span class="math inline">\(\text{1NF}\)</span>。</p>
+<h4 id="第三范式">第三范式</h4>
+<p>  即<span class="math inline">\(\text{3NF}\)</span>，<span class="math inline">\(\text{2NF}\)</span>在<span class="math inline">\(\text{2NF}\)</span>的基础上消除了非主属性对于码的传递函数依赖；如关系R(A,B,C)，其中A→B，B→C，则码为A，存在非主属性C对于码A的传递函数依赖，所以它不满足第三范式，且满足<span class="math inline">\(\text{2NF}\)</span>，所以为<span class="math inline">\(\text{2NF}\)</span>。</p>
+<h4 id="textbc范式"><span class="math inline">\(\text{BC}\)</span>范式</h4>
+<p>  即<span class="math inline">\(\text{BCNF}\)</span>，<span class="math inline">\(\text{BCNF}\)</span>在<span class="math inline">\(\text{3NF}\)</span>的基础上消除了主属性对于码的传递函数依赖和部分函数依赖；如关系R(A,B,C)，其中(A,B)→C，且C→A，那么显然的(A,B)、(C,B)是码，那么A、B、C均是主属性，存在主属性C对于码(A,B)的依赖，且它满足<span class="math inline">\(\text{3NF}\)</span>，所以它是<span class="math inline">\(\text{3NF}\)</span>。</p>
 <p><strong>待续···</strong></p>
 
       
@@ -896,7 +923,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库之范式"><span class="nav-number">1.</span> <span class="nav-text">数据库之范式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数依赖"><span class="nav-number">1.1.</span> <span class="nav-text">函数依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#码"><span class="nav-number">1.2.</span> <span class="nav-text">码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第一范式"><span class="nav-number">1.3.</span> <span class="nav-text">第一范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二范式"><span class="nav-number">1.4.</span> <span class="nav-text">第二范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三范式"><span class="nav-number">1.5.</span> <span class="nav-text">第三范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#text-BC-范式"><span class="nav-number">1.6.</span> <span class="nav-text">$\text{BC}$范式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库之范式"><span class="nav-number">1.</span> <span class="nav-text">### 数据库之范式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#码"><span class="nav-number">1.0.1.</span> <span class="nav-text">码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第一范式"><span class="nav-number">1.0.2.</span> <span class="nav-text">第一范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二范式"><span class="nav-number">1.0.3.</span> <span class="nav-text">第二范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三范式"><span class="nav-number">1.0.4.</span> <span class="nav-text">第三范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#textbc范式"><span class="nav-number">1.0.5.</span> <span class="nav-text">\(\text{BC}\)范式</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -929,7 +956,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">83k</span>
+    <span title="站点总字数">91k</span>
   
 
   
