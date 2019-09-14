@@ -103,18 +103,18 @@
 
 
 
-  <meta name="description" content="链接 \(\text{POJ - 1651}\) 题意    给你一个长度为\(n\)的序列\(a\)，现在你将要把，序列\(a\)中除开头和结尾外的所有元素都删除掉,你每次删除一个数\(a_i\)时，你将会得到的分数为\(a_{i-1}\*\)\(a_i\*a_{i+1}\)，你需要获得最少的分数，问这个分数最小为多少。   比如对于序列\({10,1,50,20,5}\)，你依次删除\(">
+  <meta name="description" content="链接 \(\text{POJ - 1651}\) 题意    给你一个长度为\(n\)的序列\(a\)，现在你将要把，序列\(a\)中除开头和结尾外的所有元素都删除掉,你每次删除一个数\(a_i\)时，你将会得到的分数为\(a_{i-1}*\)\(a_i*a_{i+1}\)，你需要获得最少的分数，问这个分数最小为多少。   比如对于序列\({10,1,50,20,5}\)，你依次删除\(5">
 <meta name="keywords" content="dp,算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[POJ - 1651] Multiplication Puzzle">
 <meta property="og:url" content="https://yuggu.github.io/2019/07/20/POJ-1651-Multiplication-Puzzle/index.html">
 <meta property="og:site_name" content="yuggu">
-<meta property="og:description" content="链接 \(\text{POJ - 1651}\) 题意    给你一个长度为\(n\)的序列\(a\)，现在你将要把，序列\(a\)中除开头和结尾外的所有元素都删除掉,你每次删除一个数\(a_i\)时，你将会得到的分数为\(a_{i-1}\*\)\(a_i\*a_{i+1}\)，你需要获得最少的分数，问这个分数最小为多少。   比如对于序列\({10,1,50,20,5}\)，你依次删除\(">
+<meta property="og:description" content="链接 \(\text{POJ - 1651}\) 题意    给你一个长度为\(n\)的序列\(a\)，现在你将要把，序列\(a\)中除开头和结尾外的所有元素都删除掉,你每次删除一个数\(a_i\)时，你将会得到的分数为\(a_{i-1}*\)\(a_i*a_{i+1}\)，你需要获得最少的分数，问这个分数最小为多少。   比如对于序列\({10,1,50,20,5}\)，你依次删除\(5">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-22T07:34:00.312Z">
+<meta property="og:updated_time" content="2019-09-14T11:37:58.608Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[POJ - 1651] Multiplication Puzzle">
-<meta name="twitter:description" content="链接 \(\text{POJ - 1651}\) 题意    给你一个长度为\(n\)的序列\(a\)，现在你将要把，序列\(a\)中除开头和结尾外的所有元素都删除掉,你每次删除一个数\(a_i\)时，你将会得到的分数为\(a_{i-1}\*\)\(a_i\*a_{i+1}\)，你需要获得最少的分数，问这个分数最小为多少。   比如对于序列\({10,1,50,20,5}\)，你依次删除\(">
+<meta name="twitter:description" content="链接 \(\text{POJ - 1651}\) 题意    给你一个长度为\(n\)的序列\(a\)，现在你将要把，序列\(a\)中除开头和结尾外的所有元素都删除掉,你每次删除一个数\(a_i\)时，你将会得到的分数为\(a_{i-1}*\)\(a_i*a_{i+1}\)，你需要获得最少的分数，问这个分数最小为多少。   比如对于序列\({10,1,50,20,5}\)，你依次删除\(5">
 
 
 
@@ -410,7 +410,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-22 15:34:00" itemprop="dateModified" datetime="2019-07-22T15:34:00+08:00">2019-07-22</time>
+                <time title="修改时间：2019-09-14 19:37:58" itemprop="dateModified" datetime="2019-09-14T19:37:58+08:00">2019-09-14</time>
               
             
           </span>
@@ -497,7 +497,15 @@
         <h3 id="链接">链接</h3>
 <p><a href="http://poj.org/problem?id=1651" target="_blank" rel="noopener"><span class="math inline">\(\text{POJ - 1651}\)</span></a></p>
 <h3 id="题意">题意</h3>
-<p>   给你一个长度为<span class="math inline">\(n\)</span>的序列<span class="math inline">\(a\)</span>，现在你将要把，序列<span class="math inline">\(a\)</span>中除开头和结尾外的所有元素都删除掉,你每次删除一个数<span class="math inline">\(a_i\)</span>时，你将会得到的分数为<span class="math inline">\(a_{i-1}\*\)</span><span class="math inline">\(a_i\*a_{i+1}\)</span>，你需要获得最少的分数，问这个分数最小为多少。   比如对于序列<span class="math inline">\({10,1,50,20,5}\)</span>，你依次删除<span class="math inline">\(50、20、1\)</span>，得到的分数分别为<span class="math inline">\(1\*50\*20、1\*20\*5、10\*1\*5\)</span>，总共为<span class="math inline">\(1150\)</span>，这样你就能获得最少的分数。 <a id="more"></a> ### 分析 &gt;  这是一道区间<span class="math inline">\(\text{DP}\)</span>题目，依旧是枚举区间长度与起点，求出小区间的最优决策，然后得到大区间的解。状态转移方程为：<span class="math display">\[dp[i][j]=min(dp[i][j],dp[i][k]+dp[k][j]+a[i]*a[k]*a[j])\]</span> &gt;  <span class="math inline">\(dp[i][j]\)</span>即为区间<span class="math inline">\([i,j]\)</span>所能获得的最小分数。 &gt;  另外，如果是获得最大分数，只需要将数组初始化为0即可。 &gt;  区间<span class="math inline">\(dp\)</span>一般基本套路即是枚举区间长度与起点，然后求接小区间解，进而合并得到大区间的解，关键是转移方程。</p>
+<p>   给你一个长度为<span class="math inline">\(n\)</span>的序列<span class="math inline">\(a\)</span>，现在你将要把，序列<span class="math inline">\(a\)</span>中除开头和结尾外的所有元素都删除掉,你每次删除一个数<span class="math inline">\(a_i\)</span>时，你将会得到的分数为<span class="math inline">\(a_{i-1}*\)</span><span class="math inline">\(a_i*a_{i+1}\)</span>，你需要获得最少的分数，问这个分数最小为多少。</p>
+<p>  比如对于序列<span class="math inline">\({10,1,50,20,5}\)</span>，你依次删除<span class="math inline">\(50、20、1\)</span>，得到的分数分别为<span class="math inline">\(1*50*20、1*20*5、10*1*5\)</span>，总共为<span class="math inline">\(1150\)</span>，这样你就能获得最少的分数。 <a id="more"></a></p>
+<h3 id="分析">分析</h3>
+<blockquote>
+<p>  这是一道区间<span class="math inline">\(\text{DP}\)</span>题目，依旧是枚举区间长度与起点，求出小区间的最优决策，然后得到大区间的解。状态转移方程为：<span class="math display">\[dp[i][j]=min(dp[i][j],dp[i][k]+dp[k][j]+a[i]*a[k]*a[j])\]</span></p>
+<p>  <span class="math inline">\(dp[i][j]\)</span>即为区间<span class="math inline">\([i,j]\)</span>所能获得的最小分数。</p>
+<p>  另外，如果是获得最大分数，只需要将数组初始化为0即可。</p>
+<p>  区间<span class="math inline">\(dp\)</span>一般基本套路即是枚举区间长度与起点，然后求接小区间解，进而合并得到大区间的解，关键是转移方程。</p>
+</blockquote>
 <h3 id="区间dp基本模板">区间<span class="math inline">\(dp\)</span>基本模板</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> len = <span class="number">1</span>;len&lt;=n;len++)&#123;<span class="comment">//枚举长度</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j+len&lt;=n+<span class="number">1</span>;j++)&#123;<span class="comment">//枚举起点，ends&lt;=n</span></span><br><span class="line">            <span class="keyword">int</span> ends = j+len - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = j;i&lt;ends;i++)&#123;<span class="comment">//枚举分割点，更新小区间最优解</span></span><br><span class="line">                dp[j][ends] = min(dp[j][ends],dp[j][i]+dp[i+<span class="number">1</span>][ends]+something);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="代码">代码</h3>
@@ -860,7 +868,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#链接"><span class="nav-number">1.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题意"><span class="nav-number">2.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区间dp基本模板"><span class="nav-number">3.</span> <span class="nav-text">区间\(dp\)基本模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#链接"><span class="nav-number">1.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题意"><span class="nav-number">2.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">3.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区间dp基本模板"><span class="nav-number">4.</span> <span class="nav-text">区间\(dp\)基本模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">5.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>
