@@ -1775,7 +1775,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b9828b;
+  background: #05ffff;
 }
 .feed-link,
 .chat {
@@ -2858,5 +2858,5 @@ ul.breadcrumb li+li:last-child {
   opacity: 0.8;
 }
 body {
-  background: url("images/c12.jpg");
+  background: url("/images/c12.jpg");
 }
