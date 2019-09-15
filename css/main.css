@@ -1775,7 +1775,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d9d2fe;
+  background: #fffecf;
 }
 .feed-link,
 .chat {
@@ -2851,6 +2851,6 @@ ul.breadcrumb li+li:last-child {
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
 }
-.body {
+body {
   background: url("D:/Hexo_Blog/yuggu/themes/next/source/images/c12.jpg");
 }
