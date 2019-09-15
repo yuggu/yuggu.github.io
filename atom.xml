@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuggu.github.io/"/>
-  <updated>2019-09-15T13:24:40.166Z</updated>
+  <updated>2019-09-15T13:25:44.578Z</updated>
   <id>https://yuggu.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>hexo背景图片及透明图修改</title>
-    <link href="https://yuggu.github.io/2019/09/15/hexo%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E5%8F%8A%E9%80%8F%E6%98%8E%E5%9B%BE%E4%BF%AE%E6%94%B9/"/>
-    <id>https://yuggu.github.io/2019/09/15/hexo背景图片及透明图修改/</id>
+    <title>hexo背景图片及透明度修改</title>
+    <link href="https://yuggu.github.io/2019/09/15/hexo%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E5%8F%8A%E9%80%8F%E6%98%8E%E5%BA%A6%E4%BF%AE%E6%94%B9/"/>
+    <id>https://yuggu.github.io/2019/09/15/hexo背景图片及透明度修改/</id>
     <published>2019-09-15T13:20:13.000Z</published>
-    <updated>2019-09-15T13:24:40.166Z</updated>
+    <updated>2019-09-15T13:25:44.578Z</updated>
     
     <content type="html"><![CDATA[<h3 id="hexo添加背景图片及修改透明度">hexo添加背景图片及修改透明度</h3><p>  首先将背景图片放入<code>hexo\next\source\images</code>文件夹下，之后修改<code>hexo\themes\next\source\css\\_custom\custom.styl</code>文件，在程序中加入下面的代码</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*这里是加载背景图片，以及设置一些图片加载的问题*/</span></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line"><span class="comment">/*url括号里的图片如果不是本地的，就直接写url*/</span></span><br><span class="line"><span class="attribute">background</span>: <span class="built_in">url</span>(/images/background.jpg)</span><br><span class="line">background-repeat: no-repeat;  </span><br><span class="line"><span class="attribute">background-attachment</span>:fixed;  </span><br><span class="line"><span class="attribute">background-position</span>:<span class="number">50%</span> <span class="number">50%</span>;  </span><br><span class="line"><span class="attribute">background-size</span>: cover;  </span><br><span class="line"><span class="attribute">-webkit-background-size</span>: cover;  </span><br><span class="line"><span class="attribute">-o-background-size</span>: cover;  </span><br><span class="line"><span class="attribute">-moz-background-size</span>: cover;  </span><br><span class="line"><span class="attribute">-ms-background-size</span>: cover;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*这里的opacity参数是修改透明度的，值越小，透明度越大*/</span></span><br><span class="line"><span class="selector-class">.header-inner</span>&#123;</span><br><span class="line"><span class="attribute">opacity</span>: <span class="number">0.8</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.main-inner</span> &#123; </span><br><span class="line">   // margin-top: 60px;</span><br><span class="line">   // padding: 60px 60px 60px 60px;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">opacity</span>: 0<span class="selector-class">.8</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><a id="more"></a>]]></content>
     
@@ -402,9 +402,9 @@
       <category term="树状数组" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
     
     
-      <category term="树状数组" scheme="https://yuggu.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
-    
       <category term="思维" scheme="https://yuggu.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
+    
+      <category term="树状数组" scheme="https://yuggu.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
