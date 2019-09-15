@@ -1775,7 +1775,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #05ffff;
+  background: #f750de;
 }
 .feed-link,
 .chat {
@@ -2791,6 +2791,9 @@ ul.breadcrumb li+li:last-child {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+body {
+  background: url("/images/c12.jpg");
+}
 .post-body p a {
   color: #0593d3;
   border-bottom: none;
@@ -2856,7 +2859,4 @@ ul.breadcrumb li+li:last-child {
 }
 .main-inner {
   opacity: 0.8;
-}
-body {
-  background: url("/images/c12.jpg");
 }
