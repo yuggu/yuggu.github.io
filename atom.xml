@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuggu.github.io/"/>
-  <updated>2019-09-14T11:09:51.259Z</updated>
+  <updated>2019-09-15T13:22:47.170Z</updated>
   <id>https://yuggu.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo背景图片及透明图修改</title>
+    <link href="https://yuggu.github.io/2019/09/15/hexo%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E5%8F%8A%E9%80%8F%E6%98%8E%E5%9B%BE%E4%BF%AE%E6%94%B9/"/>
+    <id>https://yuggu.github.io/2019/09/15/hexo背景图片及透明图修改/</id>
+    <published>2019-09-15T13:20:13.000Z</published>
+    <updated>2019-09-15T13:22:47.170Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="hexo添加背景图片及修改透明度">hexo添加背景图片及修改透明度</h3><p>  首先将背景图片放入<code>hexo\next\source\images</code>文件夹下，之后修改<code>hexo\themes\next\source\css\\_custom\custom.styl</code>文件，在程序中加入下面的代码</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*这里是加载背景图片，以及设置一些图片加载的问题*/</span></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line"><span class="comment">/*url括号里的图片如果不是本地的，就直接写url*/</span></span><br><span class="line"><span class="attribute">background</span>: <span class="built_in">url</span>(/images/background.jpg)</span><br><span class="line">background-repeat: no-repeat;  </span><br><span class="line"><span class="attribute">background-attachment</span>:fixed;  </span><br><span class="line"><span class="attribute">background-position</span>:<span class="number">50%</span> <span class="number">50%</span>;  </span><br><span class="line"><span class="attribute">background-size</span>: cover;  </span><br><span class="line"><span class="attribute">-webkit-background-size</span>: cover;  </span><br><span class="line"><span class="attribute">-o-background-size</span>: cover;  </span><br><span class="line"><span class="attribute">-moz-background-size</span>: cover;  </span><br><span class="line"><span class="attribute">-ms-background-size</span>: cover;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*这里的opacity参数是修改透明度的，值越小，透明度越大*/</span></span><br><span class="line"><span class="selector-class">.header-inner</span>&#123;</span><br><span class="line"><span class="attribute">opacity</span>: <span class="number">0.8</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.main-inner</span> &#123; </span><br><span class="line">   // margin-top: 60px;</span><br><span class="line">   // padding: 60px 60px 60px 60px;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">opacity</span>: 0<span class="selector-class">.8</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;hexo添加背景图片及修改透明度&quot;&gt;hexo添加背景图片及修改透明度&lt;/h3&gt;
+&lt;p&gt;  首先将背景图片放入&lt;code&gt;hexo\next\source\images&lt;/code&gt;文件夹下，之后修改&lt;code&gt;hexo\themes\next\source\cs
+      
+    
+    </summary>
+    
+      <category term="博客搭建" scheme="https://yuggu.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    
+      <category term="其他" scheme="https://yuggu.github.io/tags/%E5%85%B6%E4%BB%96/"/>
+    
+      <category term="hexo" scheme="https://yuggu.github.io/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>POJ-1155 TELE</title>
@@ -376,9 +404,9 @@
       <category term="树状数组" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
     
     
-      <category term="树状数组" scheme="https://yuggu.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
-    
       <category term="思维" scheme="https://yuggu.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
+    
+      <category term="树状数组" scheme="https://yuggu.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
@@ -613,38 +641,6 @@
 &lt;h3 id=&quot;题意&quot;&gt;题意&lt;/h3&gt;
 &lt;p&gt;  &lt;span class=&quot;math inline&quot;&gt;\(\text{Bessie}\)&lt;/span&gt;在一个直赛道上跑步，他需要跑&lt;span class=&quot;math inline&quot;&gt;\(\text{N}\)&lt;/span&gt;分钟，其中第&lt;span class=&quot;math inline&quot;&gt;\(i\)&lt;/span&gt;分钟他能跑&lt;span class=&quot;math inline&quot;&gt;\(d_i\)&lt;/span&gt;米，同时他还有一个最大疲劳值&lt;span class=&quot;math inline&quot;&gt;\(M\)&lt;/span&gt;，开始的时候它的疲劳值为&lt;span class=&quot;math inline&quot;&gt;\(0\)&lt;/span&gt;，跑步的时候每一分钟他都可以选择跑与不跑，如果跑的话，他的疲劳值就会增加&lt;span class=&quot;math inline&quot;&gt;\(1\)&lt;/span&gt;，如果选择休息，他的疲劳值就会下降，但是他只能等疲劳值下降到&lt;span class=&quot;math inline&quot;&gt;\(0\)&lt;/span&gt;才能再次跑，现在你需要求出&lt;span class=&quot;math inline&quot;&gt;\(\text N\)&lt;/span&gt;分钟之后，他的疲劳值为&lt;span class=&quot;math inline&quot;&gt;\(0\)&lt;/span&gt;时他能跑的最大距离是多少。&lt;/p&gt;
 &lt;p&gt;  数据范围：&lt;span class=&quot;math inline&quot;&gt;\(1\leq \text{M} \leq 500\)&lt;/span&gt;，&lt;span class=&quot;math inline&quot;&gt;\(1\le d_i\le 1000\)&lt;/span&gt;.
-    
-    </summary>
-    
-      <category term="算法" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="dp" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/dp/"/>
-    
-      <category term="区间dp" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/dp/%E5%8C%BA%E9%97%B4dp/"/>
-    
-    
-      <category term="dp" scheme="https://yuggu.github.io/tags/dp/"/>
-    
-      <category term="算法" scheme="https://yuggu.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[POJ - 3280] Cheapest Palindrome</title>
-    <link href="https://yuggu.github.io/2019/07/23/POJ-3280-Cheapest-Palindrome/"/>
-    <id>https://yuggu.github.io/2019/07/23/POJ-3280-Cheapest-Palindrome/</id>
-    <published>2019-07-23T03:39:24.000Z</published>
-    <updated>2019-09-14T11:36:15.247Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="链接">链接</h3><p><a href="http://poj.org/problem?id=3280" target="_blank" rel="noopener"><span class="math inline">\(\text{POJ - 3280}\)</span></a></p><h3 id="题意">题意</h3><p>  给你一个长度为<span class="math inline">\(\text{M}\)</span>的由小写字母组成的字符串<span class="math inline">\(s\)</span>，你希望通过插入字符或者删除字符的操作来得到一个回文串，你希望操作次数最少；同时对于<span class="math inline">\(26\)</span>种字符中的字符<span class="math inline">\(i\)</span>，有对应的删除该字符需要的花费<span class="math inline">\(cost_1\)</span>和插入该字符需要的<span class="math inline">\(cost_2\)</span>，所以你希望通过插入和删除操作并且花费尽量少的钱来获取一个回文串。</p><p>  数据范围：<span class="math inline">\(1\leq \text{M} \leq 500\)</span>，<span class="math inline">\(0\le cost\le 10000\)</span>. <a id="more"></a></p><h3 id="分析">分析</h3><blockquote><p>  这是一道区间<span class="math inline">\(dp\)</span>的题目；</p><p>  通过对字符串的插入、删除、修改来获取一 个回文串，然后求最少次数，这是一类比较典型且常见的区间<span class="math inline">\(dp\)</span>题目；</p><p>  区间<span class="math inline">\(dp\)</span>即是小区间状态到大区间状态的合并或者说转移，一般我们都会枚举小区间，然后枚举起始点；</p><p>  如对于一个串<span class="math inline">\(aba\)</span>，假设区间长度为<span class="math inline">\(2\)</span>的阶段的所有状态我们已经求出来了，那么此时区间长度为<span class="math inline">\(3\)</span>，对于这个串来说，我们肯定需要看它的两个短点<span class="math inline">\(i\)</span>与<span class="math inline">\(j\)</span>，<span class="math inline">\(s[i]==s[j]\)</span>，我们就得出了<span class="math inline">\(dp[i][j]=dp[i+1][j-1]\)</span>，这是很显然的；那么对于一个串<span class="math inline">\(aab\)</span>，如果我们也已经求出来了它的区间长度为<span class="math inline">\(2\)</span>的状态，那么此时对于区间长度为<span class="math inline">\(3\)</span>的状态，我们观察它的<span class="math inline">\(s[i]!=s[j]\)</span>，如果同时把这两个字符都给删掉或者给两个字符均插入一个匹配的字符，那么这显然是糟糕的选择，所以我们不能这样做；最终我们可以得出<span class="math inline">\(dp[i][j]=min(dp[i+1][j]+cost[i],dp[i][j-1]+cost[j])\)</span></p><p>  对于价格来说，其实都是一样的，不论插入和删除本质上都是一样的，所以我们仅需要考虑价格即可，对于每个字符，使用价格低的操作，初始状态<span class="math inline">\(dp[i][i]=0\)</span>。</p></blockquote><h3 id="代码">代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x7f7f7f7f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 100005</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 200005</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> P 2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MOD 99991</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> fastIO &#123;</span><br><span class="line"><span class="comment">//#define getchar() (p1 == p2 &amp;&amp; (p2 = (p1 = buf) + fread(buf, 1, 1&lt;&lt;22, stdin), p1 == p2) ? EOF : *p1++)</span></span><br><span class="line"><span class="comment">//char buf[(1 &lt;&lt; 22)], *p1 = buf, *p2 = buf;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">char</span> c = getchar(); <span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>) &#123; <span class="keyword">if</span> (c == <span class="string">'-'</span>) f = <span class="number">-1</span>; c = getchar(); &#125;</span><br><span class="line"><span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>) x = x * <span class="number">10</span> + c - <span class="string">'0'</span>, c = getchar();</span><br><span class="line"><span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> fastIO;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> t, n, m, a[<span class="number">300</span>], dp[<span class="number">2005</span>][<span class="number">2004</span>];</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m) &#123;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line"><span class="keyword">int</span> x, y;</span><br><span class="line"><span class="keyword">char</span> t;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; t &gt;&gt; x &gt;&gt; y;</span><br><span class="line">a[t] = min(x, y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> len = <span class="number">2</span>; len &lt;= m; len++)</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i + len - <span class="number">1</span> &lt;= m; i++) &#123;</span><br><span class="line"><span class="keyword">int</span> j = i + len - <span class="number">1</span>;</span><br><span class="line">dp[i][j] = INF;</span><br><span class="line"><span class="keyword">if</span> (s[i - <span class="number">1</span>] == s[j - <span class="number">1</span>])</span><br><span class="line">dp[i][j] = dp[i + <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">dp[i][j] = min(dp[i][j], dp[i + <span class="number">1</span>][j] + a[s[i - <span class="number">1</span>]]);</span><br><span class="line">dp[i][j] = min(dp[i][j], dp[i][j - <span class="number">1</span>] + a[s[j - <span class="number">1</span>]]);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; dp[<span class="number">1</span>][m] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;链接&quot;&gt;链接&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;http://poj.org/problem?id=3280&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;span class=&quot;math inline&quot;&gt;\(\text{POJ - 3280}\)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;题意&quot;&gt;题意&lt;/h3&gt;
-&lt;p&gt;  给你一个长度为&lt;span class=&quot;math inline&quot;&gt;\(\text{M}\)&lt;/span&gt;的由小写字母组成的字符串&lt;span class=&quot;math inline&quot;&gt;\(s\)&lt;/span&gt;，你希望通过插入字符或者删除字符的操作来得到一个回文串，你希望操作次数最少；同时对于&lt;span class=&quot;math inline&quot;&gt;\(26\)&lt;/span&gt;种字符中的字符&lt;span class=&quot;math inline&quot;&gt;\(i\)&lt;/span&gt;，有对应的删除该字符需要的花费&lt;span class=&quot;math inline&quot;&gt;\(cost_1\)&lt;/span&gt;和插入该字符需要的&lt;span class=&quot;math inline&quot;&gt;\(cost_2\)&lt;/span&gt;，所以你希望通过插入和删除操作并且花费尽量少的钱来获取一个回文串。&lt;/p&gt;
-&lt;p&gt;  数据范围：&lt;span class=&quot;math inline&quot;&gt;\(1\leq \text{M} \leq 500\)&lt;/span&gt;，&lt;span class=&quot;math inline&quot;&gt;\(0\le cost\le 10000\)&lt;/span&gt;.
     
     </summary>
     
