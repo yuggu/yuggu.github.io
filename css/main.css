@@ -1775,7 +1775,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f750de;
+  background: #c721ff;
 }
 .feed-link,
 .chat {
@@ -2793,6 +2793,14 @@ ul.breadcrumb li+li:last-child {
 }
 body {
   background: url("/images/c12.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
 }
 .post-body p a {
   color: #0593d3;
@@ -2855,8 +2863,8 @@ body {
   transition-delay: 0s;
 }
 .header-inner {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .main-inner {
-  opacity: 0.8;
+  opacity: 0.9;
 }
