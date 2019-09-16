@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="yuggu">
 <meta property="og:description" content="## Vi与Vim 简介 vi及vim是linux下的文本编辑器，其他的还有emacs、pico、joe等。 为何要学vim  vim可视作vi的高级版本； 所有的Unix-like都有内置的vi文本编辑器，其他的文本编辑器则不一定会存在； 很多软件的编辑接口都会主动调用vi(crontab、visudo、edquota等)；">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-16T04:12:04.657Z">
+<meta property="og:updated_time" content="2019-09-16T10:40:10.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux basis">
 <meta name="twitter:description" content="## Vi与Vim 简介 vi及vim是linux下的文本编辑器，其他的还有emacs、pico、joe等。 为何要学vim  vim可视作vi的高级版本； 所有的Unix-like都有内置的vi文本编辑器，其他的文本编辑器则不一定会存在； 很多软件的编辑接口都会主动调用vi(crontab、visudo、edquota等)；">
@@ -410,7 +410,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-16 12:12:04" itemprop="dateModified" datetime="2019-09-16T12:12:04+08:00">2019-09-16</time>
+                <time title="修改时间：2019-09-16 18:40:10" itemprop="dateModified" datetime="2019-09-16T18:40:10+08:00">2019-09-16</time>
               
             
           </span>
@@ -456,7 +456,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.1k</span>
+                <span title="本文字数">1.2k</span>
               
 
               
@@ -504,11 +504,12 @@
 <p> <strong>关于vi或vim的保存与退出</strong></p>
 <p> 如果welcome.txt的权限为-r--r--r--，当前登录用户为dmtsai，我们使用vim对此文件内容进行修改，我们然后退出，执行<a href="write%20and%20quit">:wq</a>，但是该文件权限不允许dmtsai进行写入，我们就可以使用[:wq!]进行强制写入。但是需要注意，强制写入是在你的权限可以改变的情况下才成立的，即文件所有者dmtsai可以修改自己权限r--为rw-。</p>
 <h4 id="系统语系的修改">系统语系的修改</h4>
+<p><span class="math inline">\(emsp;\)</span>emsp;<strong>使用root用户登陆</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]$ vim /etc/locale.conf</span><br></pre></td></tr></table></figure>
 <p>  使用vim打开上述文件，修改<code>LANG="zh_CN.UTF-8"</code>为<code>LANG="en_US.UTF-8"</code>，即可将中文修改为英文，修改为中文，反过来就可以了。</p>
 <h4 id="x-window">X window</h4>
 <p>  X window system是个利用网络架构的图形使用者接口软件，这个架构基本上分成两个原件，X Server和X Client，X Server硬件的作用是管理主机上的所有硬件设备，这些设备与输入/输出有关，如显卡、分辨率、鼠标按键对应等等。</p>
-<p>  X window是一个很出色的图形系统。</p>
+<p>  X window系统是一套工作在<span class="math inline">\(\text{UNIX}\)</span>，现在是类<span class="math inline">\(\text{UNIX}\)</span>系统中图形用户界面的工作标准。</p>
 
       
     </div>
