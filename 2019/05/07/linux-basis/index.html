@@ -103,18 +103,20 @@
 
 
 
-  <meta name="description" content="Vi与Vim  简介 vi及vim是linux下的文本编辑器，其他的还有emacs、pico、joe等。 为何要学vim  vim可视作vi的高级版本； 所有的Unix-like都有内置的vi文本编辑器，其他的文本编辑器则不一定会存在； 很多软件的编辑接口都会主动调用vi(crontab、visudo、edquota等)；">
+  <meta name="description" content="简介 vi及vim是linux下的文本编辑器，其他的还有emacs、pico、joe等。 为何要学vim  vim可视作vi的高级版本； 所有的Unix-like都有内置的vi文本编辑器，其他的文本编辑器则不一定会存在； 很多软件的编辑接口都会主动调用vi(crontab、visudo、edquota等)；">
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux basis">
 <meta property="og:url" content="https://yuggu.github.io/2019/05/07/linux-basis/index.html">
 <meta property="og:site_name" content="yuggu">
-<meta property="og:description" content="Vi与Vim  简介 vi及vim是linux下的文本编辑器，其他的还有emacs、pico、joe等。 为何要学vim  vim可视作vi的高级版本； 所有的Unix-like都有内置的vi文本编辑器，其他的文本编辑器则不一定会存在； 很多软件的编辑接口都会主动调用vi(crontab、visudo、edquota等)；">
+<meta property="og:description" content="简介 vi及vim是linux下的文本编辑器，其他的还有emacs、pico、joe等。 为何要学vim  vim可视作vi的高级版本； 所有的Unix-like都有内置的vi文本编辑器，其他的文本编辑器则不一定会存在； 很多软件的编辑接口都会主动调用vi(crontab、visudo、edquota等)；">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-16T10:51:03.568Z">
+<meta property="og:image" content="https://yuggu.github.io/images/userOfFile.png">
+<meta property="og:updated_time" content="2019-09-16T13:19:17.927Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux basis">
-<meta name="twitter:description" content="Vi与Vim  简介 vi及vim是linux下的文本编辑器，其他的还有emacs、pico、joe等。 为何要学vim  vim可视作vi的高级版本； 所有的Unix-like都有内置的vi文本编辑器，其他的文本编辑器则不一定会存在； 很多软件的编辑接口都会主动调用vi(crontab、visudo、edquota等)；">
+<meta name="twitter:description" content="简介 vi及vim是linux下的文本编辑器，其他的还有emacs、pico、joe等。 为何要学vim  vim可视作vi的高级版本； 所有的Unix-like都有内置的vi文本编辑器，其他的文本编辑器则不一定会存在； 很多软件的编辑接口都会主动调用vi(crontab、visudo、edquota等)；">
+<meta name="twitter:image" content="https://yuggu.github.io/images/userOfFile.png">
 
 
 
@@ -410,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-16 18:51:03" itemprop="dateModified" datetime="2019-09-16T18:51:03+08:00">2019-09-16</time>
+                <time title="修改时间：2019-09-16 21:19:17" itemprop="dateModified" datetime="2019-09-16T21:19:17+08:00">2019-09-16</time>
               
             
           </span>
@@ -456,7 +458,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.2k</span>
+                <span title="本文字数">2k</span>
               
 
               
@@ -480,8 +482,7 @@
       
 
       
-        <h2 id="vi与vim">Vi与Vim</h2>
-<hr>
+        <hr>
 <h4 id="简介">简介</h4>
 <p>vi及vim是linux下的文本编辑器，其他的还有emacs、pico、joe等。</p>
 <h4 id="为何要学vim">为何要学vim</h4>
@@ -501,16 +502,34 @@
 </ul>
 <h4 id="简易执行">简易执行</h4>
 <p> <strong>vi建立文件</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[dmtsai@study ~]$ /bin/vi welcome.txt</span><br><span class="line"><span class="comment"># 在一些操作系统中，由于一般账号默认vi已经被vim替换了，因此需要输入绝对路径来执行才可以。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/bin/vi welcome.txt</span><br><span class="line"><span class="comment"># 在一些操作系统中，由于一般账号默认vi已经被vim替换了，因此需要输入绝对路径来执行才可以。</span></span><br></pre></td></tr></table></figure>
 <p> <strong>关于vi或vim的保存与退出</strong></p>
 <p> 如果welcome.txt的权限为-r--r--r--，当前登录用户为dmtsai，我们使用vim对此文件内容进行修改，我们然后退出，执行:wq(write and quit)，但是该文件权限不允许dmtsai进行写入，我们就可以使用[:wq!]进行强制写入。但是需要注意，强制写入是在你的权限可以改变的情况下才成立的，即文件所有者dmtsai可以修改自己权限r--为rw-。</p>
 <h4 id="系统语系的修改">系统语系的修改</h4>
 <p>  <strong>使用root用户登陆</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]$ vim /etc/locale.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/locale.conf</span><br></pre></td></tr></table></figure>
 <p>  使用vim打开上述文件，修改<code>LANG="zh_CN.UTF-8"</code>为<code>LANG="en_US.UTF-8"</code>，即可将中文修改为英文，修改为中文，反过来就可以了。</p>
 <h4 id="x-window">X window</h4>
 <p>  X window system是个利用网络架构的图形使用者接口软件，这个架构基本上分成两个原件，X Server和X Client，X Server的作用是管理主机上的所有硬件设备，这些设备与输入/输出有关，如显卡、分辨率、鼠标按键对应等等。</p>
 <p>  X window系统是一套工作在<span class="math inline">\(\text{UNIX}\)</span>，现在是类<span class="math inline">\(\text{UNIX}\)</span>系统中图形用户界面的工作标准。</p>
+<h4 id="cat命令的使用">cat命令的使用</h4>
+<ol type="1">
+<li>cat命令用来查看文件信息，用法为<code>cat [参数] 文件名</code>，常用参数-n为从1开始对输出显示行号，</li>
+<li>建立小型文件，利用输出重定向把cat命令的输出写在一个新文件里，使用如下</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; newfile</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"hello! Linux"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"date"</span></span><br><span class="line"><span class="comment"># Ctrl + d</span></span><br><span class="line">cat newfile</span><br><span class="line"><span class="comment"># echo "hello! Linux"</span></span><br><span class="line"><span class="comment"># echo "date"</span></span><br></pre></td></tr></table></figure>
+<ol start="3" type="1">
+<li>合并文件，利用cat及重定向，将两个文件的信息合并在一起，并以一个新文件名命名。用法为<code>cat 文件1 文件2 &gt; 新文件名</code>。</li>
+</ol>
+<h4 id="more命令">more命令</h4>
+<p>  more命令用来逐屏显示文件内容，按回车显示下一行，按空格显示下一屏，按q键退出，用法为<code>more 文件名</code>，也可以使用管道由另一个命令的输出作为more的输入，一个例子如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man ls | more</span><br></pre></td></tr></table></figure>
+<h4 id="file-命令">file *命令</h4>
+<p>  file *命令用来展示当前目录下的所有文件以及其文件类型，如下。</p>
+<p><img src="/images/userOfFile.png" width="300"></p>
+<h4 id="硬链接和软链接">硬链接和软链接</h4>
+<p>  <a href="https://blog.51cto.com/wzgl08/308987" target="_blank" rel="noopener">硬链接(<span class="math inline">\(hard link\)</span>)和符号链接(<span class="math inline">\(symbolic link\)</span>)的区别</a>，通俗点说，可以把硬链接当做源文件的副本，他和源文件一样的大小但是事实上却不占任何空间。符号链接可以理解为windows下的快捷方式。符号链接的文件可以是任意文件或目录，甚至可以是不存在的文件，还可以不断的循环链接自己。删除链接文件时，系统仅删除符号链接文件，不删除源文件本身；而硬链接文件有两个限制，第一是不允许给目录创建硬链接，第二是只允许在用以文件系统中的文件之间才能创建链接。对于硬链接文件与符号链接文件进行读写和删除的时候，都会转化成对源文件的修改，但是若删除硬链接的源文件，硬链接文件仍存在，并且保留了原有的内容。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 此命令为生成一个符号链接</span></span><br><span class="line">ln -s source_file  softlink_file</span><br><span class="line"><span class="comment"># 此命令为生成一个硬链接</span></span><br><span class="line">ln existfile  newfile</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -867,7 +886,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vi与vim"><span class="nav-number">1.</span> <span class="nav-text">Vi与Vim</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.0.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为何要学vim"><span class="nav-number">1.0.2.</span> <span class="nav-text">为何要学vim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vi的使用"><span class="nav-number">1.0.3.</span> <span class="nav-text">vi的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简易执行"><span class="nav-number">1.0.4.</span> <span class="nav-text">简易执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统语系的修改"><span class="nav-number">1.0.5.</span> <span class="nav-text">系统语系的修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#x-window"><span class="nav-number">1.0.6.</span> <span class="nav-text">X window</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为何要学vim"><span class="nav-number">2.</span> <span class="nav-text">为何要学vim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vi的使用"><span class="nav-number">3.</span> <span class="nav-text">vi的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简易执行"><span class="nav-number">4.</span> <span class="nav-text">简易执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统语系的修改"><span class="nav-number">5.</span> <span class="nav-text">系统语系的修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#x-window"><span class="nav-number">6.</span> <span class="nav-text">X window</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cat命令的使用"><span class="nav-number">7.</span> <span class="nav-text">cat命令的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#more命令"><span class="nav-number">8.</span> <span class="nav-text">more命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#file-命令"><span class="nav-number">9.</span> <span class="nav-text">file *命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#硬链接和软链接"><span class="nav-number">10.</span> <span class="nav-text">硬链接和软链接</span></a></li></ol></div>
             
 
           </div>
