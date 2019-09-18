@@ -112,7 +112,7 @@
 <meta property="og:description" content="简介 vi及vim是linux下的文本编辑器，其他的还有emacs、pico、joe等。 为何要学vim  vim可视作vi的高级版本； 所有的Unix-like都有内置的vi文本编辑器，其他的文本编辑器则不一定会存在； 很多软件的编辑接口都会主动调用vi(crontab、visudo、edquota等)；">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://yuggu.github.io/images/userOfFile.png">
-<meta property="og:updated_time" content="2019-09-16T13:19:17.927Z">
+<meta property="og:updated_time" content="2019-09-18T08:25:57.149Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux basis">
 <meta name="twitter:description" content="简介 vi及vim是linux下的文本编辑器，其他的还有emacs、pico、joe等。 为何要学vim  vim可视作vi的高级版本； 所有的Unix-like都有内置的vi文本编辑器，其他的文本编辑器则不一定会存在； 很多软件的编辑接口都会主动调用vi(crontab、visudo、edquota等)；">
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-16 21:19:17" itemprop="dateModified" datetime="2019-09-16T21:19:17+08:00">2019-09-16</time>
+                <time title="修改时间：2019-09-18 16:25:57" itemprop="dateModified" datetime="2019-09-18T16:25:57+08:00">2019-09-18</time>
               
             
           </span>
@@ -458,7 +458,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2k</span>
+                <span title="本文字数">3.5k</span>
               
 
               
@@ -530,6 +530,33 @@
 <h4 id="硬链接和软链接">硬链接和软链接</h4>
 <p>  <a href="https://blog.51cto.com/wzgl08/308987" target="_blank" rel="noopener">硬链接(<span class="math inline">\(hard link\)</span>)和符号链接(<span class="math inline">\(symbolic link\)</span>)的区别</a>，通俗点说，可以把硬链接当做源文件的副本，他和源文件一样的大小但是事实上却不占任何空间。符号链接可以理解为windows下的快捷方式。符号链接的文件可以是任意文件或目录，甚至可以是不存在的文件，还可以不断的循环链接自己。删除链接文件时，系统仅删除符号链接文件，不删除源文件本身；而硬链接文件有两个限制，第一是不允许给目录创建硬链接，第二是只允许在用以文件系统中的文件之间才能创建链接。对于硬链接文件与符号链接文件进行读写和删除的时候，都会转化成对源文件的修改，但是若删除硬链接的源文件，硬链接文件仍存在，并且保留了原有的内容。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 此命令为生成一个符号链接</span></span><br><span class="line">ln -s source_file  softlink_file</span><br><span class="line"><span class="comment"># 此命令为生成一个硬链接</span></span><br><span class="line">ln existfile  newfile</span><br></pre></td></tr></table></figure>
+<h4 id="文件搜索命令">文件搜索命令</h4>
+<p>  不管是在linux还是在Windows下都是不推荐使用文件搜索命令的，因为它会占用大量的系统资源，所以在电脑或者服务器下文件的存放应该规划的很好，避免使用搜索或者搜索条件越精确，及搜索范围越小越好。</p>
+<ol type="1">
+<li>find命令：用法：<code>find [搜索范围] [匹配条件]</code>，在匹配条件中使用<code>*</code>匹配任意字符，使用<code>？</code>匹配单个字符关于使用常用参数如下；</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在目录/etc中查找文件init</span></span><br><span class="line">find /etc -name init</span><br><span class="line"><span class="comment"># 同上，但是查找不区分大小写，</span></span><br><span class="line">find /etc -iname init</span><br><span class="line"><span class="comment"># 在根下查找大于100MB的文件，100MB=102400KB=204800数据块</span></span><br><span class="line"><span class="comment"># 这里的204800是数据块的大小，1KB=2数据块，</span></span><br><span class="line"><span class="comment"># +n 大于 -n 小于 n 等于</span></span><br><span class="line">find / -size +204800</span><br><span class="line"><span class="comment"># 在根目录下查找所有者为ct104的文件</span></span><br><span class="line"><span class="comment"># -group 根据目录所属组查找</span></span><br><span class="line">find /home -user ct104</span><br><span class="line"><span class="comment"># 在/etc下查找5分钟内被修改过属性的文件和目录</span></span><br><span class="line"><span class="comment"># -amin 访问时间(access) -cmin 文件属性(change) -mmin 文件内容(modify)</span></span><br><span class="line">find /etc - cmin -5</span><br></pre></td></tr></table></figure>
+<ol start="2" type="1">
+<li>locate命令：它的查找是在一个资料库中查找，这个资料库中是会自动更新的，对于刚创建的文件显然使用locate是不行的，所以我们可以使用<code>updatedb</code>命令来更新这个资料库，用法<code>locate [匹配条件]</code>；</li>
+<li>which命令：搜索命令所在目录及别名信息。</li>
+</ol>
+<h4 id="uptime命令">uptime命令</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">uptime</span><br><span class="line"><span class="comment"># 11:10:42  up 4 days, 19:23, 2 users, load  average: 3.17, 3.45, 3.65</span></span><br><span class="line"><span class="comment"># 系统当前时间：11:10:42，up 4 days, 19:23，从上次启动开始系统运行的时间</span></span><br><span class="line"><span class="comment"># load average:3.17,3.45,3.65描述了1分钟5分钟15分钟内系统平均负载</span></span><br></pre></td></tr></table></figure>
+<h4 id="用户管理命令">用户管理命令</h4>
+<ol type="1">
+<li>passwd命令：它用来设置用户密码，使用方法：<code>passwd [用户名]</code>；</li>
+<li>who命令：查看当前登陆用户信息，使用方法：<code>who</code>；</li>
+<li>w命令：查看登陆用户详细信息，使用发发：<code>w</code>。</li>
+</ol>
+<h4 id="压缩解压命令">压缩解压命令</h4>
+<ol type="1">
+<li>gzip命令：它的功能是压缩文件，使用方法：<code>gzip [文件]</code>，压缩后文件格式：.gz。这个命令只能用来压缩文件，不能用来压缩目录，并且压缩后不保留原文件；</li>
+<li>gunzip命令：它的功能是解压缩.gz的压缩文件使用发发：<code>gunzip [压缩文件]</code>，它也等于<code>gzip -d</code>；</li>
+<li>tar命令：它用来打包压缩目录，压缩用法<code>tar [-zcf] [打包压缩后文件名] [目录]</code>，解压用法<code>tar [-zxvf] [解压文件名]</code>；</li>
+<li>zip命令：它的功能是用来压缩文件或目录，压缩后文件格式<code>.zip</code>，用法：<code>zip [-r] [压缩后文件名] [文件或目录]</code>，<code>-r</code>选项的作用是使它可以用来压缩目录；</li>
+<li>unzip命令：它的功能是解压.zip的压缩文件，用法：<code>unzip [压缩文件]</code>；</li>
+<li>bzip2命令：它的功能是用来压缩文件，相对gzip来说压缩文件后，它可以保留源文件，并且它的压缩比很好，推荐使用压缩比较大的文件，压缩后文件格式：.bz2，使用<code>tar [-cjf] [打包压缩后文件名] [目录]</code>，可以生成<code>.tar.bz2</code>格式的压缩包文件，如果想把<code>.tar.bz2</code>的压缩包解压，则使用<code>tar [-xjf] [压缩文件]</code>。</li>
+</ol>
 
       
     </div>
@@ -886,7 +913,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为何要学vim"><span class="nav-number">2.</span> <span class="nav-text">为何要学vim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vi的使用"><span class="nav-number">3.</span> <span class="nav-text">vi的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简易执行"><span class="nav-number">4.</span> <span class="nav-text">简易执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统语系的修改"><span class="nav-number">5.</span> <span class="nav-text">系统语系的修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#x-window"><span class="nav-number">6.</span> <span class="nav-text">X window</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cat命令的使用"><span class="nav-number">7.</span> <span class="nav-text">cat命令的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#more命令"><span class="nav-number">8.</span> <span class="nav-text">more命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#file-命令"><span class="nav-number">9.</span> <span class="nav-text">file *命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#硬链接和软链接"><span class="nav-number">10.</span> <span class="nav-text">硬链接和软链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为何要学vim"><span class="nav-number">2.</span> <span class="nav-text">为何要学vim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vi的使用"><span class="nav-number">3.</span> <span class="nav-text">vi的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简易执行"><span class="nav-number">4.</span> <span class="nav-text">简易执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统语系的修改"><span class="nav-number">5.</span> <span class="nav-text">系统语系的修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#x-window"><span class="nav-number">6.</span> <span class="nav-text">X window</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cat命令的使用"><span class="nav-number">7.</span> <span class="nav-text">cat命令的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#more命令"><span class="nav-number">8.</span> <span class="nav-text">more命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#file-命令"><span class="nav-number">9.</span> <span class="nav-text">file *命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#硬链接和软链接"><span class="nav-number">10.</span> <span class="nav-text">硬链接和软链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件搜索命令"><span class="nav-number">11.</span> <span class="nav-text">文件搜索命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uptime命令"><span class="nav-number">12.</span> <span class="nav-text">uptime命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户管理命令"><span class="nav-number">13.</span> <span class="nav-text">用户管理命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#压缩解压命令"><span class="nav-number">14.</span> <span class="nav-text">压缩解压命令</span></a></li></ol></div>
             
 
           </div>
@@ -919,7 +946,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">92k</span>
+    <span title="站点总字数">94k</span>
   
 
   
