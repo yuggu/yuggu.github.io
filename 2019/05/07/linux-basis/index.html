@@ -112,7 +112,7 @@
 <meta property="og:description" content="简介 vi及vim是linux下的文本编辑器，其他的还有emacs、pico、joe等。 为何要学vim  vim可视作vi的高级版本； 所有的Unix-like都有内置的vi文本编辑器，其他的文本编辑器则不一定会存在； 很多软件的编辑接口都会主动调用vi(crontab、visudo、edquota等)；">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://yuggu.github.io/images/userOfFile.png">
-<meta property="og:updated_time" content="2019-09-18T08:25:57.149Z">
+<meta property="og:updated_time" content="2019-09-18T12:18:38.008Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux basis">
 <meta name="twitter:description" content="简介 vi及vim是linux下的文本编辑器，其他的还有emacs、pico、joe等。 为何要学vim  vim可视作vi的高级版本； 所有的Unix-like都有内置的vi文本编辑器，其他的文本编辑器则不一定会存在； 很多软件的编辑接口都会主动调用vi(crontab、visudo、edquota等)；">
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-18 16:25:57" itemprop="dateModified" datetime="2019-09-18T16:25:57+08:00">2019-09-18</time>
+                <time title="修改时间：2019-09-18 20:18:38" itemprop="dateModified" datetime="2019-09-18T20:18:38+08:00">2019-09-18</time>
               
             
           </span>
@@ -458,7 +458,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.5k</span>
+                <span title="本文字数">5.2k</span>
               
 
               
@@ -556,6 +556,22 @@
 <li>zip命令：它的功能是用来压缩文件或目录，压缩后文件格式<code>.zip</code>，用法：<code>zip [-r] [压缩后文件名] [文件或目录]</code>，<code>-r</code>选项的作用是使它可以用来压缩目录；</li>
 <li>unzip命令：它的功能是解压.zip的压缩文件，用法：<code>unzip [压缩文件]</code>；</li>
 <li>bzip2命令：它的功能是用来压缩文件，相对gzip来说压缩文件后，它可以保留源文件，并且它的压缩比很好，推荐使用压缩比较大的文件，压缩后文件格式：.bz2，使用<code>tar [-cjf] [打包压缩后文件名] [目录]</code>，可以生成<code>.tar.bz2</code>格式的压缩包文件，如果想把<code>.tar.bz2</code>的压缩包解压，则使用<code>tar [-xjf] [压缩文件]</code>。</li>
+</ol>
+<h4 id="swap分区的作用">swap分区的作用</h4>
+<p>  当系统的物理内存不够用时，就需要将物理内存中的一部分空间释放出来，以供当前运行的程序使用。那些被释放的空间可能来自一些很长时间没有什么操作的程序，这些被释放的空间被临时保存到Swap空间中，等到那些程序要运行时，再从Swap中恢复保存的数据到内存中。这样，系统总是在物理内存不够时，才进行Swap交换。其实，Swap的调整对Linux服务器，特别是Web服务器的性能至关重要。通过调整Swap，有时可以越过系统性能瓶颈，节省系统升级费用。</p>
+<p>  如大家所知，现代操作系统都实现了“虚拟内存”这一技术，不但在功能上突破了物理内存的限制，使程序可以操纵大于实际物理内存的空间，更重要的是，“虚拟内存”是隔离每个进程的安全保护网，使每个进程都不受其它程序的干扰。</p>
+<h4 id="挂载">挂载</h4>
+<p>  在windows操作系统中，挂载通常是指给磁盘分区（包括被虚拟出来的磁盘分区）分配一个盘符。这个操作可以通过“计算机管理”中的“磁盘管理”来进行。如插入U盘系统自动分配给了它盘符，盘符就是挂载，退U盘的时候进行安全弹出，其实就是卸载unmount。</p>
+<p>  如果我们现在插入了U盘，系统分配了新磁盘区sdb1，它现在还不属于/，我们可以在图形桌面系统中找到它，浏览管理里面的文件，但在命令行却不知怎么访问它的目录，比如无法使用cd或者ls。也无法在编程时指定一个目录对它操作。我们需要将它挂载到linux目录树下的某个文件目录下，之后我们访问它，如我们使用<code>mount /dev/sdb1 ~/Share/</code>，将新硬盘的区sdb1挂载到工作目录下的<sub>/Share/文件夹下，之后访问这个</sub>/Share/文件夹就相当于访问这个硬盘2的sdb1分区了。对/Share/的任何操作，都相当于对sdb1里文件的操作。所以Linux下，mount挂载的作用，就是将一个设备（通常是存储设备）挂接到一个已存在的目录上。访问这个目录就是访问该存储设备。</p>
+<p>  linux操作系统将所有的设备都看作文件，它将整个计算机的资源都整合成一个大的文件目录。我们要访问存储设备中的文件，必须将文件所在的分区挂载到一个已存在的目录上，然后通过访问这个目录来访问存储设备。挂载就是把设备放在一个目录下，让系统知道怎么管理这个设备里的文件，了解这个存储设备的可读写特性之类的过程。</p>
+<p>  /dev是一个目录，然而/dev/sdb1它不是一个目录，是一个类似指针的东西，指向这个分区的原始数据块。mount前，系统并不知道这个数据块哪部分数据代表文件，如何对它们操作。另外，插入CD，系统其实自动执行了 mount /dev/cdrom /media/cdrom。所以可以直接在/media/cdrom中对CD中的内容进行管理。</p>
+<p>  使用命令进行挂载，语法：<code>mount [-t fs-type] [-o option] device mountpoint</code>，fs-type为文件系统类型，device为要挂载的文件系统所在的存储设备名，mountpoint为文件系统挂载到的linux目录树上的位置，-o的参数这里暂时不予给出，等用到的时候在给出。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount -t vfat /dev/sda1 /mnt/disk1</span><br><span class="line">mount -t vfat -o iocharset = cp635 /dev/sda1 /mnt/disk1</span><br></pre></td></tr></table></figure>
+<h4 id="常用的磁盘操作命令">常用的磁盘操作命令</h4>
+<ol type="1">
+<li>fdisk磁盘分区：fdisk为磁盘分区命令，用来进行创建分区、删除分区和查看分区等操作，分区管理是一项较危险的操作，建议执行前先备份数据；关于查看现有磁盘设备系统分区的命令为<code>fdisk [-l][device]</code>，l即为列出系统的分区类型，若不指定设备，则列出系统所有已识别的存储设备；</li>
+<li>du磁盘统计：du命令用于统计目录的磁盘使用情况，语法为：<code>du [-a] directoryname</code>；</li>
+<li>df磁盘空间统计：df命令用于统计文件系统中未使用的磁盘空间，语法为：<code>df -[ahil]</code>，a为显示所有文件系统的信息，包括swap和proc；h是以最合适的容量单位显示；i为显示文件文件节点数的使用情况而不是文件块的使用情况，l为显示本地文件系统的使用情况，不加参数，会显示所有以挂载的文件系统的磁盘空间使用情况。</li>
 </ol>
 
       
@@ -913,7 +929,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为何要学vim"><span class="nav-number">2.</span> <span class="nav-text">为何要学vim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vi的使用"><span class="nav-number">3.</span> <span class="nav-text">vi的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简易执行"><span class="nav-number">4.</span> <span class="nav-text">简易执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统语系的修改"><span class="nav-number">5.</span> <span class="nav-text">系统语系的修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#x-window"><span class="nav-number">6.</span> <span class="nav-text">X window</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cat命令的使用"><span class="nav-number">7.</span> <span class="nav-text">cat命令的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#more命令"><span class="nav-number">8.</span> <span class="nav-text">more命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#file-命令"><span class="nav-number">9.</span> <span class="nav-text">file *命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#硬链接和软链接"><span class="nav-number">10.</span> <span class="nav-text">硬链接和软链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件搜索命令"><span class="nav-number">11.</span> <span class="nav-text">文件搜索命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uptime命令"><span class="nav-number">12.</span> <span class="nav-text">uptime命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户管理命令"><span class="nav-number">13.</span> <span class="nav-text">用户管理命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#压缩解压命令"><span class="nav-number">14.</span> <span class="nav-text">压缩解压命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为何要学vim"><span class="nav-number">2.</span> <span class="nav-text">为何要学vim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vi的使用"><span class="nav-number">3.</span> <span class="nav-text">vi的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简易执行"><span class="nav-number">4.</span> <span class="nav-text">简易执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统语系的修改"><span class="nav-number">5.</span> <span class="nav-text">系统语系的修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#x-window"><span class="nav-number">6.</span> <span class="nav-text">X window</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cat命令的使用"><span class="nav-number">7.</span> <span class="nav-text">cat命令的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#more命令"><span class="nav-number">8.</span> <span class="nav-text">more命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#file-命令"><span class="nav-number">9.</span> <span class="nav-text">file *命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#硬链接和软链接"><span class="nav-number">10.</span> <span class="nav-text">硬链接和软链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件搜索命令"><span class="nav-number">11.</span> <span class="nav-text">文件搜索命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uptime命令"><span class="nav-number">12.</span> <span class="nav-text">uptime命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户管理命令"><span class="nav-number">13.</span> <span class="nav-text">用户管理命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#压缩解压命令"><span class="nav-number">14.</span> <span class="nav-text">压缩解压命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#swap分区的作用"><span class="nav-number">15.</span> <span class="nav-text">swap分区的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#挂载"><span class="nav-number">16.</span> <span class="nav-text">挂载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用的磁盘操作命令"><span class="nav-number">17.</span> <span class="nav-text">常用的磁盘操作命令</span></a></li></ol></div>
             
 
           </div>
@@ -946,7 +962,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">96k</span>
   
 
   
