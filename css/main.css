@@ -37,7 +37,7 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
+  font-family: Monaco, Monaco; /* 1 */
   font-size: 1em; /* 2 */
 }
 small {
@@ -1775,7 +1775,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffbe9a;
+  background: #ad7eff;
 }
 .feed-link,
 .chat {
