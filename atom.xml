@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuggu.github.io/"/>
-  <updated>2019-09-21T10:26:45.219Z</updated>
+  <updated>2019-09-21T10:28:49.159Z</updated>
   <id>https://yuggu.github.io/</id>
   
   <author>
@@ -21,17 +21,15 @@
     <link href="https://yuggu.github.io/2019/09/21/Network-Fundamentals/"/>
     <id>https://yuggu.github.io/2019/09/21/Network-Fundamentals/</id>
     <published>2019-09-21T10:23:42.000Z</published>
-    <updated>2019-09-21T10:26:45.219Z</updated>
+    <updated>2019-09-21T10:28:49.159Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="主机与服务器">主机与服务器</h3><p>  <strong>网络主机</strong>（<strong>network host</strong>）是已连接到一个<a href="https://zh.wikipedia.org/wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C" title="计算机网络" target="_blank" rel="noopener">计算机网络</a>的一台<a href="https://zh.wikipedia.org/wiki/%E9%9B%BB%E5%AD%90%E8%A8%88%E7%AE%97%E6%A9%9F" title="电子计算机" target="_blank" rel="noopener">电子计算机</a>或其他设备。网络主机可以向网络上的用户或其他<a href="https://zh.wikipedia.org/wiki/%E8%8A%82%E7%82%B9_(%E7%94%B5%E4%BF%A1%E7%BD%91%E7%BB%9C)" title="节点 (电信网络)" target="_blank" rel="noopener">节点</a>提供信息资源、服务和应用。一台网络主机是已被分配一个<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E5%B1%82" title="网络层" target="_blank" rel="noopener">网络层</a><a href="https://zh.wikipedia.org/w/index.php?title=%E4%B8%BB%E6%9C%BA%E5%9C%B0%E5%9D%80&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">主机地址</a>的网络节点。</p><p>  所有服务器都是主机，但并非所有主机都是服务器，任何与网络建立连接的设备都可以作为主机，而已接受其他设备连接为目的的主机被视作服务器。</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="主机与服务器">主机与服务器</h3><p>  <strong>网络主机</strong>（<strong>network host</strong>）是已连接到一个<a href="https://zh.wikipedia.org/wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C" title="计算机网络" target="_blank" rel="noopener">计算机网络</a>的一台<a href="https://zh.wikipedia.org/wiki/%E9%9B%BB%E5%AD%90%E8%A8%88%E7%AE%97%E6%A9%9F" title="电子计算机" target="_blank" rel="noopener">电子计算机</a>或其他设备。网络主机可以向网络上的用户或其他<a href="https://zh.wikipedia.org/wiki/%E8%8A%82%E7%82%B9_(%E7%94%B5%E4%BF%A1%E7%BD%91%E7%BB%9C)" title="节点 (电信网络)" target="_blank" rel="noopener">节点</a>提供信息资源、服务和应用。一台网络主机是已被分配一个<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E5%B1%82" title="网络层" target="_blank" rel="noopener">网络层</a><a href="https://zh.wikipedia.org/w/index.php?title=%E4%B8%BB%E6%9C%BA%E5%9C%B0%E5%9D%80&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">主机地址</a>的网络节点。</p><p>  所有服务器都是主机，但并非所有主机都是服务器，任何与网络建立连接的设备都可以作为主机，而已接受其他设备连接为目的的主机被视作服务器。 <a id="more"></a></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h3 id=&quot;主机与服务器&quot;&gt;主机与服务器&lt;/h3&gt;
-&lt;p&gt;  &lt;strong&gt;网络主机&lt;/strong&gt;（&lt;strong&gt;network host&lt;/strong&gt;）是已连接到一个&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E8%AE%A
-      
+      &lt;h3 id=&quot;主机与服务器&quot;&gt;主机与服务器&lt;/h3&gt;
+&lt;p&gt;  &lt;strong&gt;网络主机&lt;/strong&gt;（&lt;strong&gt;network host&lt;/strong&gt;）是已连接到一个&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C&quot; title=&quot;计算机网络&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;计算机网络&lt;/a&gt;的一台&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%9B%BB%E5%AD%90%E8%A8%88%E7%AE%97%E6%A9%9F&quot; title=&quot;电子计算机&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;电子计算机&lt;/a&gt;或其他设备。网络主机可以向网络上的用户或其他&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E8%8A%82%E7%82%B9_(%E7%94%B5%E4%BF%A1%E7%BD%91%E7%BB%9C)&quot; title=&quot;节点 (电信网络)&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;节点&lt;/a&gt;提供信息资源、服务和应用。一台网络主机是已被分配一个&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E5%B1%82&quot; title=&quot;网络层&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;网络层&lt;/a&gt;&lt;a href=&quot;https://zh.wikipedia.org/w/index.php?title=%E4%B8%BB%E6%9C%BA%E5%9C%B0%E5%9D%80&amp;amp;action=edit&amp;amp;redlink=1&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;主机地址&lt;/a&gt;的网络节点。&lt;/p&gt;
+&lt;p&gt;  所有服务器都是主机，但并非所有主机都是服务器，任何与网络建立连接的设备都可以作为主机，而已接受其他设备连接为目的的主机被视作服务器。
     
     </summary>
     
@@ -432,9 +430,9 @@
       <category term="树状数组" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
     
     
-      <category term="树状数组" scheme="https://yuggu.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
-    
       <category term="思维" scheme="https://yuggu.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
+    
+      <category term="树状数组" scheme="https://yuggu.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
