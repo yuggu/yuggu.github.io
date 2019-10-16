@@ -443,7 +443,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-16 18:32:53" itemprop="dateModified" datetime="2019-10-16T18:32:53+08:00">2019-10-16</time>
+                <time title="修改时间：2019-10-16 18:35:19" itemprop="dateModified" datetime="2019-10-16T18:35:19+08:00">2019-10-16</time>
               
             
           </span>
@@ -514,16 +514,15 @@
 
       
         
-          
-            <p>
-              E. ABBA
-题意：
-  你拥有一个长度为\(2*(n+m)\)的字符串，它含有\(n+m\)个\(A\)，以及\(n+m\)个\(B\)，你把个字符串给分解，最后可以得到\(n\)个子序列\(AB\)与\(m\)个子序列\(BA\)，问这个字符串有多少种，最终结果对（\(10^9+7\)）取余；比如\(\underline{A}\space\underline{BA}\space\underline{B}\)，第一个\(A\)与最后一个\(B\)匹配，中间的\(AB\)进行匹配，这就是对应\(n=1,m=1\)的一种合法的字符串；
-分析：
-  使用\(dp[i][j]\)表示含有\(i\)个\(A\)和\(j\)个\(B\)的合法字符串的个数，目标为\(dp[n+m][n+m]\)；
-  首先，一个事实是，对于一个合法的含\(n\)个\(AB\)含\(m\)个\(BA\)的串
-              ...
-            </p>
+          <h3 id="e.-abba">E. ABBA</h3>
+<h4 id="题意">题意：</h4>
+<p>  你拥有一个长度为<span class="math inline">\(2*(n+m)\)</span>的字符串，它含有<span class="math inline">\(n+m\)</span>个<span class="math inline">\(A\)</span>，以及<span class="math inline">\(n+m\)</span>个<span class="math inline">\(B\)</span>，你把个字符串给分解，最后可以得到<span class="math inline">\(n\)</span>个子序列<span class="math inline">\(AB\)</span>与<span class="math inline">\(m\)</span>个子序列<span class="math inline">\(BA\)</span>，问这个字符串有多少种，最终结果对（<span class="math inline">\(10^9+7\)</span>）取余；比如<span class="math inline">\(\underline{A}\space\underline{BA}\space\underline{B}\)</span>，第一个<span class="math inline">\(A\)</span>与最后一个<span class="math inline">\(B\)</span>匹配，中间的<span class="math inline">\(AB\)</span>进行匹配，这就是对应<span class="math inline">\(n=1,m=1\)</span>的一种合法的字符串；</p>
+<h4 id="分析">分析：</h4>
+<p>  使用<span class="math inline">\(dp[i][j]\)</span>表示含有<span class="math inline">\(i\)</span>个<span class="math inline">\(A\)</span>和<span class="math inline">\(j\)</span>个<span class="math inline">\(B\)</span>的合法字符串的个数，目标为<span class="math inline">\(dp[n+m][n+m]\)</span>；</p>
+<p>  首先，一个事实是，对于一个合法的含<span class="math inline">\(n\)</span>个<span class="math inline">\(AB\)</span>含<span class="math inline">\(m\)</span>个<span class="math inline">\(BA\)</span>的串，考虑它的前<span class="math inline">\(n\)</span>个<span class="math inline">\(A\)</span>作为<span class="math inline">\(AB\)</span>的<span class="math inline">\(A\)</span>，考虑前<span class="math inline">\(m\)</span>个<span class="math inline">\(B\)</span>作为<span class="math inline">\(BA\)</span>的<span class="math inline">\(B\)</span>;</p>
+<p>  然后，对于<span class="math inline">\(i、j\)</span>，考虑在当前位置插入<span class="math inline">\(A\)</span>，或者在当前位置插入<span class="math inline">\(B\)</span>，那么我们有转移方程： <span class="math display">\[dp[i][j]=dp[i-1][j]+dp[i][j-1]\]</span></p>
+<p>  然而中间并非所有的状态都合法；比如对于<span class="math inline">\(n=1,m=1\)</span>的情况，<span class="math inline">\(AABB\)</span>是不可行的，它没有被添加到最后的结果中，原因在于，在状态转移的过程中，从<span class="math inline">\(A\)</span>到<span class="math inline">\(AA\)</span>的转移是不可行的；第一个<span class="math inline">\(A\)</span>用作<span class="math inline">\(AB\)</span>的A，而对于第二个<span class="math inline">\(A\)</span>来说，由于此时<span class="math inline">\(AB\)</span>的<span class="math inline">\(A\)</span>数量已经够了，它应该是<span class="math inline">\(BA\)</span>的<span class="math inline">\(A\)</span>，所以它前面必须有<span class="math inline">\(B\)</span>，那么<span class="math inline">\(AA\)</span>显然是不可行的；</p>
+<p>  如果在之前情况基础上，在最后位置插入<span class="math inline">\(A\)</span>，那么<span class="math inline">\(B\)</span>的数量<span class="math inline">\(j\)</span>必须不小于，<span class="math inline">\(A\)</span>的数量<span class="math inline">\(i\)</span>减去组成<span class="math inline">\(n\)</span>个<span class="math inline">\(AB\)</span>的<span class="math inline">\(A\)</span>的数量，即<span class="math inline">\(i-n&lt;=j\)</span>，如果插入<span class="math inline">\(B\)</span>，也同理；</p>
           <!--noindex-->
           
             <div class="post-button text-center">
