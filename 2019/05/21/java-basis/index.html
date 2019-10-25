@@ -75,7 +75,7 @@
   
     
     
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -138,14 +138,14 @@
   <meta name="description" content="## 基础知识 随机数  Random使用，bound即上界，seed即随机数种子，代表时间，多次执行程序，Random产生的序列始终是一个序列。（网上又说以47为随机数种子产生随机数的随即率最大，对这句话不是很理解） 1234Random rand= new Random(47);//seed: 47int []num=new int[30]for(int i=0;i&amp;lt;25;i++)">
 <meta name="keywords" content="java,java基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java basis">
+<meta property="og:title" content="Java basis">
 <meta property="og:url" content="https://yuggu.github.io/2019/05/21/java-basis/index.html">
 <meta property="og:site_name" content="yuggu">
 <meta property="og:description" content="## 基础知识 随机数  Random使用，bound即上界，seed即随机数种子，代表时间，多次执行程序，Random产生的序列始终是一个序列。（网上又说以47为随机数种子产生随机数的随即率最大，对这句话不是很理解） 1234Random rand= new Random(47);//seed: 47int []num=new int[30]for(int i=0;i&amp;lt;25;i++)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-24T13:01:44.203Z">
+<meta property="og:updated_time" content="2019-10-25T11:16:16.212Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java basis">
+<meta name="twitter:title" content="Java basis">
 <meta name="twitter:description" content="## 基础知识 随机数  Random使用，bound即上界，seed即随机数种子，代表时间，多次执行程序，Random产生的序列始终是一个序列。（网上又说以47为随机数种子产生随机数的随即率最大，对这句话不是很理解） 1234Random rand= new Random(47);//seed: 47int []num=new int[30]for(int i=0;i&amp;lt;25;i++)">
 
 
@@ -166,7 +166,7 @@
   };
 </script>
 
-  <title>java basis | yuggu</title>
+  <title>Java basis | yuggu</title>
   
 
 
@@ -399,7 +399,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java basis
+          <h1 class="post-title" itemprop="name headline">Java basis
 
               
             
@@ -442,7 +442,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-24 21:01:44" itemprop="dateModified" datetime="2019-10-24T21:01:44+08:00">2019-10-24</time>
+                <time title="修改时间：2019-10-25 19:16:16" itemprop="dateModified" datetime="2019-10-25T19:16:16+08:00">2019-10-25</time>
               
             
           </span>
@@ -495,7 +495,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">5.9k</span>
+                <span title="本文字数">7.7k</span>
               
 
               
@@ -600,6 +600,27 @@
 <h5 id="实现">实现</h5>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt;list=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">ArrayList&lt;Integer&gt;arraylist=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br></pre></td></tr></table></figure>
 <p> 对于赋值右段的"&lt;&gt;"，编译器可以自动推断出其应具备的类型。</p>
+<h3 id="字符串">字符串</h3>
+<h4 id="字符串常量与字符串变量">字符串常量与字符串变量</h4>
+<p>  首先java编译器对于<strong>字符串常量</strong>会创建一个对象；另外，字符串中所有字符都是Unicode字符，所以每个字符占两个字节；</p>
+<p>  在java中，<strong>字符串常量</strong>在内存中由编译器分配固定区域，而<strong>字符串变量</strong>只是一个<strong>引用</strong>，所以不能通过字符串变量对常量进行修改，即想要通过引用修改字符串是不可行的；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"hello world!"</span>;  </span><br><span class="line">str = <span class="string">"hello java"</span>;</span><br></pre></td></tr></table></figure>
+<p>  如上面的操作只是修改了str的引用，并非修改了其值；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"hello world!"</span>;  </span><br><span class="line">String str1 = <span class="string">"hello"</span> + <span class="string">" world!"</span>;</span><br></pre></td></tr></table></figure>
+<p>  而上面的操作，其实str和str1都是对同一个字符串常量的引用，在str1进行赋值时会自动在字符串常量池中检测是否有该串，若有就直接利用它，这样做的优点是减少了程序中需要存储的字符串的数量和空间；</p>
+<h4 id="字符串的比较">字符串的比较</h4>
+<p>  java里的字符串的比较有两种；<code>str1.equals(str2)</code>，即判断str1的字符序列是否等于str2的字符序列，<code>==</code>，判断两个对象是否引用同一个对象；另外还有<code>str1.compareTo(str2)</code>，该方法用来判断str1、str2两个字符串的字典序大小关系；看下面代码即可；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">        Scanner input =<span class="keyword">new</span> Scanner(<span class="keyword">new</span> BufferedInputStream(System.in));  </span><br><span class="line">        String str = <span class="string">"hello world!"</span>;  </span><br><span class="line">        String str1 = <span class="string">"hello"</span> + <span class="string">" world!"</span>;  </span><br><span class="line">        String str2 = <span class="keyword">new</span> String(<span class="string">"hello world!"</span>);  </span><br><span class="line">        String str3 = <span class="keyword">new</span> String(<span class="string">"hello world!"</span>);</span><br><span class="line">        System.out.println(str == str1);        <span class="comment">// true  </span></span><br><span class="line">        System.out.println(str.equals(str1));   <span class="comment">// true  </span></span><br><span class="line">        System.out.println(str == str2);        <span class="comment">// false  </span></span><br><span class="line">        System.out.println(str.equals(str2));   <span class="comment">// true  </span></span><br><span class="line">        System.out.println(str2 == str3);       <span class="comment">// false  </span></span><br><span class="line">        System.out.println(str2.equals(str3));  <span class="comment">// true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">true</span></span><br><span class="line"><span class="comment">true</span></span><br><span class="line"><span class="comment">false</span></span><br><span class="line"><span class="comment">true</span></span><br><span class="line"><span class="comment">false</span></span><br><span class="line"><span class="comment">true</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>  注意new的使用，比如<code>String s = new String("hello");</code>则是声明了一个对String的引用，然后分配一个内存空间，之后调用构造函数初始化该空间的值为"hello"，然后将该地址的值赋给已创建的String的引用；<code>String s= "hello"</code>，则是先去字符串常量池中寻找受否存在"hello"，若有则直接使用它，使得引用s指向该字符串常量；<strong>（这一段是个人理解）</strong></p>
+<h4 id="其他">其他</h4>
+<p>  String是一个不可变的对象，每次对于String进行操作或者使用其相关的一些函数，都可能会生成一个新的String的对象，所以如果需要经常对其进行操作，那么会反复生成大量的临时对象，这是非常浪费时间的；</p>
+<h3 id="内存">内存</h3>
+<h4 id="堆栈常量池等">堆、栈、常量池等</h4>
+<ol type="1">
+<li>常量池：未经new的常量</li>
+<li>堆区：成员变量的引用，new出来的变量；成员变量的引用在堆区，是因为成员变量所属的对象在堆区，所以它也在堆区；</li>
+<li>栈区：局部变量的引用；局部变量的引用在堆区，是因为局部变量不属于某一个对象，在调用时才被加载，所以在栈区；</li>
+</ol>
 <h2 id="细节">细节</h2>
 <h3 id="类">类</h3>
 <h4 id="成员变量与方法">成员变量与方法</h4>
@@ -640,7 +661,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://yuggu.github.io/2019/05/21/java-basis/" title="java basis">https://yuggu.github.io/2019/05/21/java-basis/</a>
+    <a href="https://yuggu.github.io/2019/05/21/java-basis/" title="Java basis">https://yuggu.github.io/2019/05/21/java-basis/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -1004,7 +1025,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">## 基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#随机数"><span class="nav-number">1.1.</span> <span class="nav-text">随机数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环"><span class="nav-number">1.2.</span> <span class="nav-text">循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#foreach"><span class="nav-number">1.2.1.</span> <span class="nav-text">Foreach</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件流"><span class="nav-number">1.3.</span> <span class="nav-text">文件流</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#序列化与反序列化"><span class="nav-number">1.3.1.</span> <span class="nav-text">序列化与反序列化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是序列化与反序列化"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">什么是序列化与反序列化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#具体体现"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">具体体现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#transient关键字"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">transient关键字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#输入流的几种常见形式"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">输入流的几种常见形式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件读写"><span class="nav-number">1.3.2.</span> <span class="nav-text">文件读写</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型与集合"><span class="nav-number">1.4.</span> <span class="nav-text">泛型与集合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#集合"><span class="nav-number">1.4.1.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代器"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">迭代器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#list"><span class="nav-number">1.4.2.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#arraylist"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细节"><span class="nav-number">2.</span> <span class="nav-text">细节</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类"><span class="nav-number">2.1.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#成员变量与方法"><span class="nav-number">2.1.1.</span> <span class="nav-text">成员变量与方法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">## 基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#随机数"><span class="nav-number">1.1.</span> <span class="nav-text">随机数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环"><span class="nav-number">1.2.</span> <span class="nav-text">循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#foreach"><span class="nav-number">1.2.1.</span> <span class="nav-text">Foreach</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件流"><span class="nav-number">1.3.</span> <span class="nav-text">文件流</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#序列化与反序列化"><span class="nav-number">1.3.1.</span> <span class="nav-text">序列化与反序列化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是序列化与反序列化"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">什么是序列化与反序列化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#具体体现"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">具体体现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#transient关键字"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">transient关键字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#输入流的几种常见形式"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">输入流的几种常见形式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件读写"><span class="nav-number">1.3.2.</span> <span class="nav-text">文件读写</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型与集合"><span class="nav-number">1.4.</span> <span class="nav-text">泛型与集合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#集合"><span class="nav-number">1.4.1.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代器"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">迭代器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#list"><span class="nav-number">1.4.2.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#arraylist"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">1.5.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串常量与字符串变量"><span class="nav-number">1.5.1.</span> <span class="nav-text">字符串常量与字符串变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串的比较"><span class="nav-number">1.5.2.</span> <span class="nav-text">字符串的比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">1.5.3.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存"><span class="nav-number">1.6.</span> <span class="nav-text">内存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#堆栈常量池等"><span class="nav-number">1.6.1.</span> <span class="nav-text">堆、栈、常量池等</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细节"><span class="nav-number">2.</span> <span class="nav-text">细节</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类"><span class="nav-number">2.1.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#成员变量与方法"><span class="nav-number">2.1.1.</span> <span class="nav-text">成员变量与方法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1037,7 +1058,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">139k</span>
+    <span title="站点总字数">141k</span>
   
 
   
