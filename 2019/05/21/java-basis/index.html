@@ -135,18 +135,18 @@
 
 
 
-  <meta name="description" content="## 基础知识 随机数  Random使用，bound即上界，seed即随机数种子，代表时间，多次执行程序，Random产生的序列始终是一个序列。（网上又说以47为随机数种子产生随机数的随即率最大，对这句话不是很理解） 1234Random rand= new Random(47);//seed: 47int []num=new int[30]for(int i=0;i&amp;lt;25;i++)">
+  <meta name="description" content="基础知识 随机数  Random使用，bound即上界，seed即随机数种子，代表时间，多次执行程序，Random产生的序列始终是一个序列。（网上又说以47为随机数种子产生随机数的随即率最大，对这句话不是很理解） 1234Random rand= new Random(47);//seed: 47int []num=new int[30]for(int i=0;i&amp;lt;25;i++)">
 <meta name="keywords" content="java,java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java basis">
 <meta property="og:url" content="https://yuggu.github.io/2019/05/21/java-basis/index.html">
 <meta property="og:site_name" content="yuggu">
-<meta property="og:description" content="## 基础知识 随机数  Random使用，bound即上界，seed即随机数种子，代表时间，多次执行程序，Random产生的序列始终是一个序列。（网上又说以47为随机数种子产生随机数的随即率最大，对这句话不是很理解） 1234Random rand= new Random(47);//seed: 47int []num=new int[30]for(int i=0;i&amp;lt;25;i++)">
+<meta property="og:description" content="基础知识 随机数  Random使用，bound即上界，seed即随机数种子，代表时间，多次执行程序，Random产生的序列始终是一个序列。（网上又说以47为随机数种子产生随机数的随即率最大，对这句话不是很理解） 1234Random rand= new Random(47);//seed: 47int []num=new int[30]for(int i=0;i&amp;lt;25;i++)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-25T11:16:16.212Z">
+<meta property="og:updated_time" content="2019-10-25T11:18:57.676Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java basis">
-<meta name="twitter:description" content="## 基础知识 随机数  Random使用，bound即上界，seed即随机数种子，代表时间，多次执行程序，Random产生的序列始终是一个序列。（网上又说以47为随机数种子产生随机数的随即率最大，对这句话不是很理解） 1234Random rand= new Random(47);//seed: 47int []num=new int[30]for(int i=0;i&amp;lt;25;i++)">
+<meta name="twitter:description" content="基础知识 随机数  Random使用，bound即上界，seed即随机数种子，代表时间，多次执行程序，Random产生的序列始终是一个序列。（网上又说以47为随机数种子产生随机数的随即率最大，对这句话不是很理解） 1234Random rand= new Random(47);//seed: 47int []num=new int[30]for(int i=0;i&amp;lt;25;i++)">
 
 
 
@@ -442,7 +442,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-25 19:16:16" itemprop="dateModified" datetime="2019-10-25T19:16:16+08:00">2019-10-25</time>
+                <time title="修改时间：2019-10-25 19:18:57" itemprop="dateModified" datetime="2019-10-25T19:18:57+08:00">2019-10-25</time>
               
             
           </span>
@@ -519,7 +519,7 @@
       
 
       
-        <h2 id="基础知识">## 基础知识</h2>
+        <h2 id="基础知识">基础知识</h2>
 <h3 id="随机数">随机数</h3>
 <ol type="1">
 <li>Random使用，bound即上界，seed即随机数种子，代表时间，多次执行程序，Random产生的序列始终是一个序列。（网上又说以47为随机数种子产生随机数的随即率最大，对这句话不是很理解） <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Random rand= <span class="keyword">new</span> Random(<span class="number">47</span>);<span class="comment">//seed: 47</span></span><br><span class="line"><span class="keyword">int</span> []num=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">30</span>]</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">25</span>;i++)</span><br><span class="line">     num[i]=rand.nextInt(<span class="number">100</span>);<span class="comment">//bound: 100</span></span><br></pre></td></tr></table></figure></li>
@@ -561,7 +561,7 @@
 <h4 id="集合">集合</h4>
 <h5 id="迭代器">迭代器</h5>
 <p> 简单的说迭代器是用来帮助访问集合中的每个元素。所有的集合类（Set、Sequence、Queue，除了Map）都实现了迭代接口Iterable，Iterable接口只有一个方法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Itreator&lt;T&gt;itreator();</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;T&gt;iterator();</span><br></pre></td></tr></table></figure>
 <p> 它返回一个在一组T类型元素上的迭代器，Iterator是一个接口类型，它的方法如下。</p>
 <table>
 <thead>
@@ -586,7 +586,7 @@
 </tbody>
 </table>
 <p> 下面给出利用迭代器访问元素的实现</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Itreator&lt;Acount&gt;itreator=accounts.itreator();</span><br><span class="line">Account account=<span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">while</span>(itreator.hasNext())&#123;</span><br><span class="line">    account=itreator.next();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;Acount&gt;iterator=accounts.iterator();</span><br><span class="line">Account account=<span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">while</span>(iterator.hasNext())&#123;</span><br><span class="line">    account=iterator.next();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p> 集合实例名为accounts，包含的都是Accout类型的对象。</p>
 <h4 id="list">List</h4>
 <ol type="1">
@@ -772,7 +772,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">50</span>
+                    <span class="site-state-item-count">52</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -954,7 +954,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">41</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1025,7 +1029,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">## 基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#随机数"><span class="nav-number">1.1.</span> <span class="nav-text">随机数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环"><span class="nav-number">1.2.</span> <span class="nav-text">循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#foreach"><span class="nav-number">1.2.1.</span> <span class="nav-text">Foreach</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件流"><span class="nav-number">1.3.</span> <span class="nav-text">文件流</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#序列化与反序列化"><span class="nav-number">1.3.1.</span> <span class="nav-text">序列化与反序列化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是序列化与反序列化"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">什么是序列化与反序列化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#具体体现"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">具体体现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#transient关键字"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">transient关键字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#输入流的几种常见形式"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">输入流的几种常见形式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件读写"><span class="nav-number">1.3.2.</span> <span class="nav-text">文件读写</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型与集合"><span class="nav-number">1.4.</span> <span class="nav-text">泛型与集合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#集合"><span class="nav-number">1.4.1.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代器"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">迭代器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#list"><span class="nav-number">1.4.2.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#arraylist"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">1.5.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串常量与字符串变量"><span class="nav-number">1.5.1.</span> <span class="nav-text">字符串常量与字符串变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串的比较"><span class="nav-number">1.5.2.</span> <span class="nav-text">字符串的比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">1.5.3.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存"><span class="nav-number">1.6.</span> <span class="nav-text">内存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#堆栈常量池等"><span class="nav-number">1.6.1.</span> <span class="nav-text">堆、栈、常量池等</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细节"><span class="nav-number">2.</span> <span class="nav-text">细节</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类"><span class="nav-number">2.1.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#成员变量与方法"><span class="nav-number">2.1.1.</span> <span class="nav-text">成员变量与方法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#随机数"><span class="nav-number">1.1.</span> <span class="nav-text">随机数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环"><span class="nav-number">1.2.</span> <span class="nav-text">循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#foreach"><span class="nav-number">1.2.1.</span> <span class="nav-text">Foreach</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件流"><span class="nav-number">1.3.</span> <span class="nav-text">文件流</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#序列化与反序列化"><span class="nav-number">1.3.1.</span> <span class="nav-text">序列化与反序列化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是序列化与反序列化"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">什么是序列化与反序列化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#具体体现"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">具体体现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#transient关键字"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">transient关键字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#输入流的几种常见形式"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">输入流的几种常见形式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件读写"><span class="nav-number">1.3.2.</span> <span class="nav-text">文件读写</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型与集合"><span class="nav-number">1.4.</span> <span class="nav-text">泛型与集合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#集合"><span class="nav-number">1.4.1.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代器"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">迭代器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#list"><span class="nav-number">1.4.2.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#arraylist"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">1.5.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串常量与字符串变量"><span class="nav-number">1.5.1.</span> <span class="nav-text">字符串常量与字符串变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串的比较"><span class="nav-number">1.5.2.</span> <span class="nav-text">字符串的比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">1.5.3.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存"><span class="nav-number">1.6.</span> <span class="nav-text">内存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#堆栈常量池等"><span class="nav-number">1.6.1.</span> <span class="nav-text">堆、栈、常量池等</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细节"><span class="nav-number">2.</span> <span class="nav-text">细节</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类"><span class="nav-number">2.1.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#成员变量与方法"><span class="nav-number">2.1.1.</span> <span class="nav-text">成员变量与方法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1058,7 +1062,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">141k</span>
+    <span title="站点总字数">145k</span>
   
 
   
