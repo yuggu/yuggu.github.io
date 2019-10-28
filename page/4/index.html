@@ -381,6 +381,225 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yuggu.github.io/2019/09/05/2019南京网络赛-A-The-beautiful-values-of-the-palace/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yuggu">
+      <meta itemprop="description" content="多看多写多学习啊">
+      <meta itemprop="image" content="/images/t4.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yuggu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/09/05/2019南京网络赛-A-The-beautiful-values-of-the-palace/" class="post-title-link" itemprop="url">[2019南京网络赛-A] The beautiful values of the palace</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-05 18:47:55" itemprop="dateCreated datePublished" datetime="2019-09-05T18:47:55+08:00">2019-09-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-20 19:27:39" itemprop="dateModified" datetime="2019-09-20T19:27:39+08:00">2019-09-20</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/数据结构/树状数组/" itemprop="url" rel="index"><span itemprop="name">树状数组</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.6k</span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="链接">链接</h4>
+<p><a href="https://nanti.jisuanke.com/t/41298" target="_blank" rel="noopener"><span class="math inline">\(\text{2019南京网络赛-A.The beautiful values of the palace}\)</span></a></p>
+<h4 id="题意">题意</h4>
+<p>  有一个<span class="math inline">\(n\times n\)</span>的螺旋数字矩阵，<span class="math inline">\(n\)</span>一定是奇数，若边长为5则如下：</p>
+<p><img src="https://res.jisuanke.com/img/upload/20190826/e188ba2f470e2afbf1d21ac4d1887e2f225dd40b.png"></p>
+<p>  这个矩阵内有<span class="math inline">\(m\)</span>个点是有效的（即有一个值为对应螺旋矩阵该位置的值），其他位置都为0。现在有<span class="math inline">\(p\)</span>次查询<span class="math inline">\((x1,y1,x2,y2)\)</span>，询问<span class="math inline">\((x1,y1,)、(x2,y2)\)</span>所围成的矩阵之间的所有数的数位和的和是多少。</p>
+<p>  输入格式：共<span class="math inline">\(t\)</span>组测试样例，每组样例，第一行三个数<span class="math inline">\(n,m,p\)</span>，接下来<span class="math inline">\(m\)</span>行，每行一组坐标<span class="math inline">\((x,y)\)</span>，告诉<span class="math inline">\(m\)</span>个有效点，之后<span class="math inline">\(p\)</span>行，每行一次查询<span class="math inline">\((x1,y1,x2,y2)\)</span>。</p>
+<p>  数据范围：<span class="math inline">\((t\leq 5,n\leq 10^6),(m,p\leq 10^5)\)</span>.</p>
+<p>  输出格式：每行输出一个查询结果。
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/09/05/2019南京网络赛-A-The-beautiful-values-of-the-palace/" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </p></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://yuggu.github.io/2019/09/05/2019宁夏网络赛-F-Moving-On/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2275,220 +2494,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuggu.github.io/2019/07/22/LightOJ-1422-Halloween-Costumes/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yuggu">
-      <meta itemprop="description" content="多看多写多学习啊">
-      <meta itemprop="image" content="/images/t4.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yuggu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/22/LightOJ-1422-Halloween-Costumes/" class="post-title-link" itemprop="url">[LightOJ - 1422] Halloween Costumes</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-22 13:34:12" itemprop="dateCreated datePublished" datetime="2019-07-22T13:34:12+08:00">2019-07-22</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-09-14 19:37:08" itemprop="dateModified" datetime="2019-09-14T19:37:08+08:00">2019-09-14</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/dp/" itemprop="url" rel="index"><span itemprop="name">dp</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/dp/区间dp/" itemprop="url" rel="index"><span itemprop="name">区间dp</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">2.2k</span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="链接">链接</h3>
-<p><a href="https://vjudge.net/problem/LightOJ-1422" target="_blank" rel="noopener"><span class="math inline">\(\text{LightOJ - 1422}\)</span></a></p>
-<h3 id="题意">题意</h3>
-<p>  这里有<span class="math inline">\(n\)</span>次宴会，每个宴会有一个特定的编号，每个宴会需要一件特定衣服，<span class="math inline">\(n\)</span>次宴会有顺序，衣服可以套着穿，一件衣服脱下后不能在穿，问最少需要买多少件衣服，如宴会为1、2、1、2，开始买衣服1，然后买衣服2，第三个宴会为1，此时身上是有宴会1的衣服的，不过外面还有一件宴会2的衣服，所以需要脱掉衣服2，第四个宴会为2，此时需要再买一件；
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/07/22/LightOJ-1422-Halloween-Costumes/" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2537,7 +2542,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-count">53</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2620,7 +2625,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">33</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">35</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2723,7 +2732,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">43</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">45</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2810,7 +2823,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">145k</span>
+    <span title="站点总字数">148k</span>
   
 
   
