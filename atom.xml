@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuggu.github.io/"/>
-  <updated>2019-10-28T08:26:31.095Z</updated>
+  <updated>2019-11-20T05:46:18.140Z</updated>
   <id>https://yuggu.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>大三下计算机网络实验</title>
+    <link href="https://yuggu.github.io/2019/11/20/%E5%A4%A7%E4%B8%89%E4%B8%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"/>
+    <id>https://yuggu.github.io/2019/11/20/大三下计算机网络实验/</id>
+    <published>2019-11-20T05:41:24.000Z</published>
+    <updated>2019-11-20T05:46:18.140Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="计算机网络实验">计算机网络实验</h2><p>  这里主要记录实验中遇到的问题与困惑； ### 第一次实验课19.11.19</p><p>  首先，什么是vlan，vlan即是Virtual Local Area Network，即虚拟局域网，对于处于相同网段的主机来说，它们的ip与对应子网掩码的结果一定相同，而对于处于相同vlan中的不同主机呢；这就涉及到vlan的划分，这里先给出几种划分方法，便于理解vlan；</p><ol type="1"><li>根据端口划分vlan，基于端口的vlan是划分vlan最简单也是最有效的方法，这实际上是某些交换端口的集合，网络管理员只需要管理和配置交换端口，而不管交换端口连接什么设备；</li><li>根据mac地址划分，对于每个mac地址，都配置它属于某一个组，它的优点在于，当用户物理位置移动时，即从一个交换机切换到其他交换机时，vlan不需要重新配置；</li><li>基于网络层划分，ip和ipx等，没太理解；</li><li>基于策略划分，比较常用的策略（与厂商设备的支持有关）有：按mac划分，按ip划分，按以太网协议划分，按网络的应用划分等；</li></ol><a id="more"></a><p>  这次实验使用Cisco模拟器实现如下：</p><center><img src="/net191119.png"></center><p>  其中PC0与PC2处于同一个vlan，而PC1和PC3处于同一个vlan；下面给出PC0~3的IP和子网掩码以及所在vlan；</p><ol type="1"><li>PC0：ip：192.168.1.1 mask：255.255.255.0 vlan：100</li><li>PC1：ip：192.168.1.2 mask：255.255.255.0 vlan：200</li><li>PC2：ip：192.168.1.3 mask：255.255.255.0 vlan：100</li><li>PC3：ip：192.168.1.4 mask：255.255.255.0 vlan：200</li></ol><p>  那么显然这四台PC机是在同一个网段中的；</p><p>  先后配置好ip及vlan之后，在PC0上去PingPC1、PC3，是没有响应的，只有PingPC2才会返回数据；之后我又将与PC0处在同一个vlan中的PC2的ip改为192.168.2.3，这样PC0与PC2不在同一个网段，而在同一个vlan中，之后我在PC0上去PingPC2，也没有响应；之后又问了学长，说不同网段是ping不通的，相同网段可以ping通；下面给出总结</p><p>  <strong>只有在相同网段及相同vlan中才能ping的通</strong>，不同网段、不同vlan都不行，那么这是为什么呢，为什么不同网段是ping不通，而相同网段可以ping的通；<strong>这里先留下疑问</strong>;</p><p>  这里我理解的vlan大概是，交换机或路由器对于网络的自主划分，这种划分与划分的方法有关；</p><p>  ICMP协议（网络控制报文协议），在网络层使用；允许主机和路由器报告差错情况和提供有关异常的报告。它的一个重要应用就是分组网间探测PING，用来测试两台主机之间的连通性。关于协议的具体细节暂时省略；</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;计算机网络实验&quot;&gt;计算机网络实验&lt;/h2&gt;
+&lt;p&gt;  这里主要记录实验中遇到的问题与困惑； ### 第一次实验课19.11.19&lt;/p&gt;
+&lt;p&gt;  首先，什么是vlan，vlan即是Virtual Local Area Network，即虚拟局域网，对于处于相同网段的主机来说，它们的ip与对应子网掩码的结果一定相同，而对于处于相同vlan中的不同主机呢；这就涉及到vlan的划分，这里先给出几种划分方法，便于理解vlan；&lt;/p&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;根据端口划分vlan，基于端口的vlan是划分vlan最简单也是最有效的方法，这实际上是某些交换端口的集合，网络管理员只需要管理和配置交换端口，而不管交换端口连接什么设备；&lt;/li&gt;
+&lt;li&gt;根据mac地址划分，对于每个mac地址，都配置它属于某一个组，它的优点在于，当用户物理位置移动时，即从一个交换机切换到其他交换机时，vlan不需要重新配置；&lt;/li&gt;
+&lt;li&gt;基于网络层划分，ip和ipx等，没太理解；&lt;/li&gt;
+&lt;li&gt;基于策略划分，比较常用的策略（与厂商设备的支持有关）有：按mac划分，按ip划分，按以太网协议划分，按网络的应用划分等；&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Networks" scheme="https://yuggu.github.io/categories/Networks/"/>
+    
+      <category term="Fundmentals" scheme="https://yuggu.github.io/categories/Networks/Fundmentals/"/>
+    
+    
+      <category term="network exper" scheme="https://yuggu.github.io/tags/network-exper/"/>
+    
+  </entry>
   
   <entry>
     <title>[HDU-4292] Food</title>
@@ -480,9 +512,9 @@
       <category term="数学" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/"/>
     
     
-      <category term="思维" scheme="https://yuggu.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
-    
       <category term="数学" scheme="https://yuggu.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="思维" scheme="https://yuggu.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
     
   </entry>
   
@@ -593,7 +625,7 @@
     <link href="https://yuggu.github.io/2019/09/21/Network-Fundamentals/"/>
     <id>https://yuggu.github.io/2019/09/21/Network-Fundamentals/</id>
     <published>2019-09-21T10:23:42.000Z</published>
-    <updated>2019-10-24T07:11:41.624Z</updated>
+    <updated>2019-11-20T05:46:17.578Z</updated>
     
     <content type="html"><![CDATA[<h3 id="主机与服务器">主机与服务器</h3><p>  <strong>网络主机</strong>（<strong>network host</strong>）是已连接到一个<a href="https://zh.wikipedia.org/wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C" title="计算机网络" target="_blank" rel="noopener">计算机网络</a>的一台<a href="https://zh.wikipedia.org/wiki/%E9%9B%BB%E5%AD%90%E8%A8%88%E7%AE%97%E6%A9%9F" title="电子计算机" target="_blank" rel="noopener">电子计算机</a>或其他设备。网络主机可以向网络上的用户或其他<a href="https://zh.wikipedia.org/wiki/%E8%8A%82%E7%82%B9_(%E7%94%B5%E4%BF%A1%E7%BD%91%E7%BB%9C)" title="节点 (电信网络)" target="_blank" rel="noopener">节点</a>提供信息资源、服务和应用。一台网络主机是已被分配一个<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E5%B1%82" title="网络层" target="_blank" rel="noopener">网络层</a><a href="https://zh.wikipedia.org/w/index.php?title=%E4%B8%BB%E6%9C%BA%E5%9C%B0%E5%9D%80&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">主机地址</a>的网络节点。</p><p>  所有服务器都是主机，但并非所有主机都是服务器，任何与网络建立连接的设备都可以作为主机，而已接受其他设备连接为目的的主机被视作服务器。 <a id="more"></a></p><h2 id="分类的ip地址">分类的IP地址</h2><h3 id="ip地址">IP地址</h3><p>  整个互联网就是一个单一的、抽象的网络，IP地址就是给网络上的每一个主机（或路由器）的每一个接口分配一个在全世界范围内是唯一的32位的标识符。IP地址的结构是使我们可以在互联网上很方便的寻址（如对于一个IPv4的地址，我们先根据网络号找出此IP所在的网段，再根据主机号找到具体的主机或路由器）。</p><h3 id="ip地址表示方法">IP地址表示方法</h3>]]></content>
     
@@ -613,32 +645,6 @@
       <category term="network" scheme="https://yuggu.github.io/tags/network/"/>
     
       <category term="主机" scheme="https://yuggu.github.io/tags/%E4%B8%BB%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo背景图片及透明度修改</title>
-    <link href="https://yuggu.github.io/2019/09/15/hexo%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E5%8F%8A%E9%80%8F%E6%98%8E%E5%BA%A6%E4%BF%AE%E6%94%B9/"/>
-    <id>https://yuggu.github.io/2019/09/15/hexo背景图片及透明度修改/</id>
-    <published>2019-09-15T13:20:13.000Z</published>
-    <updated>2019-09-15T13:27:11.516Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="hexo添加背景图片及修改透明度">hexo添加背景图片及修改透明度</h3><p>  首先将背景图片放入<code>hexo\next\source\images</code>文件夹下，之后修改<code>hexo\themes\next\source\css\_custom\custom.styl</code>文件，在程序中加入下面的代码</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*这里是加载背景图片，以及设置一些图片加载的问题*/</span></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line"><span class="comment">/*url括号里的图片如果不是本地的，就直接写url*/</span></span><br><span class="line"><span class="attribute">background</span>: <span class="built_in">url</span>(/images/background.jpg)</span><br><span class="line">background-repeat: no-repeat;  </span><br><span class="line"><span class="attribute">background-attachment</span>:fixed;  </span><br><span class="line"><span class="attribute">background-position</span>:<span class="number">50%</span> <span class="number">50%</span>;  </span><br><span class="line"><span class="attribute">background-size</span>: cover;  </span><br><span class="line"><span class="attribute">-webkit-background-size</span>: cover;  </span><br><span class="line"><span class="attribute">-o-background-size</span>: cover;  </span><br><span class="line"><span class="attribute">-moz-background-size</span>: cover;  </span><br><span class="line"><span class="attribute">-ms-background-size</span>: cover;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*这里的opacity参数是修改透明度的，值越小，透明度越大*/</span></span><br><span class="line"><span class="selector-class">.header-inner</span>&#123;</span><br><span class="line"><span class="attribute">opacity</span>: <span class="number">0.8</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.main-inner</span> &#123; </span><br><span class="line">   // margin-top: 60px;</span><br><span class="line">   // padding: 60px 60px 60px 60px;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">opacity</span>: 0<span class="selector-class">.8</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;hexo添加背景图片及修改透明度&quot;&gt;hexo添加背景图片及修改透明度&lt;/h3&gt;
-&lt;p&gt;  首先将背景图片放入&lt;code&gt;hexo\next\source\images&lt;/code&gt;文件夹下，之后修改&lt;code&gt;hexo\themes\next\source\css\_custom\custom.styl&lt;/code&gt;文件，在程序中加入下面的代码&lt;/p&gt;
-&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/*这里是加载背景图片，以及设置一些图片加载的问题*/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;body&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;/*url括号里的图片如果不是本地的，就直接写url*/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;url&lt;/span&gt;(/images/background.jpg)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	background-repeat: no-repeat;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;background-attachment&lt;/span&gt;:fixed;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;background-position&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;50%&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;50%&lt;/span&gt;;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;background-size&lt;/span&gt;: cover;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;-webkit-background-size&lt;/span&gt;: cover;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;-o-background-size&lt;/span&gt;: cover;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;-moz-background-size&lt;/span&gt;: cover;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;-ms-background-size&lt;/span&gt;: cover;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/*这里的opacity参数是修改透明度的，值越小，透明度越大*/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.header-inner&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;opacity&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0.8&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.main-inner&lt;/span&gt; &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   // margin-top: 60px;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   // padding: 60px 60px 60px 60px;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;selector-tag&quot;&gt;opacity&lt;/span&gt;: 0&lt;span class=&quot;selector-class&quot;&gt;.8&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="博客搭建" scheme="https://yuggu.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-    
-      <category term="其他" scheme="https://yuggu.github.io/tags/%E5%85%B6%E4%BB%96/"/>
-    
-      <category term="hexo" scheme="https://yuggu.github.io/tags/hexo/"/>
     
   </entry>
   
