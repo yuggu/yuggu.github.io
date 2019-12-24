@@ -138,14 +138,14 @@
   <meta name="description" content="连续使用一个字节数组读取文件   在使用java的数组来实现连续读取数据的时候，遇到这样一个问题。   我通过一个8字节数组来通过FileOutputStream.read()读取文件中的数据，所以我每次最多读8个字节，我文件中的数据如下，总共47个字符也就是47个字节，所以需要读6次；  dshakjdhjksahklfdahkjhkjf hdljksahkfjlkjhadskjh">
 <meta name="keywords" content="java,java随笔">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ECB模式RSA的Java简单实现">
+<meta property="og:title" content="ECB模式RSA的Java简单实现中遇到的问题">
 <meta property="og:url" content="https://yuggu.github.io/2019/12/21/ECB模式RSA的Java简单实现/index.html">
 <meta property="og:site_name" content="yuggu">
 <meta property="og:description" content="连续使用一个字节数组读取文件   在使用java的数组来实现连续读取数据的时候，遇到这样一个问题。   我通过一个8字节数组来通过FileOutputStream.read()读取文件中的数据，所以我每次最多读8个字节，我文件中的数据如下，总共47个字符也就是47个字节，所以需要读6次；  dshakjdhjksahklfdahkjhkjf hdljksahkfjlkjhadskjh">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-21T10:45:10.588Z">
+<meta property="og:updated_time" content="2019-12-24T08:08:05.524Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ECB模式RSA的Java简单实现">
+<meta name="twitter:title" content="ECB模式RSA的Java简单实现中遇到的问题">
 <meta name="twitter:description" content="连续使用一个字节数组读取文件   在使用java的数组来实现连续读取数据的时候，遇到这样一个问题。   我通过一个8字节数组来通过FileOutputStream.read()读取文件中的数据，所以我每次最多读8个字节，我文件中的数据如下，总共47个字符也就是47个字节，所以需要读6次；  dshakjdhjksahklfdahkjhkjf hdljksahkfjlkjhadskjh">
 
 
@@ -166,7 +166,7 @@
   };
 </script>
 
-  <title>ECB模式RSA的Java简单实现 | yuggu</title>
+  <title>ECB模式RSA的Java简单实现中遇到的问题 | yuggu</title>
   
 
 
@@ -399,7 +399,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ECB模式RSA的Java简单实现
+          <h1 class="post-title" itemprop="name headline">ECB模式RSA的Java简单实现中遇到的问题
 
               
             
@@ -425,12 +425,24 @@
                 
               
 
-              <time title="创建时间：2019-12-21 18:14:54 / 修改时间：18:45:10" itemprop="dateCreated datePublished" datetime="2019-12-21T18:14:54+08:00">2019-12-21</time>
+              <time title="创建时间：2019-12-21 18:14:54" itemprop="dateCreated datePublished" datetime="2019-12-21T18:14:54+08:00">2019-12-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-12-24 16:08:05" itemprop="dateModified" datetime="2019-12-24T16:08:05+08:00">2019-12-24</time>
               
             
           </span>
@@ -483,7 +495,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.4k</span>
+                <span title="本文字数">3.5k</span>
               
 
               
@@ -516,15 +528,29 @@
 <a id="more"></a>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(String path)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        File file = <span class="keyword">new</span> File(file);</span><br><span class="line">        FileInputStream fis = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line">        <span class="keyword">byte</span> [] word = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">8</span>];</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> ((count = fis.read(word)) != -<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">byte</span> s : word) &#123;</span><br><span class="line">                num ++;</span><br><span class="line">                System.out.print(num +<span class="string">": "</span> + (<span class="keyword">char</span>)s + <span class="string">" "</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;<span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>  当我每读一次就把当前读到数组里的数据输出时，我发现数据与我文件中的不匹配。读取的结果如下：</p>
-<blockquote>
-<p>1: d 2: s 3: h 4: a 5: k 6: j 7: d 8: h</p>
-<p>9: j 10: k 11: s 12: a 13: h 14: k 15: l 16: f</p>
-<p>17: d 18: a 19: h 20: k 21: j 22: h 23: k 24: j</p>
-<p>25: f 26: 27: h 28: d 29: l 30: j 31: k 32: s</p>
-<p>33: a 34: h 35: k 36: f 37: j 38: l 39: k 40: j</p>
-<p>41: h 42: a 43: d 44: s 45: k 46: j 47: h 48: j</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1: d 2: s 3: h 4: a 5: k 6: j 7: d 8: h</span><br><span class="line">9: j 10: k 11: s 12: a 13: h 14: k 15: l 16: f</span><br><span class="line">17: d 18: a 19: h 20: k 21: j 22: h 23: k 24: j</span><br><span class="line">25: f 26:   27: h 28: d 29: l 30: j 31: k 32: s</span><br><span class="line">33: a 34: h 35: k 36: f 37: j 38: l 39: k 40: j</span><br><span class="line">41: h 42: a 43: d 44: s 45: k 46: j 47: h 48: j</span><br></pre></td></tr></table></figure>
 <p>  我们可以看到输出了48个字节多输出了一个字节，思考了一下我们可以想到，当我们最后一次读取文件数据时，如果这时候我们可以读取的数据已经不足8个字节，那么会怎么样呢，那么我们可以想到这最后一个字节可能来自上次8个字节的最后一个字节即第40个字节，每次使用<code>FileInputStream.read()</code>去读取数据，当前读取的数据都会把之前读取的数据给覆盖掉。所以我们每次读取之后，都要先把byte数组清空之后再进行下次读取；可以使用<code>java.util.Arrays.fill()</code>来实现；</p>
+<h3 id="一个字节的表示">一个字节的表示</h3>
+<p>  首先对于一个字节来说，表示有符号数时，范围是<code>-128~127</code>，其中<code>-128</code>的表示为<code>10000000</code>；正数为原码形式存在，负数为补码形式存在；比如对于一个字节来说，如果向计算机写入<code>-1</code>，它是一个有符号的负数，所以计算机会计算它的补码，从而转换为<code>11111111</code>；而对于<code>128~255</code>之间的数，计算机会自动视其为无符号数，那就以无符号原码表示，如<code>0xff</code>即255，就是<code>11111111</code>；</p>
+<p>  所以有时候，我们就会遇到，255和-1都表示为<code>11111111</code>的情况；</p>
+<h3 id="biginteger.tobytearray怎么实现的">BigInteger.toByteArray()怎么实现的</h3>
+<p>  在网上找了一个说的比较好的解答，也有了自己的理解。</p>
+<p>  下面是一个int的编码实例，其中需要注意二进制的4位表示一个十六进制数字，负数二进制开始为1，正数开始于0；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-2147483648 is encoded as 1000 0000 0000 0000 0000 0000 0000 0000 or 0x80000000.</span><br><span class="line">        -16 is encoded as 1111 1111 1111 1111 1111 1111 1111 0000 or 0xfffffff0.</span><br><span class="line">         -2 is encoded as 1111 1111 1111 1111 1111 1111 1111 1110 or 0xfffffffe.</span><br><span class="line">         -1 is encoded as 1111 1111 1111 1111 1111 1111 1111 1111 or 0xffffffff.</span><br><span class="line">          0 is encoded as 0000 0000 0000 0000 0000 0000 0000 0000 or 0x00000000.</span><br><span class="line">          1 is encoded as 0000 0000 0000 0000 0000 0000 0000 0001 or 0x00000001.</span><br><span class="line">         16 is encoded as 0000 0000 0000 0000 0000 0000 0001 0000 or 0x00000010.</span><br><span class="line"> 2147483647 is encoded as 0111 1111 1111 1111 1111 1111 1111 1111 or 0x7fffffff.</span><br></pre></td></tr></table></figure>
+<p>  java只是把，每个8位块中现有的位拷贝到目标数组中的问题。一个字节即是一个8位的块.</p>
+<p>  我们将一个BigInteger转换为二进制补码，我们想要的只是它的后面的有效的位，而不包含前面的无数的前导0和前导1；之后每8位的块即是一个字节；</p>
+<p>  下面用数组里的十六进制来表示BigInteger；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">                   0 [0x00000000]</span><br><span class="line">          2147483647 [0x7fffffff]</span><br><span class="line">          2147483648 [0x00000000, 0x80000000]</span><br><span class="line">          4294967296 [0x00000001, 0x00000000]</span><br><span class="line">          8589934592 [0x00000002, 0x00000000]</span><br><span class="line">     281474976710655 [0x0000ffff, 0xffffffff]</span><br><span class="line">     281474976710656 [0x00010000, 0x00000000]</span><br><span class="line">18446744073709551616 [0x00000001, 0x00000000, 0x00000000]</span><br><span class="line">    -281474976710656 [0xffff0000, 0x00000000]</span><br></pre></td></tr></table></figure>
+<p>  之后分割、拿出其中有效的byte，即以每八位分割一次；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">8589934592 [0x00 00 00 02, 0x00 00 00 00]</span><br><span class="line">bytes:     [           02,   00,00,00,00]</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li>前面的三个00都可以被忽略，因为第一个有效数字之前有25个0；</li>
+<li>然后将这些二进制位拷贝到字节中即可。</li>
+</ol>
+<p>对于官方的文档，其中有这样一句话，toByteArray()这个方法返回一个数组，这个数组包含可以代表这个BigInteger最小数量的字节，其中包含至少一个符号位。</p>
+<p>符号位是什么意思呢。对于<code>-128~127</code>之间的数组，我们都可以用一个字节来表示，而对于<code>128~255</code>之间的数呢，比如255与-1，虽然二进制表示相同，但他们终究是不同的，所以这个方法考虑到这个问题，对于255就额外加了一个0x00表示符号位；或者可以这样想，对于有符号数来说，<code>128~255</code>之间的数，一个字节是表示不了的，所以采用两个字节来表示，只不过最左边的那个字节是0x00；比如对于下面的两个byte数组：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">255 [0x00, 0xff]</span><br><span class="line">-1  [    , 0xff]</span><br></pre></td></tr></table></figure>
+<p><strong>这个问题需要特别注意</strong>；</p>
 
       
     </div>
@@ -559,7 +585,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://yuggu.github.io/2019/12/21/ECB模式RSA的Java简单实现/" title="ECB模式RSA的Java简单实现">https://yuggu.github.io/2019/12/21/ECB模式RSA的Java简单实现/</a>
+    <a href="https://yuggu.github.io/2019/12/21/ECB模式RSA的Java简单实现/" title="ECB模式RSA的Java简单实现中遇到的问题">https://yuggu.github.io/2019/12/21/ECB模式RSA的Java简单实现/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -959,7 +985,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#连续使用一个字节数组读取文件"><span class="nav-number">1.</span> <span class="nav-text">连续使用一个字节数组读取文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#连续使用一个字节数组读取文件"><span class="nav-number">1.</span> <span class="nav-text">连续使用一个字节数组读取文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个字节的表示"><span class="nav-number">2.</span> <span class="nav-text">一个字节的表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#biginteger.tobytearray怎么实现的"><span class="nav-number">3.</span> <span class="nav-text">BigInteger.toByteArray()怎么实现的</span></a></li></ol></div>
             
 
           </div>
@@ -992,7 +1018,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">171k</span>
+    <span title="站点总字数">173k</span>
   
 
   
