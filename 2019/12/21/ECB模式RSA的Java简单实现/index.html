@@ -143,7 +143,7 @@
 <meta property="og:site_name" content="yuggu">
 <meta property="og:description" content="连续使用一个字节数组读取文件   在使用java的数组来实现连续读取数据的时候，遇到这样一个问题。   我通过一个8字节数组来通过FileOutputStream.read()读取文件中的数据，所以我每次最多读8个字节，我文件中的数据如下，总共47个字符也就是47个字节，所以需要读6次；  dshakjdhjksahklfdahkjhkjf hdljksahkfjlkjhadskjh">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-24T08:08:05.524Z">
+<meta property="og:updated_time" content="2019-12-24T09:11:11.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECB模式RSA的Java简单实现中遇到的问题">
 <meta name="twitter:description" content="连续使用一个字节数组读取文件   在使用java的数组来实现连续读取数据的时候，遇到这样一个问题。   我通过一个8字节数组来通过FileOutputStream.read()读取文件中的数据，所以我每次最多读8个字节，我文件中的数据如下，总共47个字符也就是47个字节，所以需要读6次；  dshakjdhjksahklfdahkjhkjf hdljksahkfjlkjhadskjh">
@@ -442,7 +442,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-12-24 16:08:05" itemprop="dateModified" datetime="2019-12-24T16:08:05+08:00">2019-12-24</time>
+                <time title="修改时间：2019-12-24 17:11:11" itemprop="dateModified" datetime="2019-12-24T17:11:11+08:00">2019-12-24</time>
               
             
           </span>
@@ -495,7 +495,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.5k</span>
+                <span title="本文字数">4.7k</span>
               
 
               
@@ -548,9 +548,14 @@
 <li>然后将这些二进制位拷贝到字节中即可。</li>
 </ol>
 <p>对于官方的文档，其中有这样一句话，toByteArray()这个方法返回一个数组，这个数组包含可以代表这个BigInteger最小数量的字节，其中包含至少一个符号位。</p>
-<p>符号位是什么意思呢。对于<code>-128~127</code>之间的数组，我们都可以用一个字节来表示，而对于<code>128~255</code>之间的数呢，比如255与-1，虽然二进制表示相同，但他们终究是不同的，所以这个方法考虑到这个问题，对于255就额外加了一个0x00表示符号位；或者可以这样想，对于有符号数来说，<code>128~255</code>之间的数，一个字节是表示不了的，所以采用两个字节来表示，只不过最左边的那个字节是0x00；比如对于下面的两个byte数组：</p>
+<p>符号位是什么意思呢。对于<code>-128~127</code>之间的数组，我们都可以用一个字节来表示，而对于<code>128~255</code>之间的数呢，比如255与-1，虽然二进制表示相同，但他们终究是不同的，所以这个方法考虑到这个问题，对于255就额外加了一个0x00表示符号位（如果第一个字节的大小大于0x7f，就需要在最前面加上一个0x00）；或者可以这样想，对于有符号数来说，<code>128~255</code>之间的数，一个字节是表示不了的，所以采用两个字节来表示，只不过最左边的那个字节是0x00；比如对于下面的两个byte数组：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">255 [0x00, 0xff]</span><br><span class="line">-1  [    , 0xff]</span><br></pre></td></tr></table></figure>
 <p><strong>这个问题需要特别注意</strong>；</p>
+<h3 id="byte数组转biginteger">byte数组转BigInteger</h3>
+<p>  BigInteger有这样一个构造函数：<code>public BigInteger(byte[] val)</code>，它的参数是byte数组；对于<code>[0x00,0xff]</code>得到的BigInteger的到的结果是255，对于<code>[0xff]</code>的结果是-1；</p>
+<p>  BigInteger还有这样一个构造函数：<code>public BigInteger(int signum,byte[] magnitude)</code>，其中多加了一个signum参数代表你的BigInteger的正负，为-1代表负数，为1代表整数，为0代表byte数组表示的数一定是0（即这个byte数组仅包括字节0x00），如果byte数组表示的数不为0，会报错。</p>
+<p>  实践后发现，可能是这样的，如果signum为0，则在byte数组最前面加上一个0x00，然后反转上面toByteArray()的操作，得到最后的结果，如果signum为1，前面计算的结果上加上一个负号。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span> [] arr1 = &#123;<span class="number">0x00</span>&#125;;</span><br><span class="line">        <span class="keyword">byte</span> [] arr2 = &#123;<span class="number">0x00</span>,(<span class="keyword">byte</span>)<span class="number">0xff</span>&#125;;</span><br><span class="line">        <span class="keyword">byte</span> [] arr3 = &#123;(<span class="keyword">byte</span>)<span class="number">0xff</span>&#125;;</span><br><span class="line">        <span class="keyword">byte</span> [] arr4 = &#123;-<span class="number">1</span>,(<span class="keyword">byte</span>)<span class="number">0xff</span>&#125;;</span><br><span class="line">        System.out.println(<span class="keyword">new</span> BigInteger(arr4));   <span class="comment">//-32513</span></span><br><span class="line">        System.out.println(<span class="keyword">new</span> BigInteger(<span class="number">1</span>,arr4)); <span class="comment">//33023</span></span><br><span class="line">        System.out.println(<span class="keyword">new</span> BigInteger(-<span class="number">1</span>,arr4));<span class="comment">//-33023</span></span><br><span class="line">        System.out.println(<span class="keyword">new</span> BigInteger(-<span class="number">1</span>,arr1));<span class="comment">//0</span></span><br><span class="line">        System.out.println(<span class="keyword">new</span> BigInteger(<span class="number">1</span>,arr2)); <span class="comment">//255</span></span><br><span class="line">        System.out.println(<span class="keyword">new</span> BigInteger(-<span class="number">1</span>,arr2));<span class="comment">//-255</span></span><br><span class="line">        System.out.println(<span class="keyword">new</span> BigInteger(<span class="number">1</span>,arr3)); <span class="comment">//255</span></span><br><span class="line">        System.out.println(<span class="keyword">new</span> BigInteger(-<span class="number">1</span>,arr3));<span class="comment">//-255</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -985,7 +990,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#连续使用一个字节数组读取文件"><span class="nav-number">1.</span> <span class="nav-text">连续使用一个字节数组读取文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个字节的表示"><span class="nav-number">2.</span> <span class="nav-text">一个字节的表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#biginteger.tobytearray怎么实现的"><span class="nav-number">3.</span> <span class="nav-text">BigInteger.toByteArray()怎么实现的</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#连续使用一个字节数组读取文件"><span class="nav-number">1.</span> <span class="nav-text">连续使用一个字节数组读取文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个字节的表示"><span class="nav-number">2.</span> <span class="nav-text">一个字节的表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#biginteger.tobytearray怎么实现的"><span class="nav-number">3.</span> <span class="nav-text">BigInteger.toByteArray()怎么实现的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#byte数组转biginteger"><span class="nav-number">4.</span> <span class="nav-text">byte数组转BigInteger</span></a></li></ol></div>
             
 
           </div>
@@ -1018,7 +1023,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">173k</span>
+    <span title="站点总字数">174k</span>
   
 
   
