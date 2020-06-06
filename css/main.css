@@ -1775,7 +1775,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffe481;
+  background: #ecff75;
 }
 .feed-link,
 .chat {
@@ -2792,7 +2792,6 @@ ul.breadcrumb li+li:last-child {
   text-overflow: ellipsis;
 }
 body {
-  background: url("");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
