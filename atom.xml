@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>yuggu</title>
+  <title>chagelo</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://yuggu.github.io/"/>
+  <link href="https://chagelo.github.io/"/>
   <updated>2020-07-10T10:55:10.651Z</updated>
-  <id>https://yuggu.github.io/</id>
+  <id>https://chagelo.github.io/</id>
   
   <author>
-    <name>yuggu</name>
+    <name>chagelo</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>[ABC 172]</title>
-    <link href="https://yuggu.github.io/2020/07/10/ABC-172/"/>
-    <id>https://yuggu.github.io/2020/07/10/ABC-172/</id>
+    <link href="https://chagelo.github.io/2020/07/10/ABC-172/"/>
+    <id>https://chagelo.github.io/2020/07/10/ABC-172/</id>
     <published>2020-07-10T10:35:23.000Z</published>
     <updated>2020-07-10T10:55:10.651Z</updated>
     
@@ -38,17 +38,17 @@
     
     </summary>
     
-      <category term="题解" scheme="https://yuggu.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://chagelo.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="题解" scheme="https://yuggu.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://chagelo.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>为什么要学习</title>
-    <link href="https://yuggu.github.io/2020/06/06/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0/"/>
-    <id>https://yuggu.github.io/2020/06/06/为什么要学习/</id>
+    <link href="https://chagelo.github.io/2020/06/06/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://chagelo.github.io/2020/06/06/为什么要学习/</id>
     <published>2020-06-06T11:07:37.000Z</published>
     <updated>2020-06-06T11:17:55.913Z</updated>
     
@@ -63,17 +63,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="https://yuggu.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://chagelo.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="随笔" scheme="https://yuggu.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://chagelo.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>JS入门</title>
-    <link href="https://yuggu.github.io/2019/12/24/JS%E5%85%A5%E9%97%A8/"/>
-    <id>https://yuggu.github.io/2019/12/24/JS入门/</id>
+    <link href="https://chagelo.github.io/2019/12/24/JS%E5%85%A5%E9%97%A8/"/>
+    <id>https://chagelo.github.io/2019/12/24/JS入门/</id>
     <published>2019-12-24T05:36:08.000Z</published>
     <updated>2019-12-24T05:38:11.223Z</updated>
     
@@ -90,19 +90,19 @@
     
     </summary>
     
-      <category term="js" scheme="https://yuggu.github.io/categories/js/"/>
+      <category term="js" scheme="https://chagelo.github.io/categories/js/"/>
     
-      <category term="js基础" scheme="https://yuggu.github.io/categories/js/js%E5%9F%BA%E7%A1%80/"/>
+      <category term="js基础" scheme="https://chagelo.github.io/categories/js/js%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="js" scheme="https://yuggu.github.io/tags/js/"/>
+      <category term="js" scheme="https://chagelo.github.io/tags/js/"/>
     
   </entry>
   
   <entry>
     <title>ECB模式RSA的Java简单实现中遇到的问题</title>
-    <link href="https://yuggu.github.io/2019/12/21/ECB%E6%A8%A1%E5%BC%8FRSA%E7%9A%84Java%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/"/>
-    <id>https://yuggu.github.io/2019/12/21/ECB模式RSA的Java简单实现/</id>
+    <link href="https://chagelo.github.io/2019/12/21/ECB%E6%A8%A1%E5%BC%8FRSA%E7%9A%84Java%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://chagelo.github.io/2019/12/21/ECB模式RSA的Java简单实现/</id>
     <published>2019-12-21T10:14:54.000Z</published>
     <updated>2019-12-24T09:11:11.132Z</updated>
     
@@ -119,21 +119,21 @@
     
     </summary>
     
-      <category term="java" scheme="https://yuggu.github.io/categories/java/"/>
+      <category term="java" scheme="https://chagelo.github.io/categories/java/"/>
     
-      <category term="java随笔" scheme="https://yuggu.github.io/categories/java/java%E9%9A%8F%E7%AC%94/"/>
+      <category term="java随笔" scheme="https://chagelo.github.io/categories/java/java%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="java" scheme="https://yuggu.github.io/tags/java/"/>
+      <category term="java" scheme="https://chagelo.github.io/tags/java/"/>
     
-      <category term="java随笔" scheme="https://yuggu.github.io/tags/java%E9%9A%8F%E7%AC%94/"/>
+      <category term="java随笔" scheme="https://chagelo.github.io/tags/java%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>2019ecfinal西安游记</title>
-    <link href="https://yuggu.github.io/2019/12/17/2019ecfinal%E8%A5%BF%E5%AE%89%E6%B8%B8%E8%AE%B0/"/>
-    <id>https://yuggu.github.io/2019/12/17/2019ecfinal西安游记/</id>
+    <link href="https://chagelo.github.io/2019/12/17/2019ecfinal%E8%A5%BF%E5%AE%89%E6%B8%B8%E8%AE%B0/"/>
+    <id>https://chagelo.github.io/2019/12/17/2019ecfinal西安游记/</id>
     <published>2019-12-17T10:29:42.000Z</published>
     <updated>2019-12-17T12:30:09.529Z</updated>
     
@@ -147,17 +147,17 @@
     
     </summary>
     
-      <category term="其他" scheme="https://yuggu.github.io/categories/%E5%85%B6%E4%BB%96/"/>
+      <category term="其他" scheme="https://chagelo.github.io/categories/%E5%85%B6%E4%BB%96/"/>
     
     
-      <category term="随笔" scheme="https://yuggu.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://chagelo.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>Java设计模式</title>
-    <link href="https://yuggu.github.io/2019/12/02/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://yuggu.github.io/2019/12/02/Java设计模式/</id>
+    <link href="https://chagelo.github.io/2019/12/02/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://chagelo.github.io/2019/12/02/Java设计模式/</id>
     <published>2019-12-02T04:27:53.000Z</published>
     <updated>2019-12-02T04:29:13.620Z</updated>
     
@@ -172,21 +172,21 @@
     
     </summary>
     
-      <category term="java" scheme="https://yuggu.github.io/categories/java/"/>
+      <category term="java" scheme="https://chagelo.github.io/categories/java/"/>
     
-      <category term="java基础" scheme="https://yuggu.github.io/categories/java/java%E5%9F%BA%E7%A1%80/"/>
+      <category term="java基础" scheme="https://chagelo.github.io/categories/java/java%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="java" scheme="https://yuggu.github.io/tags/java/"/>
+      <category term="java" scheme="https://chagelo.github.io/tags/java/"/>
     
-      <category term="设计模式" scheme="https://yuggu.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://chagelo.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>pyqt学习</title>
-    <link href="https://yuggu.github.io/2019/11/27/pyqt%E5%AD%A6%E4%B9%A0/"/>
-    <id>https://yuggu.github.io/2019/11/27/pyqt学习/</id>
+    <link href="https://chagelo.github.io/2019/11/27/pyqt%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://chagelo.github.io/2019/11/27/pyqt学习/</id>
     <published>2019-11-27T05:31:02.000Z</published>
     <updated>2019-12-02T04:28:57.671Z</updated>
     
@@ -204,21 +204,21 @@
     
     </summary>
     
-      <category term="Python" scheme="https://yuggu.github.io/categories/Python/"/>
+      <category term="Python" scheme="https://chagelo.github.io/categories/Python/"/>
     
-      <category term="PyQt" scheme="https://yuggu.github.io/categories/Python/PyQt/"/>
+      <category term="PyQt" scheme="https://chagelo.github.io/categories/Python/PyQt/"/>
     
     
-      <category term="Python" scheme="https://yuggu.github.io/tags/Python/"/>
+      <category term="Python" scheme="https://chagelo.github.io/tags/Python/"/>
     
-      <category term="PyQt" scheme="https://yuggu.github.io/tags/PyQt/"/>
+      <category term="PyQt" scheme="https://chagelo.github.io/tags/PyQt/"/>
     
   </entry>
   
   <entry>
     <title>字符集与编码</title>
-    <link href="https://yuggu.github.io/2019/11/20/%E5%AD%97%E7%AC%A6%E9%9B%86%E4%B8%8E%E7%BC%96%E7%A0%81/"/>
-    <id>https://yuggu.github.io/2019/11/20/字符集与编码/</id>
+    <link href="https://chagelo.github.io/2019/11/20/%E5%AD%97%E7%AC%A6%E9%9B%86%E4%B8%8E%E7%BC%96%E7%A0%81/"/>
+    <id>https://chagelo.github.io/2019/11/20/字符集与编码/</id>
     <published>2019-11-20T10:56:47.000Z</published>
     <updated>2019-11-20T10:58:12.845Z</updated>
     
@@ -233,21 +233,21 @@
     
     </summary>
     
-      <category term="其他" scheme="https://yuggu.github.io/categories/%E5%85%B6%E4%BB%96/"/>
+      <category term="其他" scheme="https://chagelo.github.io/categories/%E5%85%B6%E4%BB%96/"/>
     
     
-      <category term="字符编码" scheme="https://yuggu.github.io/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/"/>
+      <category term="字符编码" scheme="https://chagelo.github.io/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/"/>
     
-      <category term="Unicode" scheme="https://yuggu.github.io/tags/Unicode/"/>
+      <category term="Unicode" scheme="https://chagelo.github.io/tags/Unicode/"/>
     
-      <category term="utf-8" scheme="https://yuggu.github.io/tags/utf-8/"/>
+      <category term="utf-8" scheme="https://chagelo.github.io/tags/utf-8/"/>
     
   </entry>
   
   <entry>
     <title>Python基础之遇到的小问题记录</title>
-    <link href="https://yuggu.github.io/2019/11/20/Python%E5%9F%BA%E7%A1%80%E4%B9%8B%E9%81%87%E5%88%B0%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
-    <id>https://yuggu.github.io/2019/11/20/Python基础之遇到的小问题记录/</id>
+    <link href="https://chagelo.github.io/2019/11/20/Python%E5%9F%BA%E7%A1%80%E4%B9%8B%E9%81%87%E5%88%B0%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    <id>https://chagelo.github.io/2019/11/20/Python基础之遇到的小问题记录/</id>
     <published>2019-11-20T08:19:49.000Z</published>
     <updated>2019-12-20T05:26:17.030Z</updated>
     
@@ -262,17 +262,17 @@
     
     </summary>
     
-      <category term="Python" scheme="https://yuggu.github.io/categories/Python/"/>
+      <category term="Python" scheme="https://chagelo.github.io/categories/Python/"/>
     
     
-      <category term="Python" scheme="https://yuggu.github.io/tags/Python/"/>
+      <category term="Python" scheme="https://chagelo.github.io/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>大三上计算机网络实验</title>
-    <link href="https://yuggu.github.io/2019/11/20/%E5%A4%A7%E4%B8%89%E4%B8%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"/>
-    <id>https://yuggu.github.io/2019/11/20/大三上计算机网络实验/</id>
+    <link href="https://chagelo.github.io/2019/11/20/%E5%A4%A7%E4%B8%89%E4%B8%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/"/>
+    <id>https://chagelo.github.io/2019/11/20/大三上计算机网络实验/</id>
     <published>2019-11-20T05:41:24.000Z</published>
     <updated>2019-11-20T05:52:11.634Z</updated>
     
@@ -293,19 +293,19 @@
     
     </summary>
     
-      <category term="Networks" scheme="https://yuggu.github.io/categories/Networks/"/>
+      <category term="Networks" scheme="https://chagelo.github.io/categories/Networks/"/>
     
-      <category term="Fundmentals" scheme="https://yuggu.github.io/categories/Networks/Fundmentals/"/>
+      <category term="Fundmentals" scheme="https://chagelo.github.io/categories/Networks/Fundmentals/"/>
     
     
-      <category term="network exper" scheme="https://yuggu.github.io/tags/network-exper/"/>
+      <category term="network exper" scheme="https://chagelo.github.io/tags/network-exper/"/>
     
   </entry>
   
   <entry>
     <title>[HDU-4292] Food</title>
-    <link href="https://yuggu.github.io/2019/10/28/HDU-4292-Food/"/>
-    <id>https://yuggu.github.io/2019/10/28/HDU-4292-Food/</id>
+    <link href="https://chagelo.github.io/2019/10/28/HDU-4292-Food/"/>
+    <id>https://chagelo.github.io/2019/10/28/HDU-4292-Food/</id>
     <published>2019-10-28T07:37:57.000Z</published>
     <updated>2019-10-28T08:26:31.095Z</updated>
     
@@ -321,23 +321,23 @@
     
     </summary>
     
-      <category term="算法" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://chagelo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="网络流" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/%E7%BD%91%E7%BB%9C%E6%B5%81/"/>
+      <category term="网络流" scheme="https://chagelo.github.io/categories/%E7%AE%97%E6%B3%95/%E7%BD%91%E7%BB%9C%E6%B5%81/"/>
     
-      <category term="最大流" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/%E7%BD%91%E7%BB%9C%E6%B5%81/%E6%9C%80%E5%A4%A7%E6%B5%81/"/>
+      <category term="最大流" scheme="https://chagelo.github.io/categories/%E7%AE%97%E6%B3%95/%E7%BD%91%E7%BB%9C%E6%B5%81/%E6%9C%80%E5%A4%A7%E6%B5%81/"/>
     
     
-      <category term="最大流" scheme="https://yuggu.github.io/tags/%E6%9C%80%E5%A4%A7%E6%B5%81/"/>
+      <category term="最大流" scheme="https://chagelo.github.io/tags/%E6%9C%80%E5%A4%A7%E6%B5%81/"/>
     
-      <category term="网络流" scheme="https://yuggu.github.io/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/"/>
+      <category term="网络流" scheme="https://chagelo.github.io/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/"/>
     
   </entry>
   
   <entry>
     <title>[POJ 3080] Blue Jeans</title>
-    <link href="https://yuggu.github.io/2019/10/28/POJ-3080-Blue-Jeans/"/>
-    <id>https://yuggu.github.io/2019/10/28/POJ-3080-Blue-Jeans/</id>
+    <link href="https://chagelo.github.io/2019/10/28/POJ-3080-Blue-Jeans/"/>
+    <id>https://chagelo.github.io/2019/10/28/POJ-3080-Blue-Jeans/</id>
     <published>2019-10-28T05:12:12.000Z</published>
     <updated>2019-10-28T08:26:21.349Z</updated>
     
@@ -355,23 +355,23 @@
     
     </summary>
     
-      <category term="算法" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://chagelo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="字符串" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://chagelo.github.io/categories/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="kmp" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2/kmp/"/>
+      <category term="kmp" scheme="https://chagelo.github.io/categories/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2/kmp/"/>
     
     
-      <category term="字符串" scheme="https://yuggu.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://chagelo.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="kmp" scheme="https://yuggu.github.io/tags/kmp/"/>
+      <category term="kmp" scheme="https://chagelo.github.io/tags/kmp/"/>
     
   </entry>
   
   <entry>
     <title>I/O流</title>
-    <link href="https://yuggu.github.io/2019/10/25/I-O%E6%B5%81/"/>
-    <id>https://yuggu.github.io/2019/10/25/I-O流/</id>
+    <link href="https://chagelo.github.io/2019/10/25/I-O%E6%B5%81/"/>
+    <id>https://chagelo.github.io/2019/10/25/I-O流/</id>
     <published>2019-10-25T11:26:28.000Z</published>
     <updated>2019-12-21T10:17:55.745Z</updated>
     
@@ -387,21 +387,21 @@
     
     </summary>
     
-      <category term="随笔" scheme="https://yuggu.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://chagelo.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="java随笔" scheme="https://yuggu.github.io/tags/java%E9%9A%8F%E7%AC%94/"/>
+      <category term="java随笔" scheme="https://chagelo.github.io/tags/java%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="I/O" scheme="https://yuggu.github.io/tags/I-O/"/>
+      <category term="I/O" scheme="https://chagelo.github.io/tags/I-O/"/>
     
-      <category term="缓冲区" scheme="https://yuggu.github.io/tags/%E7%BC%93%E5%86%B2%E5%8C%BA/"/>
+      <category term="缓冲区" scheme="https://chagelo.github.io/tags/%E7%BC%93%E5%86%B2%E5%8C%BA/"/>
     
   </entry>
   
   <entry>
     <title>[Luogu-P3375] KMP字符串匹配</title>
-    <link href="https://yuggu.github.io/2019/10/24/Luogu-P3375-KMP%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/"/>
-    <id>https://yuggu.github.io/2019/10/24/Luogu-P3375-KMP字符串匹配/</id>
+    <link href="https://chagelo.github.io/2019/10/24/Luogu-P3375-KMP%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/"/>
+    <id>https://chagelo.github.io/2019/10/24/Luogu-P3375-KMP字符串匹配/</id>
     <published>2019-10-24T12:41:57.000Z</published>
     <updated>2019-10-28T05:11:13.154Z</updated>
     
@@ -422,23 +422,23 @@
     
     </summary>
     
-      <category term="算法" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://chagelo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="字符串" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://chagelo.github.io/categories/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="kmp" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2/kmp/"/>
+      <category term="kmp" scheme="https://chagelo.github.io/categories/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2/kmp/"/>
     
     
-      <category term="字符串" scheme="https://yuggu.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://chagelo.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="kmp" scheme="https://yuggu.github.io/tags/kmp/"/>
+      <category term="kmp" scheme="https://chagelo.github.io/tags/kmp/"/>
     
   </entry>
   
   <entry>
     <title>[ABC143] E.Travel by Car</title>
-    <link href="https://yuggu.github.io/2019/10/22/ABC143-E.Travel-by-Car/"/>
-    <id>https://yuggu.github.io/2019/10/22/ABC143-E.Travel-by-Car/</id>
+    <link href="https://chagelo.github.io/2019/10/22/ABC143-E.Travel-by-Car/"/>
+    <id>https://chagelo.github.io/2019/10/22/ABC143-E.Travel-by-Car/</id>
     <published>2019-10-22T13:33:51.000Z</published>
     <updated>2019-10-24T06:55:15.304Z</updated>
     
@@ -459,8 +459,8 @@
   
   <entry>
     <title>python程序随笔:191016</title>
-    <link href="https://yuggu.github.io/2019/10/16/python%E7%A8%8B%E5%BA%8F%E9%9A%8F%E7%AC%94-191016/"/>
-    <id>https://yuggu.github.io/2019/10/16/python程序随笔-191016/</id>
+    <link href="https://chagelo.github.io/2019/10/16/python%E7%A8%8B%E5%BA%8F%E9%9A%8F%E7%AC%94-191016/"/>
+    <id>https://chagelo.github.io/2019/10/16/python程序随笔-191016/</id>
     <published>2019-10-16T11:24:14.000Z</published>
     <updated>2019-10-17T06:30:31.912Z</updated>
     
@@ -473,19 +473,19 @@
     
     </summary>
     
-      <category term="随笔" scheme="https://yuggu.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://chagelo.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="随笔" scheme="https://yuggu.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://chagelo.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="Python" scheme="https://yuggu.github.io/tags/Python/"/>
+      <category term="Python" scheme="https://chagelo.github.io/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>2019牛客多校第一场</title>
-    <link href="https://yuggu.github.io/2019/10/13/2019%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A1%E7%AC%AC%E4%B8%80%E5%9C%BA/"/>
-    <id>https://yuggu.github.io/2019/10/13/2019牛客多校第一场/</id>
+    <link href="https://chagelo.github.io/2019/10/13/2019%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A1%E7%AC%AC%E4%B8%80%E5%9C%BA/"/>
+    <id>https://chagelo.github.io/2019/10/13/2019牛客多校第一场/</id>
     <published>2019-10-13T07:29:41.000Z</published>
     <updated>2019-10-16T10:35:19.630Z</updated>
     
@@ -505,17 +505,17 @@
     
     </summary>
     
-      <category term="题解" scheme="https://yuggu.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://chagelo.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="题解" scheme="https://yuggu.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="https://chagelo.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>DES(数据加密标准)</title>
-    <link href="https://yuggu.github.io/2019/10/08/DES-%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86/"/>
-    <id>https://yuggu.github.io/2019/10/08/DES-数据加密标准/</id>
+    <link href="https://chagelo.github.io/2019/10/08/DES-%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86/"/>
+    <id>https://chagelo.github.io/2019/10/08/DES-数据加密标准/</id>
     <published>2019-10-08T03:15:23.000Z</published>
     <updated>2019-10-08T03:24:46.101Z</updated>
     
@@ -530,19 +530,19 @@
     
     </summary>
     
-      <category term="信息安全" scheme="https://yuggu.github.io/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+      <category term="信息安全" scheme="https://chagelo.github.io/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
     
     
-      <category term="DES" scheme="https://yuggu.github.io/tags/DES/"/>
+      <category term="DES" scheme="https://chagelo.github.io/tags/DES/"/>
     
-      <category term="数据加密" scheme="https://yuggu.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/"/>
+      <category term="数据加密" scheme="https://chagelo.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/"/>
     
   </entry>
   
   <entry>
     <title>[POJ - 2288] Islands and Bridges</title>
-    <link href="https://yuggu.github.io/2019/10/03/POJ-2288-Islands-and-Bridges/"/>
-    <id>https://yuggu.github.io/2019/10/03/POJ-2288-Islands-and-Bridges/</id>
+    <link href="https://chagelo.github.io/2019/10/03/POJ-2288-Islands-and-Bridges/"/>
+    <id>https://chagelo.github.io/2019/10/03/POJ-2288-Islands-and-Bridges/</id>
     <published>2019-10-03T08:47:04.000Z</published>
     <updated>2019-10-03T08:52:08.012Z</updated>
     
@@ -558,23 +558,23 @@
     
     </summary>
     
-      <category term="算法" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://chagelo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="dp" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/dp/"/>
+      <category term="dp" scheme="https://chagelo.github.io/categories/%E7%AE%97%E6%B3%95/dp/"/>
     
-      <category term="状压dp" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/dp/%E7%8A%B6%E5%8E%8Bdp/"/>
+      <category term="状压dp" scheme="https://chagelo.github.io/categories/%E7%AE%97%E6%B3%95/dp/%E7%8A%B6%E5%8E%8Bdp/"/>
     
     
-      <category term="算法" scheme="https://yuggu.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://chagelo.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="状压dp" scheme="https://yuggu.github.io/tags/%E7%8A%B6%E5%8E%8Bdp/"/>
+      <category term="状压dp" scheme="https://chagelo.github.io/tags/%E7%8A%B6%E5%8E%8Bdp/"/>
     
   </entry>
   
   <entry>
     <title>[HDU - 3001] Travelling</title>
-    <link href="https://yuggu.github.io/2019/10/03/HDU-3001-Travelling/"/>
-    <id>https://yuggu.github.io/2019/10/03/HDU-3001-Travelling/</id>
+    <link href="https://chagelo.github.io/2019/10/03/HDU-3001-Travelling/"/>
+    <id>https://chagelo.github.io/2019/10/03/HDU-3001-Travelling/</id>
     <published>2019-10-03T05:17:04.000Z</published>
     <updated>2019-10-03T05:20:49.011Z</updated>
     
@@ -590,16 +590,16 @@
     
     </summary>
     
-      <category term="算法" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://chagelo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="dp" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/dp/"/>
+      <category term="dp" scheme="https://chagelo.github.io/categories/%E7%AE%97%E6%B3%95/dp/"/>
     
-      <category term="状压dp" scheme="https://yuggu.github.io/categories/%E7%AE%97%E6%B3%95/dp/%E7%8A%B6%E5%8E%8Bdp/"/>
+      <category term="状压dp" scheme="https://chagelo.github.io/categories/%E7%AE%97%E6%B3%95/dp/%E7%8A%B6%E5%8E%8Bdp/"/>
     
     
-      <category term="算法" scheme="https://yuggu.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://chagelo.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="状压dp" scheme="https://yuggu.github.io/tags/%E7%8A%B6%E5%8E%8Bdp/"/>
+      <category term="状压dp" scheme="https://chagelo.github.io/tags/%E7%8A%B6%E5%8E%8Bdp/"/>
     
   </entry>
   
