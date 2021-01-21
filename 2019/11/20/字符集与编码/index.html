@@ -143,7 +143,7 @@
 <meta property="og:site_name" content="chagelo">
 <meta property="og:description" content="编码   ascii编码是针对公共字符的编码，阿拉伯数字、英文字母，还有一些特殊字符；而如GB2312是针对汉字的编码，使用两个字节表示一个汉字；">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-01-20T04:11:20.105Z">
+<meta property="og:updated_time" content="2021-01-20T04:50:46.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字符集与编码">
 <meta name="twitter:description" content="编码   ascii编码是针对公共字符的编码，阿拉伯数字、英文字母，还有一些特殊字符；而如GB2312是针对汉字的编码，使用两个字节表示一个汉字；">
@@ -442,7 +442,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-01-20 12:11:20" itemprop="dateModified" datetime="2021-01-20T12:11:20+08:00">2021-01-20</time>
+                <time title="修改时间：2021-01-20 12:50:46" itemprop="dateModified" datetime="2021-01-20T12:50:46+08:00">2021-01-20</time>
               
             
           </span>
@@ -488,7 +488,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.2k</span>
+                <span title="本文字数">3.3k</span>
               
 
               
@@ -541,6 +541,7 @@
 <p>  对于程序员来说，要实现两个编码（A与B）之间的转换可以这样做:A-&gt;二进制-&gt;B;</p>
 <h3 id="乱码">乱码</h3>
 <p>  乱码的出现是因为编码和解码的时候使用了不同或者不兼容的字符集。对应到真实生活中，就好比是一个英国人为了表示祝福在纸上写了<code>bless</code>（编码过程）。而一个法国人拿到了这张纸，由于在法语中bless表示受伤的意思，所以认为他想表达的是<code>受伤</code>（解码过程）。</p>
+<p>  <strong>当读取文件时，计算机会猜测应该使用哪种编码方式来对二进制进行编码，如果猜对了那么就会得到原来的字符串，如果猜错了就会产生乱码；</strong></p>
 <p>要从乱码字符中反解出原来的正确文字需要对各个字符集编码规则有较为深刻的掌握。但是原理很简单，这里用最常见的UTF-8被错误用GBK展示时的乱码为例，来说明具体反解和识别过程。</p>
 <h4 id="第1步-编码">第1步 编码</h4>
 <p>假设我们在页面上看到<code>寰堝睂</code>这样的乱码，而又得知我们的浏览器当前使用GBK编码。那么第一步我们就能先通过GBK把乱码编码成二进制表达式。当然查表编码效率很低，我们也可以用以下SQL语句直接通过MySQL客户端来做编码工作：</p>
@@ -576,6 +577,7 @@
 <h3 id="reference">Reference</h3>
 <ol type="1">
 <li><a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html" target="_blank" rel="noopener">阮一峰的网络日志：字符编码笔记：ASCII，Unicode 和 UTF-8</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/107943002" target="_blank" rel="noopener">你需要知道的字符串编码</a></li>
 </ol>
 
       
@@ -724,7 +726,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">64</span>
+                    <span class="site-state-item-count">65</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -819,7 +821,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">39</span>
+                      
+                    
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -944,7 +948,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">54</span>
+                      
+                    
+                    <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1048,7 +1054,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">182k</span>
+    <span title="站点总字数">185k</span>
   
 
   
