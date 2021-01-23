@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chagelo.github.io/"/>
-  <updated>2021-01-23T08:22:07.704Z</updated>
+  <updated>2021-01-23T09:57:13.226Z</updated>
   <id>https://chagelo.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git使用</title>
+    <link href="https://chagelo.github.io/2021/01/23/git%E4%BD%BF%E7%94%A8/"/>
+    <id>https://chagelo.github.io/2021/01/23/git使用/</id>
+    <published>2021-01-23T09:55:35.000Z</published>
+    <updated>2021-01-23T09:57:13.226Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>git配置</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看当前项目git配置</span></span><br><span class="line">git config -l</span><br><span class="line"><span class="comment"># 查看系统配置</span></span><br><span class="line">git config --system --list</span><br><span class="line"><span class="comment"># 查看本地配置</span></span><br><span class="line">git config --global --list</span><br><span class="line"><span class="comment"># 配置邮箱、用户名</span></span><br><span class="line">git config --global user.name <span class="string">"chagelo"</span></span><br><span class="line">git config --global user.email <span class="string">"example@gmail.com"</span></span><br></pre></td></tr></table></figure><a id="more"></a><p><strong>git操作</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span>  <span class="string">"远程仓库地址"</span> <span class="comment">#克隆远程仓库到本地</span></span><br><span class="line">git add .               <span class="comment">#添加修改到stage</span></span><br><span class="line">git commit <span class="string">"备注信息"</span>   <span class="comment">#提交到local resp</span></span><br><span class="line">git push origin master  <span class="comment">#提交到master</span></span><br><span class="line">git push origin chagelo:chagelo     <span class="comment">#提交本地chagelo分支到远程分支chagelo</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除工作区文件，并将这次删除操作放入暂存区</span></span><br><span class="line">git rm (file1) (file2)...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更改文件名称，并把这次操作放入暂存区</span></span><br><span class="line">git mv (file-original) (file-renamed)</span><br></pre></td></tr></table></figure><p><strong>git分支</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出本地所有分支</span></span><br><span class="line">git branch </span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出远程所有分支</span></span><br><span class="line">git branch -r</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除分支</span></span><br><span class="line">git branch -d (branchname)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，但仍然停留在当前分支</span></span><br><span class="line">git branch (branchname)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建新分支并切换到该分支</span></span><br><span class="line">git checkout -b (branchname)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到另一个分支</span></span><br><span class="line">git checkout (branchname)</span><br></pre></td></tr></table></figure><p>[1][狂神说git](https://www.bilibili.com/video/BV1FE411P7B3?p=1) [2][Git 大全](https://gitee.com/all-about-git)</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;git配置&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 查看当前项目git配置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config -l&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 查看系统配置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --system --list&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 查看本地配置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global --list&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 配置邮箱、用户名&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.name &lt;span class=&quot;string&quot;&gt;&quot;chagelo&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.email &lt;span class=&quot;string&quot;&gt;&quot;example@gmail.com&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="git" scheme="https://chagelo.github.io/categories/git/"/>
+    
+    
+      <category term="git" scheme="https://chagelo.github.io/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>leetcode 树</title>
@@ -563,33 +586,6 @@
     
     
       <category term="题解" scheme="https://chagelo.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DES(数据加密标准)</title>
-    <link href="https://chagelo.github.io/2019/10/08/DES-%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86/"/>
-    <id>https://chagelo.github.io/2019/10/08/DES-数据加密标准/</id>
-    <published>2019-10-08T03:15:23.000Z</published>
-    <updated>2019-10-08T03:24:46.101Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="des-数据加密标准">DES( 数据加密标准)</h2><h3 id="des">DES</h3><p>  <span class="math inline">\(\text{DES}\)</span>是一种数据加密标准，是一种对称加密算法，<span class="math inline">\(\text{DES}\)</span>算法的入口参数有三个：<span class="math inline">\(\text{Key、Date、Mode}\)</span>。其中<span class="math inline">\(\text{Key}\)</span>为8个字节共64位，是<span class="math inline">\(\text{DES}\)</span>算法的工作密钥；<span class="math inline">\(\text{Date}\)</span>也为8个字节64位，是要被加密或解密的数据；<span class="math inline">\(\text{Mode}\)</span>为<span class="math inline">\(\text{DES}\)</span>的工作方式，有两种：加密或解密。</p><p>  <span class="math inline">\(\text{DES}\)</span>算法是这样工作的：若<span class="math inline">\(\text{Mode}\)</span>为加密，则用<span class="math inline">\(\text{Key}\)</span>去把数据<span class="math inline">\(\text{Date}\)</span>进行加密，生成<span class="math inline">\(\text{Date}\)</span>的密码形式（64位）作为<span class="math inline">\(\text{DES}的输出结果；若\)</span>为解密，则用<span class="math inline">\(\text{Key}\)</span>去把密码形式的数据<span class="math inline">\(\text{Data}\)</span>解密，还原为<span class="math inline">\(\text{Date}\)</span>的明码形式（64位）作为<span class="math inline">\(\text{DES}\)</span>的输出结果。在通信网络的两端，双方约定一致的<span class="math inline">\(\text{Key}\)</span>，在通信的源点用<span class="math inline">\(\text{Key}\)</span>对核心数据进行<span class="math inline">\(\text{DES}\)</span>加密，然后以密码形式在公共通信网（如电话网）中传输到通信网络的终点，数据到达目的地后，用同样的<span class="math inline">\(\text{Key}\)</span>对密码数据进行解密，便再现了明码形式的核心数据。这样，便保证了核心数据（如<span class="math inline">\(\text{PIN、MAC}\)</span>等）在公共通信网中传输的安全性和可靠性。</p><a id="more"></a><h3 id="des加密算法">DES加密算法</h3><p>  下面的图表示了<span class="math inline">\(\text{DES}\)</span>加密的整个机制，对于任意加密方案，总有两个输入：明文和密钥。<span class="math inline">\(\text{DES}\)</span>的明文长为64位，密钥长为56位（实际上是64位，其余8位可以奇偶校验或随意设置）。</p><p>  由图左部分可知，明文的处理经过了三个阶段，首先64位的明文经过初始置换IP而重新排列。然后进行16轮相同函数的作用，每轮作用都有置换和替换，最后一轮迭代的输出有64位；图的右半部分给出了使用56位密钥的过程，首先，密钥经过一个置换，在经过循环左移和一个置换就得到了各轮的子密钥<span class="math inline">\(K_i\)</span>，每轮的置换函数都一样，但是由于密钥的循环左移，使得每轮的子密钥互不相同。</p><p><img src="/images/des_2.png" width="550px"></p><h4 id="获取子密钥k_i">获取子密钥<span class="math inline">\(K_i\)</span></h4><p>  <span class="math inline">\(\text{DES}\)</span>的初始密钥<span class="math inline">\(\text{K}\)</span>为64位，按8行8列从左往右从上往下，其中每行第8位用于奇偶校验（即<span class="math inline">\(K\)</span>的第8、16、24、32、40、48、56、64共8个校验），因此初始密钥<span class="math inline">\(K\)</span>实际可用56位，之后通过<span class="math inline">\(\text{PC-1}\)</span>置换函数进行置换，<span class="math inline">\(\text{PC-1}\)</span>函数置换表如图，即将初始密钥<span class="math inline">\(\text{K}\)</span>的第57位（这里的位数，将校验位也计算在内）放在第1位，第49位放在第2位，依次类推；</p><p><img src="/images/des_3.png" width="450px"></p><p>  经过<span class="math inline">\(\text{PC-1}\)</span>置换，得到的置换输出是56位的，将它的前28位作为<span class="math inline">\(C_0\)</span>，后28位作为<span class="math inline">\(D_0\)</span>，之后<span class="math inline">\(C_0、D_0\)</span>分别<strong>循环左移</strong>1位得到<span class="math inline">\(C_1、D_1\)</span>，然后将两部分合成56位，在将这个56位的结果通过<span class="math inline">\(\text{PC-2}\)</span>函数置换，就得到了48位的子密钥<span class="math inline">\(K_1\)</span>，<span class="math inline">\(\text{PC-2}\)</span>函数置换表如下；</p><p><img src="/images/des_4.png" width="350px"></p><p>  对于上面所说的循环左移，是分别针对<span class="math inline">\(C_0\)</span>和<span class="math inline">\(D_0\)</span>所说的，它的意思是，对于<span class="math inline">\(C_0\)</span>把它的第2~28位整体左移1位，而第1位就就移动到空闲下来的第28位上；另外这里不一定是移动1位，也可能是移动2位，要按规定来，下面给出具体移动位数的规定。</p><p><img src="/images/des_5.png" width="550px"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;des-数据加密标准&quot;&gt;DES( 数据加密标准)&lt;/h2&gt;
-&lt;h3 id=&quot;des&quot;&gt;DES&lt;/h3&gt;
-&lt;p&gt;  &lt;span class=&quot;math inline&quot;&gt;\(\text{DES}\)&lt;/span&gt;是一种数据加密标准，是一种对称加密算法，&lt;span class=&quot;math inline&quot;&gt;\(\text{DES}\)&lt;/span&gt;算法的入口参数有三个：&lt;span class=&quot;math inline&quot;&gt;\(\text{Key、Date、Mode}\)&lt;/span&gt;。其中&lt;span class=&quot;math inline&quot;&gt;\(\text{Key}\)&lt;/span&gt;为8个字节共64位，是&lt;span class=&quot;math inline&quot;&gt;\(\text{DES}\)&lt;/span&gt;算法的工作密钥；&lt;span class=&quot;math inline&quot;&gt;\(\text{Date}\)&lt;/span&gt;也为8个字节64位，是要被加密或解密的数据；&lt;span class=&quot;math inline&quot;&gt;\(\text{Mode}\)&lt;/span&gt;为&lt;span class=&quot;math inline&quot;&gt;\(\text{DES}\)&lt;/span&gt;的工作方式，有两种：加密或解密。&lt;/p&gt;
-&lt;p&gt;  &lt;span class=&quot;math inline&quot;&gt;\(\text{DES}\)&lt;/span&gt;算法是这样工作的：若&lt;span class=&quot;math inline&quot;&gt;\(\text{Mode}\)&lt;/span&gt;为加密，则用&lt;span class=&quot;math inline&quot;&gt;\(\text{Key}\)&lt;/span&gt;去把数据&lt;span class=&quot;math inline&quot;&gt;\(\text{Date}\)&lt;/span&gt;进行加密，生成&lt;span class=&quot;math inline&quot;&gt;\(\text{Date}\)&lt;/span&gt;的密码形式（64位）作为&lt;span class=&quot;math inline&quot;&gt;\(\text{DES}的输出结果；若\)&lt;/span&gt;为解密，则用&lt;span class=&quot;math inline&quot;&gt;\(\text{Key}\)&lt;/span&gt;去把密码形式的数据&lt;span class=&quot;math inline&quot;&gt;\(\text{Data}\)&lt;/span&gt;解密，还原为&lt;span class=&quot;math inline&quot;&gt;\(\text{Date}\)&lt;/span&gt;的明码形式（64位）作为&lt;span class=&quot;math inline&quot;&gt;\(\text{DES}\)&lt;/span&gt;的输出结果。在通信网络的两端，双方约定一致的&lt;span class=&quot;math inline&quot;&gt;\(\text{Key}\)&lt;/span&gt;，在通信的源点用&lt;span class=&quot;math inline&quot;&gt;\(\text{Key}\)&lt;/span&gt;对核心数据进行&lt;span class=&quot;math inline&quot;&gt;\(\text{DES}\)&lt;/span&gt;加密，然后以密码形式在公共通信网（如电话网）中传输到通信网络的终点，数据到达目的地后，用同样的&lt;span class=&quot;math inline&quot;&gt;\(\text{Key}\)&lt;/span&gt;对密码数据进行解密，便再现了明码形式的核心数据。这样，便保证了核心数据（如&lt;span class=&quot;math inline&quot;&gt;\(\text{PIN、MAC}\)&lt;/span&gt;等）在公共通信网中传输的安全性和可靠性。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="信息安全" scheme="https://chagelo.github.io/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
-    
-    
-      <category term="DES" scheme="https://chagelo.github.io/tags/DES/"/>
-    
-      <category term="数据加密" scheme="https://chagelo.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/"/>
     
   </entry>
   
