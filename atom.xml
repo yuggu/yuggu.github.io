@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chagelo.github.io/"/>
-  <updated>2021-01-31T09:13:41.367Z</updated>
+  <updated>2021-02-01T05:00:46.415Z</updated>
   <id>https://chagelo.github.io/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>离散数学 集合论</title>
+    <link href="https://chagelo.github.io/2021/02/01/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6-%E9%9B%86%E5%90%88%E8%AE%BA/"/>
+    <id>https://chagelo.github.io/2021/02/01/离散数学-集合论/</id>
+    <published>2021-02-01T04:57:34.000Z</published>
+    <updated>2021-02-01T05:00:46.415Z</updated>
+    
+    <content type="html"><![CDATA[<p>{1}</p><h2 id="集合">集合</h2><p>集合中的元素可以是任何对象</p><h3 id="集合表示">集合表示</h3><ol type="1"><li>枚举法</li><li>叙述法：具有某种性质的元素</li><li>文氏图</li></ol><h3 id="集合基数">集合基数</h3><ol type="1"><li>集合A中的元素的个数是|A|；</li><li>若一个集合的基数是有限的，则该集合为有限集</li><li>若一个集合的基数是无限的，则称该集合为无限集</li></ol><p><span class="math display">\[A = {a,b,c},|A| = 3\]</span></p><p><span class="math display">\[B = {a,{b,c}},|B| = 2\]</span></p><h3 id="空集">空集</h3><p>空集是唯一的</p><p><span class="math inline">\(|\emptyset| = 0,|{\emptyset}| = 1\)</span></p><h3 id="全集">全集</h3><p>全集在文氏图中一般用方形表示；</p><h3 id="元素的基本特性">元素的基本特性</h3><ol type="1"><li>集合中的元素是无序的，<span class="math inline">\({1,2,3,4}\)</span>与<span class="math inline">\({2,3,1,4}\)</span>相同</li><li>集合中的元素是不同的，<span class="math inline">\({1,2,2,3,4,3,4,2}\)</span>与<span class="math inline">\({1,2,3,4}\)</span>相同</li></ol><p><strong>外延性原理</strong></p><p>两个集合<span class="math inline">\(A,B\)</span>相等，当且仅当他们的元素完全相同，记<span class="math inline">\(A=B\)</span>，否则<span class="math inline">\(A\)</span>和<span class="math inline">\(B\)</span>不相同，记作<span class="math inline">\(A\neq B\)</span>；</p><p><strong>定理</strong></p><p>设<span class="math inline">\(A,B\)</span>为任意两个集合，则<span class="math inline">\(A=B\iff A\subseteq B,B\subseteq A\)</span></p><p>证明两个集合相等，证明<span class="math inline">\(A\subseteq B\)</span>同时<span class="math inline">\(B\subseteq A\)</span></p><p><strong>幂集</strong></p><p><span class="math inline">\(A\)</span>为任意集合，把A的所有不同子集构成的集合叫做A的幂集，记作<span class="math inline">\(P(A)\)</span></p><p>比如<span class="math inline">\(A = {a,{b,c}}\)</span>，<span class="math inline">\(P(A)={\emptyset, {a}, {b,c},{a,{b,c}}}\)</span></p><h3 id="集合的运算">集合的运算</h3><ol type="1"><li>并集</li><li>交集</li><li>补集，设<span class="math inline">\(U\)</span>是全集，则集合<span class="math inline">\(A\)</span>的补集定义为：<span class="math inline">\(\overline A = {x|x\notin A}\)</span></li><li>差集 ew</li><li>对称差，<span class="math inline">\(A\)</span>与<span class="math inline">\(B\)</span>的对称差就是只属于<span class="math inline">\(A\)</span>的和只属于<span class="math inline">\(B\)</span>的元素的并</li></ol><p><strong>运算定律</strong></p><ol type="1"><li>幂等律：<span class="math inline">\(A\cup A \cup ... A= A,A\cap A \cap ... A= A\)</span></li><li>同一律：<span class="math inline">\(A\cup \emptyset = A ,A\cap U = A\)</span></li><li>零律： <span class="math inline">\(A\cup U = U, A\cap \emptyset = \emptyset\)</span></li><li>德摩根律，交换律，结合律，分配律</li></ol><p><img src="/images/德摩根律.png"></p><h3 id="不可数集合与可数集合">不可数集合与可数集合</h3><p>如何比较集合的大小，对于两个有限集合，只需要比较集合的基数；</p><p><strong>等势</strong></p><p>如果两个集合的所有元素具有一种相互的一一映射关系，那么两个集合是等势的；</p><p><strong>可数集合</strong></p><p>凡是与自然数集合<span class="math inline">\(\text{N}\)</span>等势的集合，成为可数集合（countable set）</p><p>正奇数集合、素数集合、有理数集合都是可数集合</p><p>正奇数集合、素数集合是自然数集合的子集，然而它们是与自然数集合是等势的，而有理数集合元素比自然数集合多得多，它们仍然是等势的；</p><p>因此我们可以意识到，两个无限集合的“大小”已经不能单纯使用集合中的元素个数来衡量。<span class="math inline">\(aleph_0\)</span>表示一切可数集合的基数，是一种抽象的表达；</p><p><strong>不可数集合</strong></p><p>开区间<span class="math inline">\((0,1)\)</span>称不可数集合，凡是与<span class="math inline">\((0,1)\)</span>等势的集合成为不可数集合，该类集合的基数为<span class="math inline">\(\aleph\)</span></p><p>实数集合是不可数集合</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;{1}&lt;/p&gt;
+&lt;h2 id=&quot;集合&quot;&gt;集合&lt;/h2&gt;
+&lt;p&gt;集合中的元素可以是任何对象&lt;/p&gt;
+&lt;h3 id=&quot;集合表示&quot;&gt;集合表示&lt;/h3&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;枚举法&lt;/li&gt;
+&lt;li&gt;叙述法：具有某种性质的元素&lt;/li&gt;
+&lt;li&gt;文氏图
+      
+    
+    </summary>
+    
+      <category term="Note" scheme="https://chagelo.github.io/categories/Note/"/>
+    
+      <category term="离散数学" scheme="https://chagelo.github.io/categories/Note/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/"/>
+    
+    
+      <category term="note" scheme="https://chagelo.github.io/tags/note/"/>
+    
+      <category term="基础学科" scheme="https://chagelo.github.io/tags/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/"/>
+    
+  </entry>
   
   <entry>
     <title>Primer 变量与基本数据类型</title>
@@ -573,28 +609,6 @@
       <category term="字符串" scheme="https://chagelo.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
       <category term="kmp" scheme="https://chagelo.github.io/tags/kmp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[ABC143] E.Travel by Car</title>
-    <link href="https://chagelo.github.io/2019/10/22/ABC143-E.Travel-by-Car/"/>
-    <id>https://chagelo.github.io/2019/10/22/ABC143-E.Travel-by-Car/</id>
-    <published>2019-10-22T13:33:51.000Z</published>
-    <updated>2019-10-24T06:55:15.304Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="链接">链接</h3><p><a href="https://atcoder.jp/contests/abc143/tasks/abc143_e" target="_blank" rel="noopener"><span class="math inline">\(\text{ABC143 E - Travel by Car}\)</span></a></p><h3 id="题意">题意</h3><p>  给你一个由<span class="math inline">\(n\)</span>个城镇（编号<span class="math inline">\(1\)</span>到<span class="math inline">\(n\)</span>）和<span class="math inline">\(m\)</span>条路组成的无向图，第<span class="math inline">\(i\)</span>条路的距离为<span class="math inline">\(C_i\)</span>； 你将要乘车去一些城镇旅游，你的汽车的油箱的容量是<span class="math inline">\(L\)</span>，在路上行驶<span class="math inline">\(1\)</span>单位的距离将消耗<span class="math inline">\(1\)</span>单位的油，在你旅游途中的每个城镇，你都可以选择加油与不加油，选择加油，你可以将你油箱加满油；现在将对你进行<span class="math inline">\(Q\)</span>次询问，每次询问从城镇<span class="math inline">\(S_i\)</span>到城镇<span class="math inline">\(T_i\)</span>，旅途中的最少加油次数，如果不能抵达输出<span class="math inline">\(-1\)</span>；</p><p>  数据范围：<span class="math inline">\(2\leq n\leq 300,0\leq M\leq \frac{n(n-1)}{2},1\leq L\leq 10^{9}，S_i\neq T_i,1\leq C_i\leq 10^{9},1\leq Q\leq N(N-1)\)</span>.</p><a id="more"></a><h3 id="分析">分析</h3><p>  这里的查询最多可以有<span class="math inline">\(N(N-1)\)</span>个，所以我们考虑预处理出任意两点之间的答案；</p><p>  首先可以寻找出所有的起始终止城镇<span class="math inline">\((s_i,t_i)\)</span>，使得从<span class="math inline">\(s_i\)</span>到<span class="math inline">\(t_i\)</span>加一次油即可到达，可以通过计算任意两点之间的最短路得出，然后我们在此基础上处理，若两个 城镇之间距离<span class="math inline">\(\leq L\)</span>，那么它们之间仅加一次油即可，所以将该条边权值赋为<span class="math inline">\(1\)</span>，若<span class="math inline">\(&gt;L\)</span>则赋值为<span class="math inline">\(\infty\)</span>，由此计算任意两城镇之间最短路，此时的最短路，即是最少加油次数；</p><p>  对于任意<span class="math inline">\((s_i,t_i)\)</span>，我们都贪心的考虑，将路径分割成若干段，每一段距离都<span class="math inline">\(\leq L\)</span>，我们希望得到尽量少的段，所以我们预处理了任意两城市之间的最短路；</p><p>  注意开始油箱是满的；</p><h3 id="代码">代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> clr(a,b) memset(a,b,sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, l, q, cost[<span class="number">304</span>][<span class="number">305</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">floyd</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; k++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">                cost[i][j] = min(cost[i][j], cost[i][k] + cost[k][j]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen("test.in", "r", stdin);</span></span><br><span class="line">    <span class="comment">//freopen("test.out", "w", stdout);</span></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; l;</span><br><span class="line">    <span class="keyword">int</span> a, b, c;</span><br><span class="line">    clr(cost, inf);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">        cost[a][b] = cost[b][a] = c;</span><br><span class="line">    &#125;</span><br><span class="line">    floyd();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">            cost[i][j] = (cost[i][j] &lt;= l ? <span class="number">1</span> : inf);</span><br><span class="line">    floyd();</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; q;</span><br><span class="line">    <span class="keyword">while</span> (q--) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; (cost[a][b] == inf ? <span class="number">-1</span> : cost[a][b] - <span class="number">1</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;链接&quot;&gt;链接&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://atcoder.jp/contests/abc143/tasks/abc143_e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;span class=&quot;math inline&quot;&gt;\(\text{ABC143 E - Travel by Car}\)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;题意&quot;&gt;题意&lt;/h3&gt;
-&lt;p&gt;  给你一个由&lt;span class=&quot;math inline&quot;&gt;\(n\)&lt;/span&gt;个城镇（编号&lt;span class=&quot;math inline&quot;&gt;\(1\)&lt;/span&gt;到&lt;span class=&quot;math inline&quot;&gt;\(n\)&lt;/span&gt;）和&lt;span class=&quot;math inline&quot;&gt;\(m\)&lt;/span&gt;条路组成的无向图，第&lt;span class=&quot;math inline&quot;&gt;\(i\)&lt;/span&gt;条路的距离为&lt;span class=&quot;math inline&quot;&gt;\(C_i\)&lt;/span&gt;； 你将要乘车去一些城镇旅游，你的汽车的油箱的容量是&lt;span class=&quot;math inline&quot;&gt;\(L\)&lt;/span&gt;，在路上行驶&lt;span class=&quot;math inline&quot;&gt;\(1\)&lt;/span&gt;单位的距离将消耗&lt;span class=&quot;math inline&quot;&gt;\(1\)&lt;/span&gt;单位的油，在你旅游途中的每个城镇，你都可以选择加油与不加油，选择加油，你可以将你油箱加满油；现在将对你进行&lt;span class=&quot;math inline&quot;&gt;\(Q\)&lt;/span&gt;次询问，每次询问从城镇&lt;span class=&quot;math inline&quot;&gt;\(S_i\)&lt;/span&gt;到城镇&lt;span class=&quot;math inline&quot;&gt;\(T_i\)&lt;/span&gt;，旅途中的最少加油次数，如果不能抵达输出&lt;span class=&quot;math inline&quot;&gt;\(-1\)&lt;/span&gt;；&lt;/p&gt;
-&lt;p&gt;  数据范围：&lt;span class=&quot;math inline&quot;&gt;\(2\leq n\leq 300,0\leq M\leq \frac{n(n-1)}{2},1\leq L\leq 10^{9}，S_i\neq T_i,1\leq C_i\leq 10^{9},1\leq Q\leq N(N-1)\)&lt;/span&gt;.&lt;/p&gt;
-    
-    </summary>
-    
     
   </entry>
   
