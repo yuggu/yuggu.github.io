@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chagelo.github.io/"/>
-  <updated>2021-02-01T05:00:46.415Z</updated>
+  <updated>2021-02-02T03:24:42.076Z</updated>
   <id>https://chagelo.github.io/</id>
   
   <author>
@@ -17,13 +17,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>离散数学 命词逻辑</title>
+    <link href="https://chagelo.github.io/2021/02/02/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6-%E5%90%8D%E8%AF%8D%E9%80%BB%E8%BE%91/"/>
+    <id>https://chagelo.github.io/2021/02/02/离散数学-名词逻辑/</id>
+    <published>2021-02-02T03:22:26.000Z</published>
+    <updated>2021-02-02T03:24:42.076Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="命词逻辑">命词逻辑</h3><ol type="1"><li>否定联结词</li><li>合取联结词</li><li>析取联结词</li><li>蕴含联结词<span class="math inline">\(P\rightarrow Q\)</span></li><li>等价联结词</li></ol><p>五个联结词优先顺序为：否定、合区、析取、蕴含、等价；</p><p>比如<code>雪是白的当且仅当北京是中国的首都</code>，这是一个等价命题，其中<code>雪是白的</code>是真命题，<code>北京是中国的首都</code>也是真命题，因此这个命题是一个真命题；虽然两个自命题之间没有联系；</p><p>而对<code>如果2是偶数，则天上会吊馅饼</code>，这是一个蕴含命题，<code>2是偶数</code>是真值为真的前件，<code>天上掉馅饼</code>是真值为假的后件，由蕴含命题的特性，这个命题的真值是假；</p><p>因此，<strong>一个复合命题的真值只取决于其中的原子命题的真值，而与具体的命题内容无关。</strong></p><p><strong>命题变元</strong></p><p>当复合命题中的原子命题是变元时，此复合命题也为命题变元的函数，可称为“真值函数”或“命题公式”；如：</p><p><span class="math display">\[G = P \vee Q \rightarrow \lnot R\]</span></p><p><strong>命题公式</strong></p><p>原子命题 <span class="math inline">\(P,Q,R\)</span> 是最简单的命题公式；</p><p>实际应用时，常用二元树表达命题公式</p><p><strong>真值表</strong></p><p>由公式在其所有可能的解释（也就是原子命题所有取值可能的组合）下所取真值构成的表，成为真值表；</p><p><strong>命题公式分类</strong></p><ul><li>永真公式，也叫做<strong>重言式</strong>；</li><li>永假公式，有时也称永假公式为不可满足公式，或<strong>矛盾式</strong>；</li><li>一个公式是可满足公式，如果他不是永假的；</li></ul><p><strong>基本等价公式</strong></p><p>这里只写出一些不好写的公式蕴含式</p><ol type="1"><li>蕴含式：<span class="math inline">\(G\rightarrow H = \lnot G\wedge H\)</span></li><li>假言易式：<span class="math inline">\(G\rightarrow H = \lnot H \rightarrow \lnot G\)</span></li><li>等价否定式：<span class="math inline">\(G\iff H = \lnot G \iff \lnot H\)</span></li><li>归谬式：$(GH) (GH) = G $</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;命词逻辑&quot;&gt;命词逻辑&lt;/h3&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;否定联结词&lt;/li&gt;
+&lt;li&gt;合取联结词&lt;/li&gt;
+&lt;li&gt;析取联结词&lt;/li&gt;
+&lt;li&gt;蕴含联结词&lt;span class=&quot;math inline&quot;&gt;\(P\rightarrow Q\
+      
+    
+    </summary>
+    
+      <category term="Note" scheme="https://chagelo.github.io/categories/Note/"/>
+    
+      <category term="离散数学" scheme="https://chagelo.github.io/categories/Note/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/"/>
+    
+    
+      <category term="note" scheme="https://chagelo.github.io/tags/note/"/>
+    
+      <category term="基础学科" scheme="https://chagelo.github.io/tags/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>离散数学 集合论</title>
     <link href="https://chagelo.github.io/2021/02/01/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6-%E9%9B%86%E5%90%88%E8%AE%BA/"/>
     <id>https://chagelo.github.io/2021/02/01/离散数学-集合论/</id>
     <published>2021-02-01T04:57:34.000Z</published>
-    <updated>2021-02-01T05:00:46.415Z</updated>
+    <updated>2021-02-02T03:24:37.952Z</updated>
     
-    <content type="html"><![CDATA[<p>{1}</p><h2 id="集合">集合</h2><p>集合中的元素可以是任何对象</p><h3 id="集合表示">集合表示</h3><ol type="1"><li>枚举法</li><li>叙述法：具有某种性质的元素</li><li>文氏图</li></ol><h3 id="集合基数">集合基数</h3><ol type="1"><li>集合A中的元素的个数是|A|；</li><li>若一个集合的基数是有限的，则该集合为有限集</li><li>若一个集合的基数是无限的，则称该集合为无限集</li></ol><p><span class="math display">\[A = {a,b,c},|A| = 3\]</span></p><p><span class="math display">\[B = {a,{b,c}},|B| = 2\]</span></p><h3 id="空集">空集</h3><p>空集是唯一的</p><p><span class="math inline">\(|\emptyset| = 0,|{\emptyset}| = 1\)</span></p><h3 id="全集">全集</h3><p>全集在文氏图中一般用方形表示；</p><h3 id="元素的基本特性">元素的基本特性</h3><ol type="1"><li>集合中的元素是无序的，<span class="math inline">\({1,2,3,4}\)</span>与<span class="math inline">\({2,3,1,4}\)</span>相同</li><li>集合中的元素是不同的，<span class="math inline">\({1,2,2,3,4,3,4,2}\)</span>与<span class="math inline">\({1,2,3,4}\)</span>相同</li></ol><p><strong>外延性原理</strong></p><p>两个集合<span class="math inline">\(A,B\)</span>相等，当且仅当他们的元素完全相同，记<span class="math inline">\(A=B\)</span>，否则<span class="math inline">\(A\)</span>和<span class="math inline">\(B\)</span>不相同，记作<span class="math inline">\(A\neq B\)</span>；</p><p><strong>定理</strong></p><p>设<span class="math inline">\(A,B\)</span>为任意两个集合，则<span class="math inline">\(A=B\iff A\subseteq B,B\subseteq A\)</span></p><p>证明两个集合相等，证明<span class="math inline">\(A\subseteq B\)</span>同时<span class="math inline">\(B\subseteq A\)</span></p><p><strong>幂集</strong></p><p><span class="math inline">\(A\)</span>为任意集合，把A的所有不同子集构成的集合叫做A的幂集，记作<span class="math inline">\(P(A)\)</span></p><p>比如<span class="math inline">\(A = {a,{b,c}}\)</span>，<span class="math inline">\(P(A)={\emptyset, {a}, {b,c},{a,{b,c}}}\)</span></p><h3 id="集合的运算">集合的运算</h3><ol type="1"><li>并集</li><li>交集</li><li>补集，设<span class="math inline">\(U\)</span>是全集，则集合<span class="math inline">\(A\)</span>的补集定义为：<span class="math inline">\(\overline A = {x|x\notin A}\)</span></li><li>差集 ew</li><li>对称差，<span class="math inline">\(A\)</span>与<span class="math inline">\(B\)</span>的对称差就是只属于<span class="math inline">\(A\)</span>的和只属于<span class="math inline">\(B\)</span>的元素的并</li></ol><p><strong>运算定律</strong></p><ol type="1"><li>幂等律：<span class="math inline">\(A\cup A \cup ... A= A,A\cap A \cap ... A= A\)</span></li><li>同一律：<span class="math inline">\(A\cup \emptyset = A ,A\cap U = A\)</span></li><li>零律： <span class="math inline">\(A\cup U = U, A\cap \emptyset = \emptyset\)</span></li><li>德摩根律，交换律，结合律，分配律</li></ol><p><img src="/images/德摩根律.png"></p><h3 id="不可数集合与可数集合">不可数集合与可数集合</h3><p>如何比较集合的大小，对于两个有限集合，只需要比较集合的基数；</p><p><strong>等势</strong></p><p>如果两个集合的所有元素具有一种相互的一一映射关系，那么两个集合是等势的；</p><p><strong>可数集合</strong></p><p>凡是与自然数集合<span class="math inline">\(\text{N}\)</span>等势的集合，成为可数集合（countable set）</p><p>正奇数集合、素数集合、有理数集合都是可数集合</p><p>正奇数集合、素数集合是自然数集合的子集，然而它们是与自然数集合是等势的，而有理数集合元素比自然数集合多得多，它们仍然是等势的；</p><p>因此我们可以意识到，两个无限集合的“大小”已经不能单纯使用集合中的元素个数来衡量。<span class="math inline">\(aleph_0\)</span>表示一切可数集合的基数，是一种抽象的表达；</p><p><strong>不可数集合</strong></p><p>开区间<span class="math inline">\((0,1)\)</span>称不可数集合，凡是与<span class="math inline">\((0,1)\)</span>等势的集合成为不可数集合，该类集合的基数为<span class="math inline">\(\aleph\)</span></p><p>实数集合是不可数集合</p>]]></content>
+    <content type="html"><![CDATA[<p>{1}</p><h2 id="集合">集合</h2><p>集合中的元素可以是任何对象</p><h3 id="集合表示">集合表示</h3><ol type="1"><li>枚举法</li><li>叙述法：具有某种性质的元素</li><li>文氏图</li></ol><h3 id="集合基数">集合基数</h3><ol type="1"><li>集合A中的元素的个数是|A|；</li><li>若一个集合的基数是有限的，则该集合为有限集</li><li>若一个集合的基数是无限的，则称该集合为无限集</li></ol><p><span class="math display">\[A = {a,b,c},|A| = 3\]</span></p><p><span class="math display">\[B = {a,{b,c}},|B| = 2\]</span></p><h3 id="空集">空集</h3><p>空集是唯一的</p><p><span class="math inline">\(|\emptyset| = 0,|{\emptyset}| = 1\)</span></p><h3 id="全集">全集</h3><p>全集在文氏图中一般用方形表示；</p><h3 id="元素的基本特性">元素的基本特性</h3><ol type="1"><li>集合中的元素是无序的，<span class="math inline">\(\{1,2,3,4\}\)</span>与<span class="math inline">\(\{2,3,1,4\}\)</span>相同</li><li>集合中的元素是不同的，<span class="math inline">\(\{1,2,2,3,4,3,4,2\}\)</span>与<span class="math inline">\(\{1,2,3,4\}\)</span>相同</li></ol><p><strong>外延性原理</strong></p><p>两个集合<span class="math inline">\(A,B\)</span>相等，当且仅当他们的元素完全相同，记<span class="math inline">\(A=B\)</span>，否则<span class="math inline">\(A\)</span>和<span class="math inline">\(B\)</span>不相同，记作<span class="math inline">\(A\neq B\)</span>；</p><p><strong>定理</strong></p><p>设<span class="math inline">\(A,B\)</span>为任意两个集合，则<span class="math inline">\(A=B\iff A\subseteq B,B\subseteq A\)</span></p><p>证明两个集合相等，证明<span class="math inline">\(A\subseteq B\)</span>同时<span class="math inline">\(B\subseteq A\)</span></p><p><strong>幂集</strong></p><p><span class="math inline">\(A\)</span>为任意集合，把A的所有不同子集构成的集合叫做A的幂集，记作<span class="math inline">\(P(A)\)</span></p><p>比如<span class="math inline">\(A = \{a,\{b,c\}\}\)</span>，<span class="math inline">\(P(A)=\{\emptyset, \{a\}, \{b,c\},\{a,\{b,c\}\}\}\)</span></p><h3 id="集合的运算">集合的运算</h3><ol type="1"><li>并集</li><li>交集</li><li>补集，设<span class="math inline">\(U\)</span>是全集，则集合<span class="math inline">\(A\)</span>的补集定义为：<span class="math inline">\(\overline A = \{x|x\notin A\}\)</span></li><li>差集</li><li>对称差，<span class="math inline">\(A\)</span>与<span class="math inline">\(B\)</span>的对称差就是只属于<span class="math inline">\(A\)</span>的和只属于<span class="math inline">\(B\)</span>的元素的并</li></ol><p><strong>运算定律</strong></p><ol type="1"><li>幂等律：<span class="math inline">\(A\cup A \cup ... A= A,A\cap A \cap ... A= A\)</span></li><li>同一律：<span class="math inline">\(A\cup \emptyset = A ,A\cap U = A\)</span></li><li>零律： <span class="math inline">\(A\cup U = U, A\cap \emptyset = \emptyset\)</span></li><li>德摩根律，交换律，结合律，分配律</li></ol><p><img src="/images/德摩根律.png"></p><h3 id="不可数集合与可数集合">不可数集合与可数集合</h3><p>如何比较集合的大小，对于两个有限集合，只需要比较集合的基数；</p><p><strong>等势</strong></p><p>如果两个集合的所有元素具有一种相互的一一映射关系，那么两个集合是等势的；</p><p><strong>可数集合</strong></p><p>凡是与自然数集合<span class="math inline">\(\text{N}\)</span>等势的集合，成为可数集合（countable set）</p><p>正奇数集合、素数集合、有理数集合都是可数集合</p><p>正奇数集合、素数集合是自然数集合的子集，然而它们是与自然数集合是等势的，而有理数集合元素比自然数集合多得多，它们仍然是等势的；</p><p>因此我们可以意识到，两个无限集合的“大小”已经不能单纯使用集合中的元素个数来衡量。<span class="math inline">\(aleph_0\)</span>表示一切可数集合的基数，是一种抽象的表达；</p><p><strong>不可数集合</strong></p><p>开区间<span class="math inline">\((0,1)\)</span>称不可数集合，凡是与<span class="math inline">\((0,1)\)</span>等势的集合成为不可数集合，该类集合的基数为<span class="math inline">\(\aleph\)</span></p><p>实数集合是不可数集合</p>]]></content>
     
     <summary type="html">
     
@@ -572,43 +606,6 @@
       <category term="I/O" scheme="https://chagelo.github.io/tags/I-O/"/>
     
       <category term="缓冲区" scheme="https://chagelo.github.io/tags/%E7%BC%93%E5%86%B2%E5%8C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[Luogu-P3375] KMP字符串匹配</title>
-    <link href="https://chagelo.github.io/2019/10/24/Luogu-P3375-KMP%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/"/>
-    <id>https://chagelo.github.io/2019/10/24/Luogu-P3375-KMP字符串匹配/</id>
-    <published>2019-10-24T12:41:57.000Z</published>
-    <updated>2019-10-28T05:11:13.154Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="链接">链接</h3><p><a href="https://www.luogu.org/problem/P3375" target="_blank" rel="noopener"><span class="math inline">\(\text{Luogu-P3375 KMP字符串匹配}\)</span></a></p><h3 id="题意">题意</h3><p>  输入两个串<span class="math inline">\(s_1、s_2\)</span>，求出<span class="math inline">\(s_2\)</span>在<span class="math inline">\(s_1\)</span>中所有出现的位置（匹配的开始位置），并输出子串的<span class="math inline">\(next\)</span>数组的；</p><p>  数据范围：<span class="math inline">\(s_1\)</span>长度为<span class="math inline">\(n\)</span>，<span class="math inline">\(s_2\)</span>长度为<span class="math inline">\(M\)</span>，<span class="math inline">\(n\leq 1000000,m\leq 1000000\)</span>.</p><h3 id="分析">分析</h3><p>  这是一个<span class="math inline">\(kmp\)</span>的模板题；</p><p>  这里我用了<span class="math inline">\(Java\)</span>来写，然而一直TLE，不知什么原因，最后发现了原因，在于String的使用；</p><p>  在<span class="math inline">\(ACM\)</span>竞赛中需要特别注意Java中String及与其有关的一些函数；String是一个不可变的对象，每次对String进行修改时都等同于生成了一个新的String临时对象，如果需要经常对其修改，那么这是相当浪费时间的；</p><p>  在此题中，我使用了一个String.format()函数来控制格式的输出，这个函数会返回一个String，而我又在for里反复使用了它，所以会TLE；我试了仅仅使用String.format()输出了一个元素，是不会超时的，所以仅仅是<span class="math inline">\(O(1)\)</span>的使用它是不会超时的。</p><a id="more"></a><h3 id="代码">代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;  </span><br><span class="line"><span class="keyword">import</span> java.util.*;  </span><br><span class="line"><span class="keyword">import</span> java.lang.*;  </span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> [] next = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">1000003</span>];  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> n, m;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">        Scanner input =<span class="keyword">new</span> Scanner(<span class="keyword">new</span> BufferedInputStream(System.in));  </span><br><span class="line">        PrintWriter out = <span class="keyword">new</span> PrintWriter(<span class="keyword">new</span> BufferedOutputStream(System.out));  </span><br><span class="line">        String s1 = input.nextLine(), s2 = input.nextLine();  </span><br><span class="line">        n = s1.length();  </span><br><span class="line">        m = s2.length();  </span><br><span class="line">        kmp(s2);  </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, j = <span class="number">0</span>; i &lt;= n; i++) &#123;  </span><br><span class="line">            <span class="keyword">while</span> (j &gt; <span class="number">0</span> &amp;&amp; (j == m || s1.charAt(i - <span class="number">1</span>) != s2.charAt(j)))j = next[j];  </span><br><span class="line">            <span class="keyword">if</span> (s1.charAt(i - <span class="number">1</span>) == s2.charAt(j)) &#123;  </span><br><span class="line">                j++;  </span><br><span class="line">            &#125;  </span><br><span class="line">            <span class="keyword">if</span> (j == m) &#123;  </span><br><span class="line">                out.println(i - j + <span class="number">1</span>);  </span><br><span class="line">                <span class="comment">// 在s1中，和s2匹配的各串之间可以覆盖  </span></span><br><span class="line">                j = next[j];  </span><br><span class="line">                <span class="comment">// j = 0 在s1中，和s2匹配的各串之间可以覆盖  </span></span><br><span class="line">                <span class="comment">// 即下一个匹配的串的开始位置，必须在上一个匹配的串的结束位置的后面  </span></span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m - <span class="number">1</span>; i++) &#123;  </span><br><span class="line">           out.print(next[i] + <span class="string">" "</span>);  </span><br><span class="line">        &#125;  </span><br><span class="line">        out.println(String.format(<span class="string">"%d"</span>,next[m]));  </span><br><span class="line">        out.flush();  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">kmp</span><span class="params">(String s)</span> </span>&#123;  </span><br><span class="line">        next[<span class="number">1</span>] = <span class="number">0</span>;  </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= m; i++) &#123;  </span><br><span class="line">            <span class="keyword">while</span> (j &gt; <span class="number">0</span> &amp;&amp; s.charAt(i - <span class="number">1</span>) != s.charAt(j)) j = next[j];  </span><br><span class="line">            <span class="keyword">if</span> (s.charAt(i - <span class="number">1</span>) == s.charAt(j)) j++;  </span><br><span class="line">            next[i] = j;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;链接&quot;&gt;链接&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.luogu.org/problem/P3375&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;span class=&quot;math inline&quot;&gt;\(\text{Luogu-P3375 KMP字符串匹配}\)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;题意&quot;&gt;题意&lt;/h3&gt;
-&lt;p&gt;  输入两个串&lt;span class=&quot;math inline&quot;&gt;\(s_1、s_2\)&lt;/span&gt;，求出&lt;span class=&quot;math inline&quot;&gt;\(s_2\)&lt;/span&gt;在&lt;span class=&quot;math inline&quot;&gt;\(s_1\)&lt;/span&gt;中所有出现的位置（匹配的开始位置），并输出子串的&lt;span class=&quot;math inline&quot;&gt;\(next\)&lt;/span&gt;数组的；&lt;/p&gt;
-&lt;p&gt;  数据范围：&lt;span class=&quot;math inline&quot;&gt;\(s_1\)&lt;/span&gt;长度为&lt;span class=&quot;math inline&quot;&gt;\(n\)&lt;/span&gt;，&lt;span class=&quot;math inline&quot;&gt;\(s_2\)&lt;/span&gt;长度为&lt;span class=&quot;math inline&quot;&gt;\(M\)&lt;/span&gt;，&lt;span class=&quot;math inline&quot;&gt;\(n\leq 1000000,m\leq 1000000\)&lt;/span&gt;.&lt;/p&gt;
-&lt;h3 id=&quot;分析&quot;&gt;分析&lt;/h3&gt;
-&lt;p&gt;  这是一个&lt;span class=&quot;math inline&quot;&gt;\(kmp\)&lt;/span&gt;的模板题；&lt;/p&gt;
-&lt;p&gt;  这里我用了&lt;span class=&quot;math inline&quot;&gt;\(Java\)&lt;/span&gt;来写，然而一直TLE，不知什么原因，最后发现了原因，在于String的使用；&lt;/p&gt;
-&lt;p&gt;  在&lt;span class=&quot;math inline&quot;&gt;\(ACM\)&lt;/span&gt;竞赛中需要特别注意Java中String及与其有关的一些函数；String是一个不可变的对象，每次对String进行修改时都等同于生成了一个新的String临时对象，如果需要经常对其修改，那么这是相当浪费时间的；&lt;/p&gt;
-&lt;p&gt;  在此题中，我使用了一个String.format()函数来控制格式的输出，这个函数会返回一个String，而我又在for里反复使用了它，所以会TLE；我试了仅仅使用String.format()输出了一个元素，是不会超时的，所以仅仅是&lt;span class=&quot;math inline&quot;&gt;\(O(1)\)&lt;/span&gt;的使用它是不会超时的。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="https://chagelo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="字符串" scheme="https://chagelo.github.io/categories/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-      <category term="kmp" scheme="https://chagelo.github.io/categories/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2/kmp/"/>
-    
-    
-      <category term="字符串" scheme="https://chagelo.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-      <category term="kmp" scheme="https://chagelo.github.io/tags/kmp/"/>
     
   </entry>
   
