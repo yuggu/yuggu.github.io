@@ -381,6 +381,440 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chagelo.github.io/2019/09/13/POJ-1155-TELE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chagelo">
+      <meta itemprop="description" content="life ends with programming.">
+      <meta itemprop="image" content="/images/t4.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="chagelo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/09/13/POJ-1155-TELE/" class="post-title-link" itemprop="url">[POJ - 1155] TELE</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-13 13:01:41" itemprop="dateCreated datePublished" datetime="2019-09-13T13:01:41+08:00">2019-09-13</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-22 15:04:13" itemprop="dateModified" datetime="2019-09-22T15:04:13+08:00">2019-09-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/dp/" itemprop="url" rel="index"><span itemprop="name">dp</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/dp/树形dp/" itemprop="url" rel="index"><span itemprop="name">树形dp</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.5k</span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="链接">链接</h3>
+<p><a href="http://poj.org/problem?id=1155" target="_blank" rel="noopener"><span class="math inline">\(\text{POJ - 1155 TELE}\)</span></a></p>
+<h3 id="题意">题意</h3>
+<p>  这里有<span class="math inline">\(m\)</span>个用户想要使用电视，然而它们需要电视网络信号进行传播信号，整个电视网络由信号发射器和用户组成，它的形状是一棵树，用户是叶子结点，现在给出了连接发射器与发射器或用户之间的信号所需要花费的金钱，<span class="math inline">\(m\)</span>个用户每个用户使用电视都会支付一些金钱，问可以观看电视的用户的数量最大是多少，以致电视网络的搭建不会亏损金钱；整颗树共<span class="math inline">\(n\)</span>个节点，</p>
+<p>  输入格式：第一行两个整数<span class="math inline">\(n,m\)</span>，表示树中结点个数和叶子结点个数，树根一定是1，其他发射器编号从2到<span class="math inline">\(n-m\)</span>，用户即叶子结点编号从<span class="math inline">\(n-m+1\)</span>到<span class="math inline">\(n\)</span>，接下来<span class="math inline">\(n-m\)</span>行，第<span class="math inline">\(i\)</span>行<code>K A1 C1...AK CK</code>，表示与<span class="math inline">\(i\)</span>个发射器相连接的结点有<span class="math inline">\(k\)</span>个，对应编号是<span class="math inline">\(a_j\)</span>，连接<span class="math inline">\(i\)</span>与<span class="math inline">\(a_j\)</span>需要花费的费用是<span class="math inline">\(c_j\)</span>，最后一行<span class="math inline">\(m\)</span>个整数，表示<span class="math inline">\(m\)</span>个用户使用电视会支付的金钱。</p>
+<p>  数据范围：<span class="math inline">\(2\leq n\leq 3000,1\leq m\leq n-1\)</span>.</p>
+<p>  输出格式：输出一行，表示电视网络搭建不亏损情况下，最多可以使用电视的用户的数量。
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/09/13/POJ-1155-TELE/" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </p></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chagelo.github.io/2019/09/12/UVA-1292-Strategic-game/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chagelo">
+      <meta itemprop="description" content="life ends with programming.">
+      <meta itemprop="image" content="/images/t4.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="chagelo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/09/12/UVA-1292-Strategic-game/" class="post-title-link" itemprop="url">[UVA-1292-Strategic] game</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-12 21:37:08" itemprop="dateCreated datePublished" datetime="2019-09-12T21:37:08+08:00">2019-09-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-20 19:07:10" itemprop="dateModified" datetime="2019-09-20T19:07:10+08:00">2019-09-20</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/dp/" itemprop="url" rel="index"><span itemprop="name">dp</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/dp/树形dp/" itemprop="url" rel="index"><span itemprop="name">树形dp</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.3k</span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="链接">链接</h3>
+<p><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=4038" target="_blank" rel="noopener"><span class="math inline">\(\text{UVA - 1292 Strategic game}\)</span></a></p>
+<h3 id="题意">题意</h3>
+<p>  <span class="math inline">\(\text{Bob}\)</span>在玩一款策略游戏，它需要保卫一个城市，很多道路将城市连起来，整体看起来像一棵树，<span class="math inline">\(\text{Bob}\)</span>希望放置尽可能少的士兵到一些城市，包围连接这个城市的道路，士兵只能放在城市上即树的节点上，他可以保护与这个节点相邻的边。</p>
+<p>  输入格式：多组测试样例，每个测试样例的第一行一个整数<span class="math inline">\(n\)</span>，表示城市个数，之后<span class="math inline">\(n\)</span>行每行输入一个城市的信息<code>x:(number) a1,a2...</code>，表示与<span class="math inline">\(x\)</span>城市直接连接的城市有<span class="math inline">\(number\)</span>个，分别为<span class="math inline">\(a_1,a_2,...,a_{number}\)</span></p>
+<p>  数据范围：<span class="math inline">\(0\leq n\leq 1500\)</span>.</p>
+<p>  输出格式：输出一行，表示所需要放置的士兵的最小数量。
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/09/12/UVA-1292-Strategic-game/" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </p></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://chagelo.github.io/2019/09/12/Luogu-P1122-最大子树和/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2058,439 +2492,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chagelo.github.io/2019/09/05/2019南京网络赛-A-The-beautiful-values-of-the-palace/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chagelo">
-      <meta itemprop="description" content="life ends with programming.">
-      <meta itemprop="image" content="/images/t4.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="chagelo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/09/05/2019南京网络赛-A-The-beautiful-values-of-the-palace/" class="post-title-link" itemprop="url">[2019南京网络赛-A] The beautiful values of the palace</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-09-05 18:47:55" itemprop="dateCreated datePublished" datetime="2019-09-05T18:47:55+08:00">2019-09-05</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-09-20 19:27:39" itemprop="dateModified" datetime="2019-09-20T19:27:39+08:00">2019-09-20</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/数据结构/树状数组/" itemprop="url" rel="index"><span itemprop="name">树状数组</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">3.6k</span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="链接">链接</h4>
-<p><a href="https://nanti.jisuanke.com/t/41298" target="_blank" rel="noopener"><span class="math inline">\(\text{2019南京网络赛-A.The beautiful values of the palace}\)</span></a></p>
-<h4 id="题意">题意</h4>
-<p>  有一个<span class="math inline">\(n\times n\)</span>的螺旋数字矩阵，<span class="math inline">\(n\)</span>一定是奇数，若边长为5则如下：</p>
-<p><img src="https://res.jisuanke.com/img/upload/20190826/e188ba2f470e2afbf1d21ac4d1887e2f225dd40b.png"></p>
-<p>  这个矩阵内有<span class="math inline">\(m\)</span>个点是有效的（即有一个值为对应螺旋矩阵该位置的值），其他位置都为0。现在有<span class="math inline">\(p\)</span>次查询<span class="math inline">\((x1,y1,x2,y2)\)</span>，询问<span class="math inline">\((x1,y1,)、(x2,y2)\)</span>所围成的矩阵之间的所有数的数位和的和是多少。</p>
-<p>  输入格式：共<span class="math inline">\(t\)</span>组测试样例，每组样例，第一行三个数<span class="math inline">\(n,m,p\)</span>，接下来<span class="math inline">\(m\)</span>行，每行一组坐标<span class="math inline">\((x,y)\)</span>，告诉<span class="math inline">\(m\)</span>个有效点，之后<span class="math inline">\(p\)</span>行，每行一次查询<span class="math inline">\((x1,y1,x2,y2)\)</span>。</p>
-<p>  数据范围：<span class="math inline">\((t\leq 5,n\leq 10^6),(m,p\leq 10^5)\)</span>.</p>
-<p>  输出格式：每行输出一个查询结果。
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/05/2019南京网络赛-A-The-beautiful-values-of-the-palace/" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chagelo.github.io/2019/09/05/2019宁夏网络赛-F-Moving-On/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chagelo">
-      <meta itemprop="description" content="life ends with programming.">
-      <meta itemprop="image" content="/images/t4.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="chagelo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/09/05/2019宁夏网络赛-F-Moving-On/" class="post-title-link" itemprop="url">[2019宁夏网络赛-F] Moving On</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-09-05 13:09:04" itemprop="dateCreated datePublished" datetime="2019-09-05T13:09:04+08:00">2019-09-05</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-12-24 13:38:27" itemprop="dateModified" datetime="2019-12-24T13:38:27+08:00">2019-12-24</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/图论/" itemprop="url" rel="index"><span itemprop="name">图论</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/图论/最短路/" itemprop="url" rel="index"><span itemprop="name">最短路</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">2.5k</span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="链接">链接</h3>
-<p><a href="https://nanti.jisuanke.com/t/41290" target="_blank" rel="noopener"><span class="math inline">\(\text{2019宁夏网络赛-F.Moving On}\)</span></a></p>
-<h3 id="题意">题意</h3>
-<p>  有<span class="math inline">\(n\)</span>个城市，城市<span class="math inline">\(i\)</span>有一个犯罪值<span class="math inline">\(r_i\)</span>，城市u和v之间的距离是<span class="math inline">\(d[i][j]\)</span>(无向图)，现在有<span class="math inline">\(q\)</span>次查询，每次查询询问从城市<span class="math inline">\(u\)</span>到<span class="math inline">\(v\)</span>，在中途经过的任意城市的犯罪值不超过<span class="math inline">\(w\)</span>的情况下(中途城市不包括<span class="math inline">\(i\)</span>和<span class="math inline">\(j\)</span>)的最短路径是多少。
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/05/2019宁夏网络赛-F-Moving-On/" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2539,7 +2540,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">71</span>
+                    <span class="site-state-item-count">73</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2646,7 +2647,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">45</span>
+                      
+                    
+                    <span class="site-state-item-count">46</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2783,7 +2786,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">60</span>
+                      
+                    
+                    <span class="site-state-item-count">61</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2870,7 +2875,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">216k</span>
+    <span title="站点总字数">221k</span>
   
 
   
