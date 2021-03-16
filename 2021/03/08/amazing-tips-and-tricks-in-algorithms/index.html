@@ -135,18 +135,18 @@
 
 
 
-  <meta name="description" content="这里记录一些在算法中遇到的，令人感到非常惊奇的思路、技巧； 无修改的区间和 这个比较简单，前缀和； 子数组的个数 如果给一个数组，让求数组中连续子数组的总个数，一个比较好的思路是：总的连续子数组的个数等于，以索引0结尾的子数组个数+以索引1结尾的子数组个数+...+以索引n-1结尾的子数组个数；同时，以索引i结尾的子数组的个数等于，以索引i-1结尾的子数组的个数再加个1（只含有下标i的一个">
+  <meta name="description" content="这里记录一些在算法中遇到的，令人感到非常惊奇的思路、技巧；">
 <meta name="keywords" content="思维,算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="amazing tips and tricks in algorithms">
 <meta property="og:url" content="https://chagelo.github.io/2021/03/08/amazing-tips-and-tricks-in-algorithms/index.html">
 <meta property="og:site_name" content="chagelo">
-<meta property="og:description" content="这里记录一些在算法中遇到的，令人感到非常惊奇的思路、技巧； 无修改的区间和 这个比较简单，前缀和； 子数组的个数 如果给一个数组，让求数组中连续子数组的总个数，一个比较好的思路是：总的连续子数组的个数等于，以索引0结尾的子数组个数+以索引1结尾的子数组个数+...+以索引n-1结尾的子数组个数；同时，以索引i结尾的子数组的个数等于，以索引i-1结尾的子数组的个数再加个1（只含有下标i的一个">
+<meta property="og:description" content="这里记录一些在算法中遇到的，令人感到非常惊奇的思路、技巧；">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-03-10T04:02:42.098Z">
+<meta property="og:updated_time" content="2021-03-10T04:16:44.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="amazing tips and tricks in algorithms">
-<meta name="twitter:description" content="这里记录一些在算法中遇到的，令人感到非常惊奇的思路、技巧； 无修改的区间和 这个比较简单，前缀和； 子数组的个数 如果给一个数组，让求数组中连续子数组的总个数，一个比较好的思路是：总的连续子数组的个数等于，以索引0结尾的子数组个数+以索引1结尾的子数组个数+...+以索引n-1结尾的子数组个数；同时，以索引i结尾的子数组的个数等于，以索引i-1结尾的子数组的个数再加个1（只含有下标i的一个">
+<meta name="twitter:description" content="这里记录一些在算法中遇到的，令人感到非常惊奇的思路、技巧；">
 
 
 
@@ -442,7 +442,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-03-10 12:02:42" itemprop="dateModified" datetime="2021-03-10T12:02:42+08:00">2021-03-10</time>
+                <time title="修改时间：2021-03-10 12:16:44" itemprop="dateModified" datetime="2021-03-10T12:16:44+08:00">2021-03-10</time>
               
             
           </span>
@@ -488,7 +488,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">261</span>
+                <span title="本文字数">263</span>
               
 
               
@@ -513,9 +513,10 @@
 
       
         <p>这里记录一些在算法中遇到的，令人感到非常惊奇的思路、技巧；</p>
-<h4 id="无修改的区间和">无修改的区间和</h4>
+<a id="more"></a>
+<h3 id="无修改的区间和">无修改的区间和</h3>
 <p>这个比较简单，前缀和；</p>
-<h4 id="子数组的个数">子数组的个数</h4>
+<h3 id="子数组的个数">子数组的个数</h3>
 <p>如果给一个数组，让求数组中连续子数组的总个数，一个比较好的思路是：总的连续子数组的个数等于，以索引0结尾的子数组个数+以索引1结尾的子数组个数+...+以索引n-1结尾的子数组个数；同时，以索引i结尾的子数组的个数等于，以索引i-1结尾的子数组的个数再加个1（只含有下标i的一个元素的子数组），这里具有这样一种递推关系，但是仔细想一下，以索引i结尾的子数组个数不就等于i+1吗（共i+1个元素）；</p>
 
       
@@ -981,7 +982,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#无修改的区间和"><span class="nav-number">1.</span> <span class="nav-text">无修改的区间和</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子数组的个数"><span class="nav-number">2.</span> <span class="nav-text">子数组的个数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#无修改的区间和"><span class="nav-number">1.</span> <span class="nav-text">无修改的区间和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子数组的个数"><span class="nav-number">2.</span> <span class="nav-text">子数组的个数</span></a></li></ol></div>
             
 
           </div>
@@ -1014,7 +1015,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">221k</span>
+    <span title="站点总字数">222k</span>
   
 
   
