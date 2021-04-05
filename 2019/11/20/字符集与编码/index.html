@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN,en,zh-HK,zh-TW,default">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/t4.ico?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/t4.ico?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="编码   ascii编码是针对公共字符的编码，阿拉伯数字、英文字母，还有一些特殊字符；而如GB2312是针对汉字的编码，使用两个字节表示一个汉字；">
+<meta name="keywords" content="字符编码,Unicode,utf-8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字符集与编码">
+<meta property="og:url" content="https://chagelo.github.io/2019/11/20/字符集与编码/index.html">
+<meta property="og:site_name" content="chagelo">
+<meta property="og:description" content="编码   ascii编码是针对公共字符的编码，阿拉伯数字、英文字母，还有一些特殊字符；而如GB2312是针对汉字的编码，使用两个字节表示一个汉字；">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-01-20T04:50:46.017Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="字符集与编码">
+<meta name="twitter:description" content="编码   ascii编码是针对公共字符的编码，阿拉伯数字、英文字母，还有一些特殊字符；而如GB2312是针对汉字的编码，使用两个字节表示一个汉字；">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="chagelo" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://chagelo.github.io/2019/11/20/字符集与编码/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>字符集与编码 | chagelo</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">chagelo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chagelo.github.io/2019/11/20/字符集与编码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chagelo">
+      <meta itemprop="description" content="life ends up with programming.">
+      <meta itemprop="image" content="/images/t4.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="chagelo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">字符集与编码
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-20 18:56:47" itemprop="dateCreated datePublished" datetime="2019-11-20T18:56:47+08:00">2019-11-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-01-20 12:50:46" itemprop="dateModified" datetime="2021-01-20T12:50:46+08:00">2021-01-20</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.3k</span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="编码">编码</h3>
+<p>  ascii编码是针对公共字符的编码，阿拉伯数字、英文字母，还有一些特殊字符；<strong>而如GB2312是针对汉字的编码，使用两个字节表示一个汉字</strong>；</p>
+<a id="more"></a>
+<h3 id="acsii">Acsii</h3>
+<p>  <strong>Ascii</strong>：是基于拉丁字母的一套电脑编码系统，主要用来显示现代英语；</p>
+<p>  <strong>Ascii字符集</strong>：包括控制字符（回车键、退格、换行键等）；可显示字符（英文大小写字符、阿拉伯数字和西文符号）。一开始是128字符，共7位，后来为了表示更多欧洲常用字符，对其进行了扩展，使用了8位，共256个字符；虽然解决了欧洲的问题，但是对于其他有些语言没有办法；</p>
+<p>  <strong>Ascii编码</strong>：将ascii字符集转换为二进制的规则；</p>
+<h3 id="unicode">Unicode</h3>
+<p>  世界上存在着很多编码标准，同一个二进制数，可能被不同编码标准解释成不同符号，那么如果全世界拥有一种统一的编码标准就好了；然后就有了Unicode，它的规模很大；<strong>需要注意，它只是一个字符集，只规定了符号的二进制代码，却没有规定这个二进制如何存储；即该需要多少字节，那么这就相当不好，因为他没有一个统一的存储的标准；而比如ascii都规定了一个字节存储；</strong></p>
+<p>  如汉字<code>严</code>的Unicode是十六进制<code>4E25</code>，二进制共15位，那么表示他至少需要2个字节；那么表示其他符号呢，可能需要3、4个字节，可能更多；</p>
+<p>  那么如何区别Unicode和ASCII，计算机怎么知道三个字节位一个符号，而不是分别表示三个符号；第二个问题，英文字符表示用一个字节就够了，如果Unicode规定统一用3个或4个字节，那么每个英文字符前都有2个到3个字节是0，这是极大的浪费。</p>
+<p>  <a href="https://en.wikipedia.org/wiki/Comparison_of_Unicode_encodings" title="Unicode编码比较" target="_blank" rel="noopener">Unicode可以</a>通过不同的<a href="https://en.wikipedia.org/wiki/Character_encoding" title="字符编码" target="_blank" rel="noopener">字符编码实现</a>。Unicode标准定义了<a href="https://en.wikipedia.org/wiki/UTF-8" title="UTF-8" target="_blank" rel="noopener">UTF-8</a>，<a href="https://en.wikipedia.org/wiki/UTF-16" title="UTF-16" target="_blank" rel="noopener">UTF-16</a>和<a href="https://en.wikipedia.org/wiki/UTF-32" title="UTF-32" target="_blank" rel="noopener">UTF-32</a>，并且正在使用其他几种编码。最常用的编码是UTF-16 的前身UTF-8，UTF-16和<a href="https://en.wikipedia.org/wiki/Universal_Coded_Character_Set" title="通用编码字符集" target="_blank" rel="noopener">UCS</a> -2（不完全支持Unicode）。<a href="https://en.wikipedia.org/wiki/GB_18030" title="GB 18030" target="_blank" rel="noopener">GB18030</a>在中国已标准化，并且完全实现了Unicode，而不是正式的Unicode标准。</p>
+<p>Unicode定义了两种映射方法：Unicode转换格式（UTF）编码和<a href="https://en.wikipedia.org/wiki/Universal_Coded_Character_Set" title="通用编码字符集" target="_blank" rel="noopener">通用编码字符集</a>（UCS）编码</p>
+<h3 id="utf-8">Utf-8</h3>
+<p>  UTF-8 是在互联网上使用最广的一种 Unicode 的实现方式。；这是一种变长编码；</p>
+<p>  utf-8的编码实现如下，即utf-8的物理存储与Unicode序号的转换关系，utf-8编码为边长字节。最小编码单位（<code>code unit</code>）为一个字节，每个字节的前1-3个bit为描述性部分，后面为实际序号部分（序号即Unicode字符库中的序号）。</p>
+<ul>
+<li>如果一个字节的第一位为0，那么代表当前字符为单字节字符，占用一个字节的空间。0之后的所有部分（7个bit）代表在Unicode中的序号。</li>
+<li>如果一个字节以110开头，那么代表当前字符为双字节字符，占用2个字节的空间。110之后的所有部分（5个bit）加上后一个字节的除10外的部分（6个bit）代表在Unicode中的序号。且第二个字节以10开头</li>
+<li>如果一个字节以1110开头，那么代表当前字符为三字节字符，占用3个字节的空间。110之后的所有部分（5个bit）加上后两个字节的除10外的部分（12个bit）代表在Unicode中的序号。且第二、第三个字节以10开头</li>
+<li>如果一个字节以10开头，那么代表当前字节为多字节字符的第二个字节。10之后的所有部分（6个bit）和之前的部分一同组成在Unicode中的序号。</li>
+</ul>
+<p>  这里和ip地址的规划、变长操作码的指令字结构很相似；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Unicode符号范围     |        UTF-8编码方式</span><br><span class="line">(十六进制)        |              （二进制）</span><br><span class="line">----------------------+---------------------------------------------</span><br><span class="line">0000 0000-0000 007F | 0xxxxxxx</span><br><span class="line">0000 0080-0000 07FF | 110xxxxx 10xxxxxx</span><br><span class="line">0000 0800-0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx</span><br><span class="line">0001 0000-0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</span><br></pre></td></tr></table></figure>
+<p>  这里把<a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html" target="_blank" rel="noopener">阮一峰大佬</a>博客里的utf-8编码拿了过来；</p>
+<h3 id="编码转换">编码转换</h3>
+<p>  对于程序员来说，要实现两个编码（A与B）之间的转换可以这样做:A-&gt;二进制-&gt;B;</p>
+<h3 id="乱码">乱码</h3>
+<p>  乱码的出现是因为编码和解码的时候使用了不同或者不兼容的字符集。对应到真实生活中，就好比是一个英国人为了表示祝福在纸上写了<code>bless</code>（编码过程）。而一个法国人拿到了这张纸，由于在法语中bless表示受伤的意思，所以认为他想表达的是<code>受伤</code>（解码过程）。</p>
+<p>  <strong>当读取文件时，计算机会猜测应该使用哪种编码方式来对二进制进行编码，如果猜对了那么就会得到原来的字符串，如果猜错了就会产生乱码；</strong></p>
+<p>要从乱码字符中反解出原来的正确文字需要对各个字符集编码规则有较为深刻的掌握。但是原理很简单，这里用最常见的UTF-8被错误用GBK展示时的乱码为例，来说明具体反解和识别过程。</p>
+<h4 id="第1步-编码">第1步 编码</h4>
+<p>假设我们在页面上看到<code>寰堝睂</code>这样的乱码，而又得知我们的浏览器当前使用GBK编码。那么第一步我们就能先通过GBK把乱码编码成二进制表达式。当然查表编码效率很低，我们也可以用以下SQL语句直接通过MySQL客户端来做编码工作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql [localhost] &#123;msandbox&#125; &gt; select hex(convert(&apos;寰堝睂&apos; using gbk));</span><br><span class="line">+-------------------------------------+</span><br><span class="line">| hex(convert(&apos;寰堝睂&apos; using gbk))    |</span><br><span class="line">+-------------------------------------+</span><br><span class="line">| E5BE88E5B18C                        |</span><br><span class="line">+-------------------------------------+</span><br><span class="line">1 row in set (0.01 sec)</span><br></pre></td></tr></table></figure>
+<h4 id="第2步-识别">第2步 识别</h4>
+<p>现在我们得到了解码后的二进制字符串<code>E5BE88E5B18C</code>。然后我们将它按字节拆开。</p>
+<table>
+<thead>
+<tr class="header">
+<th>Byte 1</th>
+<th>Byte 2</th>
+<th>Byte 3</th>
+<th>Byte 4</th>
+<th>Byte 5</th>
+<th>Byte 6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>E5</td>
+<td>BE</td>
+<td>88</td>
+<td>E5</td>
+<td>B1</td>
+<td>8C</td>
+</tr>
+</tbody>
+</table>
+<p>然后套用之前UTF-8编码介绍章节中总结出的规律，就不难发现这6个字节的数据符合UTF-8编码规则。如果整个数据流都符合这个规则的话，我们就能大胆假设乱码之前的编码字符集是UTF-8</p>
+<h4 id="第3步-解码">第3步 解码</h4>
+<p>然后我们就能拿着<code>E5BE88E5B18C</code>用UTF-8解码，查看乱码前的文字了。当然我们可以不查表直接通过SQL获得结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql [localhost] &#123;msandbox&#125; ((none)) &gt; select convert(0xE5BE88E5B18C using utf8);</span><br><span class="line">+------------------------------------+</span><br><span class="line">| convert(0xE5BE88E5B18C using utf8) |</span><br><span class="line">+------------------------------------+</span><br><span class="line">| 很屌                               |</span><br><span class="line">+------------------------------------+</span><br><span class="line">1 row in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<h3 id="reference">Reference</h3>
+<ol type="1">
+<li><a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html" target="_blank" rel="noopener">阮一峰的网络日志：字符编码笔记：ASCII，Unicode 和 UTF-8</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/107943002" target="_blank" rel="noopener">你需要知道的字符串编码</a></li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/字符编码/" rel="tag"><i class="fa fa-tags"></i> 字符编码</a>
+          
+            <a href="/tags/Unicode/" rel="tag"><i class="fa fa-tags"></i> Unicode</a>
+          
+            <a href="/tags/utf-8/" rel="tag"><i class="fa fa-tags"></i> utf-8</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/20/Python基础之遇到的小问题记录/" rel="next" title="Python基础之遇到的小问题记录">
+                <i class="fa fa-chevron-left"></i> Python基础之遇到的小问题记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/27/pyqt学习/" rel="prev" title="pyqt学习">
+                pyqt学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/t4.jpg" alt="chagelo">
+            
+              <p class="site-author-name" itemprop="name">chagelo</p>
+              <div class="site-description motion-element" itemprop="description">life ends up with programming.</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">71</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">57</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/chagelo" title="GitHub &rarr; https://github.com/chagelo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:yuggup@foxmail.com" title="E-Mail &rarr; mailto:yuggup@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#编码"><span class="nav-number">1.</span> <span class="nav-text">编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#acsii"><span class="nav-number">2.</span> <span class="nav-text">Acsii</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unicode"><span class="nav-number">3.</span> <span class="nav-text">Unicode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#utf-8"><span class="nav-number">4.</span> <span class="nav-text">Utf-8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码转换"><span class="nav-number">5.</span> <span class="nav-text">编码转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#乱码"><span class="nav-number">6.</span> <span class="nav-text">乱码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第1步-编码"><span class="nav-number">6.1.</span> <span class="nav-text">第1步 编码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第2步-识别"><span class="nav-number">6.2.</span> <span class="nav-text">第2步 识别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第3步-解码"><span class="nav-number">6.3.</span> <span class="nav-text">第3步 解码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reference"><span class="nav-number">7.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chagelo</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">238k</span>
+  
+
+  
+</div>
+
+<!-- 
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.1.1</div>
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

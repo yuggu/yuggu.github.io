@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN,en,zh-HK,zh-TW,default">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/t4.ico?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/t4.ico?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="缓冲区   遇到与底层相关的概念，往往都很模糊，所以才想要把这个问题解决清楚；   那么什么是缓冲区呢，我为什么会有这样的疑问呢；接触到Java的I/O流，其中底层是怎么实现的，其中BufferedReader中的Buffered是什么意思，C语言中的输入、输出底层是什么实现的，它们跟缓冲有什么关系；   缓冲区（Buffer）就是在内存中预留指定大小的存储空间用来对I/O的数据做临时存储，">
+<meta name="keywords" content="java随笔,I&#x2F;O,缓冲区">
+<meta property="og:type" content="article">
+<meta property="og:title" content="I&#x2F;O流">
+<meta property="og:url" content="https://chagelo.github.io/2019/10/25/I-O流/index.html">
+<meta property="og:site_name" content="chagelo">
+<meta property="og:description" content="缓冲区   遇到与底层相关的概念，往往都很模糊，所以才想要把这个问题解决清楚；   那么什么是缓冲区呢，我为什么会有这样的疑问呢；接触到Java的I/O流，其中底层是怎么实现的，其中BufferedReader中的Buffered是什么意思，C语言中的输入、输出底层是什么实现的，它们跟缓冲有什么关系；   缓冲区（Buffer）就是在内存中预留指定大小的存储空间用来对I/O的数据做临时存储，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-21T10:17:55.745Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="I&#x2F;O流">
+<meta name="twitter:description" content="缓冲区   遇到与底层相关的概念，往往都很模糊，所以才想要把这个问题解决清楚；   那么什么是缓冲区呢，我为什么会有这样的疑问呢；接触到Java的I/O流，其中底层是怎么实现的，其中BufferedReader中的Buffered是什么意思，C语言中的输入、输出底层是什么实现的，它们跟缓冲有什么关系；   缓冲区（Buffer）就是在内存中预留指定大小的存储空间用来对I/O的数据做临时存储，">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="chagelo" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://chagelo.github.io/2019/10/25/I-O流/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>I/O流 | chagelo</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">chagelo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chagelo.github.io/2019/10/25/I-O流/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chagelo">
+      <meta itemprop="description" content="life ends up with programming.">
+      <meta itemprop="image" content="/images/t4.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="chagelo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">I/O流
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-25 19:26:28" itemprop="dateCreated datePublished" datetime="2019-10-25T19:26:28+08:00">2019-10-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-12-21 18:17:55" itemprop="dateModified" datetime="2019-12-21T18:17:55+08:00">2019-12-21</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">6.5k</span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="缓冲区">缓冲区</h3>
+<p>  遇到与底层相关的概念，往往都很模糊，所以才想要把这个问题解决清楚；</p>
+<p>  那么什么是缓冲区呢，我为什么会有这样的疑问呢；接触到Java的I/O流，其中底层是怎么实现的，其中BufferedReader中的Buffered是什么意思，C语言中的输入、输出底层是什么实现的，它们跟缓冲有什么关系；</p>
+<p>  缓冲区（Buffer）就是在内存中预留指定大小的存储空间用来对I/O的数据做临时存储，这部分预留的内存空间叫缓冲区。</p>
+<p>  对于scanf()来说，它是从缓冲区里读取数据到对应的变量里，如果缓冲区没有数据，这时候执行scanf()，它会因读取不到数据而一直等待，从而发生死锁；</p>
+<a id="more"></a>
+<h3 id="java-file类">Java File类</h3>
+<p>  在java中，File对象是一个对文件或者目录名的抽象，在windows中即是文件夹，它不是真实硬盘里的文件或者文件夹，File实例是在内存中new出来的一个对象，实际上它只是 与硬盘上的文件或者文件夹进行了映射，它的构造函数参见<a href="https://docs.oracle.com/javase/8/docs/api/" target="_blank" rel="noopener">File类构造函数</a>，他不含有无参的构造函数，即它这个new出来的对象，根据构造函数参数代表的文件进行映射，如果文件不存在，那么对于这个file实例来说，它不会发生错误，它的属性依然拥有默认值，不过当如果通过流去读取时，会发生错误；构造函数参数文件名，不区分大小写。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;  </span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Array;  </span><br><span class="line"><span class="keyword">import</span> java.util.*;  </span><br><span class="line"><span class="keyword">import</span> java.lang.Integer;  </span><br><span class="line"></span><br><span class="line"><span class="comment">/**  </span></span><br><span class="line"><span class="comment"> * Created by Messick on 2019/10/26. */</span>  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">        File file = <span class="keyword">new</span> File(<span class="string">"D:\\1.txt"</span>);  </span><br><span class="line">        System.out.println(file.canExecute());  </span><br><span class="line">        System.out.println(file.canRead());  </span><br><span class="line">        System.out.println(file.canWrite());  </span><br><span class="line">        System.out.println(file.isHidden());  </span><br><span class="line">        System.out.println(file.isFile());  </span><br><span class="line">        System.out.println(file.isDirectory());  </span><br><span class="line">        System.out.println(file.length());</span><br><span class="line">        System.out.println(file.lastModified());</span><br><span class="line">        File file1 = <span class="keyword">new</span> File(<span class="string">"D:\\2.txt"</span>);  </span><br><span class="line">        <span class="keyword">try</span> &#123;  </span><br><span class="line">            <span class="keyword">boolean</span> v1 = file1.createNewFile();  </span><br><span class="line">            System.out.println(v1);  </span><br><span class="line">        &#125;<span class="keyword">catch</span> (IOException e) &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125;  </span><br><span class="line">        File file2 = <span class="keyword">new</span> File(<span class="string">"D:\\3"</span>);  </span><br><span class="line">        File file3 = <span class="keyword">new</span> File(<span class="string">"D:\\l1\\l2"</span>);  </span><br><span class="line">        System.out.println(file2.mkdir());  </span><br><span class="line">        <span class="comment">//递归创建文件夹</span></span><br><span class="line">        System.out.println(file3.mkdirs());</span><br><span class="line">        System.out.println(file1.delete());  </span><br><span class="line">        System.out.println(file2.delete());</span><br><span class="line">        <span class="comment">//删除文件或空文件夹</span></span><br><span class="line">        System.out.println(file3.delete());</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="java-文件流">Java 文件流</h3>
+<p>  分为字节型文件流和字符型文件流；</p>
+<p>  文件存在的原因，是因为文件存储在硬盘上，是永久保存的，而类似变量、集合，都是暂时性地存储，并且文件可以存储很多份地信息。</p>
+<p>  对于文件的读取，实际上是将文件里的信息读取，存到内存中的集合等容器中，然后对此容器进行操作，此容器相当于缓存。而文件流即是对于文件的读取或者写入。</p>
+<h4 id="字节型文件流">字节型文件流</h4>
+<p>  FileInputStream/FileOutputStream</p>
+<ol type="1">
+<li>FileInputStream是InputStream的子类，字节型输入流都是InputStream的子类。它的构造函数有三个，分别是字符串、file对象，第三个不做了解；</li>
+<li>FileInputStream.read()，java对该方法进行了重载，对于不带参数的方法，为读取一个字节，返回值为读取字节对应的Unicode；实际上都是当作字符来读取，如果读取到汉字，而汉字编码又不是一个字节的情况下，那么仅读取该汉字的一字节的数据，如果输出这个单字节数据的Unicode码对应的char，可能会是乱码；对于带参数的情况，参数可以是一个byte数组，即一次性读取byte数组大小的数据，并存到该byte数组中；</li>
+</ol>
+<p>  如图，使用一个3字节大小的byte数组去成功读取一个汉字，所以，可以想到的是，如果我们去读取1字节，那么仅仅是该汉字的一部分；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;  </span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Array;  </span><br><span class="line"><span class="keyword">import</span> java.util.*;  </span><br><span class="line"><span class="keyword">import</span> java.lang.Integer;  </span><br><span class="line"></span><br><span class="line"><span class="comment">/**  </span></span><br><span class="line"><span class="comment"> * Created by Messick on 2019/10/26. */</span>  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">        File file = <span class="keyword">new</span> File(<span class="string">"D:\\1.txt"</span>);  </span><br><span class="line">        <span class="keyword">try</span> &#123;  </span><br><span class="line">            FileInputStream fis = <span class="keyword">new</span> FileInputStream(file);  </span><br><span class="line">            <span class="comment">//读取一个字节 返回为读取字节int的Unicode码  </span></span><br><span class="line">            <span class="keyword">int</span> t = fis.read();</span><br><span class="line">            <span class="comment">//byte [] a = new byte[10003];</span></span><br><span class="line">            <span class="comment">////文件读取到byte数组里,cnt为读取到的有效字节个数，包括\r\n</span></span><br><span class="line">            <span class="comment">//int cnt  = fis.read(a);  </span></span><br><span class="line">            <span class="comment">//for(byte x:a) &#123;  </span></span><br><span class="line">            <span class="comment">//    System.out.println(x);</span></span><br><span class="line">            <span class="comment">//    流管道中剩余的缓存的字节数</span></span><br><span class="line">            <span class="comment">//    System.out.println(fis.available());  </span></span><br><span class="line">            <span class="comment">//&#125;</span></span><br><span class="line">            <span class="keyword">while</span> (t != -<span class="number">1</span>) &#123;  </span><br><span class="line">                <span class="comment">//字节对应的Unicode码  </span></span><br><span class="line">                System.out.println(t);  </span><br><span class="line">                t = fis.read();  </span><br><span class="line">                <span class="comment">//这个过程中，流管道中缓存的字节数逐渐减少至0</span></span><br><span class="line">                System.out.println(fis.available());  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 需要注意的是，在文件中，每一行的结尾一定是\r\n，分别代表换行符和回车，对应的Unicode码为13、10 */</span></span><br></pre></td></tr></table></figure>
+<p>  同FileInputStream，FileOutputStream是OutputStream的子类，字节型输出流都是OutputStream的子类；在这里，如果创建文件输出流，文件路径不存在，则创建该文件；对于FileInputStream则会抛出异常；<strong>并且，FileOutputStream实例含有一个两个参数的构造函数，第一个参数为文件路径，第二个参数为一个布尔型，为true代表可追加，否则每次新建一个文件输出流，文件内容都会被清空。</strong></p>
+<ol type="1">
+<li>FileOutputStream，该类构造函数第一种，参数为File类实例，还有一个boolean参数 默认false，第二种构造函数和第一种类似，不过把File换成了String；</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;  </span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Array;  </span><br><span class="line"><span class="keyword">import</span> java.util.*;  </span><br><span class="line"><span class="keyword">import</span> java.lang.Integer;  </span><br><span class="line"></span><br><span class="line"><span class="comment">/**  </span></span><br><span class="line"><span class="comment"> * Created by Messick on 2019/10/26. */</span>  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">        File file = <span class="keyword">new</span> File(<span class="string">"D:\\1.txt"</span>);  </span><br><span class="line">        <span class="keyword">try</span> &#123;  </span><br><span class="line">            <span class="comment">// 流管道  </span></span><br><span class="line">            FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(file,<span class="keyword">true</span>);</span><br><span class="line">            <span class="keyword">byte</span> [] b = <span class="keyword">new</span> <span class="keyword">byte</span>[]&#123;<span class="number">97</span>, <span class="number">98</span>, <span class="number">99</span>&#125;;</span><br><span class="line">            String str = <span class="string">"1 + 1 = 2"</span>;</span><br><span class="line">            fos.write(b);</span><br><span class="line">            fos.write(str.getBytes());</span><br><span class="line">            fos.write(<span class="number">102</span>);  </span><br><span class="line">            fos.write(<span class="number">103</span>);  </span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125;  </span><br><span class="line"></span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="字符型文件流">字符型文件流</h4>
+<p>  FileReader/FileWriter；</p>
+<ol type="1">
+<li><p>FileReader是字符型文件输入流，是InputStreamReader的子类，而InputStreamReader是Reader的子类，它含有两个构造函数，第一种，含一个参数是String，即文件路径，第二种参数是一个File实例；</p></li>
+<li><p>FileReader.read()，对于它不含参数的方法，读取一个字符，返回值为该字符的Unicode码；对于含参数的方法，它的参数应该是一个空的char数组，即将通过流将文件中字符读到char数组中，返回值为读取的有效字符数；</p></li>
+<li><p>FileWriter，常用方法，FileWriter.wirte()，参数可以是你想要写到文件里的字符对应的Unicode码，或者是一个字符数组，或者是一个String，不能是字符；</p></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;  </span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Array;  </span><br><span class="line"><span class="keyword">import</span> java.util.*;  </span><br><span class="line"><span class="keyword">import</span> java.lang.Integer;  </span><br><span class="line"></span><br><span class="line"><span class="comment">/**  </span></span><br><span class="line"><span class="comment"> * Created by Messick on 2019/10/26. */</span><span class="comment">//你哈珀  </span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">try</span> &#123;  </span><br><span class="line">            File file = <span class="keyword">new</span> File(<span class="string">"D:\\1.txt"</span>);  </span><br><span class="line">            FileReader fr = <span class="keyword">new</span> FileReader(file);  </span><br><span class="line">            FileInputStream fis = <span class="keyword">new</span> FileInputStream(file);  </span><br><span class="line">            FileWriter fw = <span class="keyword">new</span> FileWriter(file, <span class="keyword">true</span>);</span><br><span class="line">            <span class="keyword">int</span> code = fr.read();  </span><br><span class="line">            System.out.println((<span class="keyword">char</span>)code);  </span><br><span class="line">        &#125; <span class="keyword">catch</span>(FileNotFoundException e) &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125; <span class="keyword">catch</span>(IOException e) &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="java-缓冲流">Java 缓冲流</h3>
+<p>  同样的，也分为字节型缓冲流和字符型缓冲流，BufferedInputStream/BufferedOutputStream，BufferedReader/BufferedWriter；</p>
+<p>  使用缓冲的目的即是为了提高速度，比如，一次读取很多字节，但不写入磁盘，先放到内存中，等凑够了缓冲区的大小一次性写入磁盘，这样减少了磁盘操作次数，会提高速度；</p>
+<p>  所以，缓冲流就是实现了缓冲功能的输入流和输出流，使用带缓冲的输入输出流，效率更高速度更快。</p>
+<p>  <code>BufferedInputStream/BufferedOutputStream</code>本质上是通过一个内部缓冲字节数组实现的，那么<code>BufferedReader/BufferedWriter</code>本质上是通过一个内部缓冲字符数组实现的。具体参见java API；</p>
+<p>  需要注意，缓冲流的构造函数的参数需要是一个文件流的实例；</p>
+<h3 id="java序列化与反序列化">Java序列化与反序列化</h3>
+<p>  之前学过了也讲过了<span class="math inline">\(\dots\)</span></p>
+<h3 id="待续">待续</h3>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java随笔/" rel="tag"><i class="fa fa-tags"></i> java随笔</a>
+          
+            <a href="/tags/I-O/" rel="tag"><i class="fa fa-tags"></i> I/O</a>
+          
+            <a href="/tags/缓冲区/" rel="tag"><i class="fa fa-tags"></i> 缓冲区</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/24/Luogu-P3375-KMP字符串匹配/" rel="next" title="[Luogu-P3375] KMP字符串匹配">
+                <i class="fa fa-chevron-left"></i> [Luogu-P3375] KMP字符串匹配
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/28/POJ-3080-Blue-Jeans/" rel="prev" title="[POJ 3080] Blue Jeans">
+                [POJ 3080] Blue Jeans <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/t4.jpg" alt="chagelo">
+            
+              <p class="site-author-name" itemprop="name">chagelo</p>
+              <div class="site-description motion-element" itemprop="description">life ends up with programming.</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">71</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">57</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/chagelo" title="GitHub &rarr; https://github.com/chagelo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:yuggup@foxmail.com" title="E-Mail &rarr; mailto:yuggup@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#缓冲区"><span class="nav-number">1.</span> <span class="nav-text">缓冲区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-file类"><span class="nav-number">2.</span> <span class="nav-text">Java File类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-文件流"><span class="nav-number">3.</span> <span class="nav-text">Java 文件流</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字节型文件流"><span class="nav-number">3.1.</span> <span class="nav-text">字节型文件流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符型文件流"><span class="nav-number">3.2.</span> <span class="nav-text">字符型文件流</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-缓冲流"><span class="nav-number">4.</span> <span class="nav-text">Java 缓冲流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java序列化与反序列化"><span class="nav-number">5.</span> <span class="nav-text">Java序列化与反序列化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#待续"><span class="nav-number">6.</span> <span class="nav-text">待续</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chagelo</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">238k</span>
+  
+
+  
+</div>
+
+<!-- 
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.1.1</div>
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

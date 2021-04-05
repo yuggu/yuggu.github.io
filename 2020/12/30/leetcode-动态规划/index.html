@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN,en,zh-HK,zh-TW,default">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/t4.ico?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/t4.ico?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="322.零钱兑换 code 123456789101112class Solution:    def coinChange(self, coins: List[int], amount: int) -&amp;gt; int:        if amount == 0:            return 0        count = len(coins)        dp = [10005">
+<meta name="keywords" content="dp,leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode 动态规划">
+<meta property="og:url" content="https://chagelo.github.io/2020/12/30/leetcode-动态规划/index.html">
+<meta property="og:site_name" content="chagelo">
+<meta property="og:description" content="322.零钱兑换 code 123456789101112class Solution:    def coinChange(self, coins: List[int], amount: int) -&amp;gt; int:        if amount == 0:            return 0        count = len(coins)        dp = [10005">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-03-11T13:36:13.555Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="leetcode 动态规划">
+<meta name="twitter:description" content="322.零钱兑换 code 123456789101112class Solution:    def coinChange(self, coins: List[int], amount: int) -&amp;gt; int:        if amount == 0:            return 0        count = len(coins)        dp = [10005">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="chagelo" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://chagelo.github.io/2020/12/30/leetcode-动态规划/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>leetcode 动态规划 | chagelo</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">chagelo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chagelo.github.io/2020/12/30/leetcode-动态规划/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chagelo">
+      <meta itemprop="description" content="life ends up with programming.">
+      <meta itemprop="image" content="/images/t4.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="chagelo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">leetcode 动态规划
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-12-30 13:07:28" itemprop="dateCreated datePublished" datetime="2020-12-30T13:07:28+08:00">2020-12-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-03-11 21:36:13" itemprop="dateModified" datetime="2021-03-11T21:36:13+08:00">2021-03-11</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/dp/" itemprop="url" rel="index"><span itemprop="name">dp</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">9.5k</span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="零钱兑换"><a href="https://leetcode-cn.com/problems/coin-change/" target="_blank" rel="noopener">322.零钱兑换</a></h3>
+<h4 id="code">code</h4>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">coinChange</span><span class="params">(self, coins: List[int], amount: int)</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> amount == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        count = len(coins)</span><br><span class="line">        dp = [<span class="number">10005</span> <span class="keyword">for</span> j <span class="keyword">in</span> range(amount + <span class="number">1</span>)]</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, count):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(amount + <span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> j &gt;= coins[i]:</span><br><span class="line">                    dp[j] = min(dp[j - coins[i]] + <span class="number">1</span>, dp[j])</span><br><span class="line">        <span class="keyword">return</span> dp[amount] <span class="keyword">if</span> dp[amount] != <span class="number">10005</span> <span class="keyword">else</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="最大子序和"><a href="https://leetcode-cn.com/problems/maximum-subarray/" target="_blank" rel="noopener">53. 最大子序和</a></h3>
+<h4 id="题解">题解</h4>
+<p>如果直接求最大子序和是不好求的，这里的想法是这样的，用一个变量保存序列和，如果子序列和为负，那么它很不好，就清空，并将当前数字赋给这个和，反之就累加当前值，这个和在整个过程中，是从0增大，然后可能会减小到0，最大子序和一定出现在这个过程中；</p>
+<h4 id="code-1">code</h4>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxSubArray</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="comment"># nums[i]表示以第i个数字结尾最大和</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(nums)):</span><br><span class="line">            nums[i]= nums[i] + max(nums[i<span class="number">-1</span>], <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> max(nums)</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxSubArray</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        maxm = -float(<span class="string">'inf'</span>)</span><br><span class="line">        temp = nums[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> temp &gt; <span class="number">0</span>:</span><br><span class="line">                temp += x</span><br><span class="line">            <span class="keyword">else</span> temp = x</span><br><span class="line">            maxm = max(temp, maxm)</span><br><span class="line">        <span class="keyword">return</span> maxm</span><br></pre></td></tr></table></figure>
+<h3 id="按摩师"><a href="https://leetcode-cn.com/problems/the-masseuse-lcci/" target="_blank" rel="noopener">17.16. 按摩师</a></h3>
+<h4 id="code-2">code</h4>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">massage</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        n = len(nums)</span><br><span class="line">        A,B = <span class="number">0</span>,<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="comment"># A是选择当前数字，B是不选</span></span><br><span class="line">            A,B = B + nums[i], max(B,A)</span><br><span class="line">        <span class="keyword">return</span> max(A,B)</span><br></pre></td></tr></table></figure>
+<h3 id="使用最小花费爬楼梯"><a href="https://leetcode-cn.com/problems/min-cost-climbing-stairs/" target="_blank" rel="noopener">746. 使用最小花费爬楼梯</a></h3>
+<h4 id="code-3">code</h4>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minCostClimbingStairs</span><span class="params">(self, cost: List[int])</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> len(cost) == <span class="number">2</span>: <span class="keyword">return</span> max(cost[<span class="number">0</span>],cost[<span class="number">1</span>])</span><br><span class="line">        dp = [float(<span class="string">'inf'</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(len(cost) + <span class="number">2</span>)]</span><br><span class="line">        count = len(cost)</span><br><span class="line">        dp[<span class="number">0</span>] = cost[<span class="number">0</span>]</span><br><span class="line">        dp[<span class="number">1</span>] = cost[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, count):</span><br><span class="line">            dp[i] = min(dp[i - <span class="number">1</span>] + cost[i], dp[i - <span class="number">2</span>] + cost[i])</span><br><span class="line">        <span class="keyword">return</span> min(dp[count - <span class="number">1</span>], dp[count - <span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+<h3 id="一和零"><a href="https://leetcode-cn.com/problems/ones-and-zeroes/" target="_blank" rel="noopener">474. 一和零</a></h3>
+<h4 id="code-4">code</h4>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMaxForm</span><span class="params">(self, strs: List[str], m: int, n: int)</span> -&gt; int:</span></span><br><span class="line">        <span class="comment"># 二维约束01背包</span></span><br><span class="line">        zero,one = [],[]</span><br><span class="line">        <span class="keyword">for</span> str <span class="keyword">in</span> strs:</span><br><span class="line">            zero.append(str.count(<span class="string">'0'</span>))</span><br><span class="line">            one.append(str.count(<span class="string">'1'</span>))</span><br><span class="line">        dp = [[<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">101</span>)] <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">101</span>)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(strs)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(m,zero[i] - <span class="number">1</span>, <span class="number">-1</span>):</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> range(n, one[i] - <span class="number">1</span>, <span class="number">-1</span>):</span><br><span class="line">                        dp[j][k] = max(dp[j - zero[i]][k - one[i]] + <span class="number">1</span>, dp[j][k])</span><br><span class="line">        <span class="keyword">return</span> dp[m][n]</span><br></pre></td></tr></table></figure>
+<h3 id="最长递增子序列"><a href="https://leetcode-cn.com/problems/longest-increasing-subsequence/" target="_blank" rel="noopener">300. 最长递增子序列</a></h3>
+<h4 id="题解-1">题解</h4>
+<p>第一种做法比较简单，也比较好想到，<span class="math inline">\(dp[i]\)</span>表示第<span class="math inline">\(i\)</span>个数字结尾的序列最长长度；</p>
+<p>第二种做法：用一个数组暂存最长上升子序列<span class="math inline">\(a\)</span>，每遍历到一个数字，用二分把这个数字查到<span class="math inline">\(a\)</span>里面；给定序列<code>[10,9,2,5,3,7,1]</code></p>
+<p>当遍历到<span class="math inline">\(7\)</span>的时候，<span class="math inline">\(a\)</span>里面为<code>[2,3,7]</code>，当遍历到<span class="math inline">\(1\)</span>时候，<span class="math inline">\(1\)</span>插进去为<code>[1,3,7]</code>，这样并不会影响最长上升子序列的长度，并且，如果原序列中<span class="math inline">\(1\)</span>后面还有长度超过<span class="math inline">\(3\)</span>上升子序列，那么整个<span class="math inline">\(a\)</span>会被更新成更长的上升子序列；</p>
+<h4 id="code-5">code</h4>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLIS</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        dp = [<span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums))]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i + <span class="number">1</span>,len(nums)):</span><br><span class="line">                <span class="keyword">if</span> nums[i] &lt; nums[j]:</span><br><span class="line">                    dp[j] = max(dp[j], dp[i] + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> max(dp)</span><br></pre></td></tr></table></figure>
+<h3 id="最长等差数列"><a href="https://leetcode-cn.com/problems/longest-arithmetic-subsequence/" target="_blank" rel="noopener">1027. 最长等差数列</a></h3>
+<h4 id="题解-2">题解</h4>
+<p>思路1：<span class="math inline">\(dp[i][k]\)</span>，表示以<span class="math inline">\(a[i]\)</span>结尾，公差为<span class="math inline">\(k\)</span>的最长等差子列长度 在这种情况下，考虑状态转移，仅需要枚举任意两元素<span class="math inline">\(i、j\)</span>，考虑<span class="math inline">\(j\)</span>到<span class="math inline">\(i\)</span>的状态转移；</p>
+<p>思路2：<span class="math inline">\(dp[i][j]\)</span>，表示以<span class="math inline">\(a[j]、a[i]\)</span>作为最长等差子列结尾两元素（也就是公差是<span class="math inline">\(a[i] - a[j]\)</span>）的最长长度； 这种情况下，暴力的想，可以枚举<span class="math inline">\(k\)</span>，使<span class="math inline">\(k、j、i\)</span>三个元素成为一个等差数列，然后考虑状态转移，但这样复杂度很高，然而这个过程是贪心的，即这个<span class="math inline">\(k\)</span>越大越好（但需要小于<span class="math inline">\(j\)</span>），我们可以这样做：每一次枚举<span class="math inline">\(j\)</span>结束后更新answer，并且<code>mp[a[j]] = j</code></p>
+<h4 id="code-6">code</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> d[<span class="number">2005</span>][<span class="number">20010</span>];</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">longestArithSeqLength</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> N = A.size();</span><br><span class="line">        <span class="built_in">memset</span>(d,<span class="number">0</span>,<span class="keyword">sizeof</span>(d));</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;++i)&#123;</span><br><span class="line">            d[i][<span class="number">10000</span>] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;i;++j)&#123;</span><br><span class="line">                <span class="keyword">int</span> diff = A[i] - A[j] + <span class="number">10000</span>;</span><br><span class="line">                <span class="keyword">int</span>&amp; r = d[i][diff];</span><br><span class="line">                r = max(r,max(<span class="number">2</span>,d[j][diff]+<span class="number">1</span>));</span><br><span class="line">                ans = max(ans,r);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> d[<span class="number">2005</span>][<span class="number">2005</span>];</span><br><span class="line"><span class="keyword">int</span> idx[<span class="number">10010</span>];</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">longestArithSeqLength</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> N = A.size();</span><br><span class="line">        <span class="built_in">memset</span>(d,<span class="number">0</span>,<span class="keyword">sizeof</span>(d));</span><br><span class="line">        <span class="built_in">memset</span>(idx,<span class="number">0xcf</span>,<span class="keyword">sizeof</span>(idx));</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;++i)&#123;</span><br><span class="line">            d[i][i] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;i;++j)&#123;</span><br><span class="line">                <span class="keyword">int</span>&amp; r=d[j][i];</span><br><span class="line">                <span class="keyword">if</span>(j == <span class="number">0</span>)&#123;</span><br><span class="line">                    r = max(r,<span class="number">2</span>);</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">int</span> x = <span class="number">2</span> * A[j] - A[i];</span><br><span class="line">                    <span class="keyword">if</span>(x &lt; <span class="number">0</span> || idx[x] &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                        r = max(r,<span class="number">2</span>);</span><br><span class="line">                    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                        r = max(r,d[idx[x]][j]+<span class="number">1</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                ans = max(ans,r);</span><br><span class="line">                idx[A[j]] = j;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="最长湍流子数组"><a href="https://leetcode-cn.com/problems/longest-turbulent-subarray/" target="_blank" rel="noopener">978. 最长湍流子数组</a></h3>
+<h4 id="code-7">code</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxTurbulenceSize</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> sum[<span class="number">2</span>] = &#123;<span class="number">1</span>,<span class="number">1</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arr.size(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i % <span class="number">2</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (arr[i] &lt; arr[i - <span class="number">1</span>])sum[<span class="number">0</span>]++, sum[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(arr[i] &gt; arr[i - <span class="number">1</span>])sum[<span class="number">1</span>]++, sum[<span class="number">0</span>] = <span class="number">1</span>; </span><br><span class="line">                <span class="keyword">else</span> sum[<span class="number">0</span>] = sum[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (!(i % <span class="number">2</span>)) &#123;</span><br><span class="line">                <span class="keyword">if</span> (arr[i] &gt; arr[i - <span class="number">1</span>])sum[<span class="number">0</span>]++,sum[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(arr[i] &lt; arr[i - <span class="number">1</span>])sum[<span class="number">1</span>]++,sum[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> sum[<span class="number">0</span>] = sum[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            ans = max(ans,max(sum[<span class="number">0</span>], sum[<span class="number">1</span>]));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="k-站中转内最便宜的航班"><a href="https://leetcode-cn.com/problems/cheapest-flights-within-k-stops/" target="_blank" rel="noopener">787. K 站中转内最便宜的航班</a></h3>
+<h4 id="code-8">code</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findCheapestPrice</span><span class="params">(<span class="keyword">int</span> n, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; flights, <span class="keyword">int</span> src, <span class="keyword">int</span> dst, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> dp[<span class="number">103</span>][<span class="number">103</span>];</span><br><span class="line">        <span class="built_in">memset</span>(dp, <span class="number">0x3f3f3f3f</span>, <span class="keyword">sizeof</span>(dp));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;x: flights) </span><br><span class="line">            <span class="keyword">if</span> (x[<span class="number">0</span>] == src)</span><br><span class="line">                dp[x[<span class="number">1</span>]][<span class="number">0</span>] = x[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= K; i++)</span><br><span class="line">            dp[src][i] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= K; k++) </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;x: flights)</span><br><span class="line">                <span class="keyword">if</span> (dp[x[<span class="number">0</span>]][k - <span class="number">1</span>] != <span class="number">0x3f3f3f3f</span>)</span><br><span class="line">                    dp[x[<span class="number">1</span>]][k] = min(dp[x[<span class="number">1</span>]][k], dp[x[<span class="number">0</span>]][k - <span class="number">1</span>] + x[<span class="number">2</span>]);</span><br><span class="line">        <span class="keyword">return</span> dp[dst][K] == <span class="number">0x3f3f3f3f</span>?<span class="number">-1</span>:dp[dst][K];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="统计字典序元音字符串的数目"><a href="https://leetcode-cn.com/problems/count-sorted-vowel-strings/" target="_blank" rel="noopener">1641. 统计字典序元音字符串的数目</a></h3>
+<h4 id="code-9">code</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countVowelStrings</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> dp[<span class="number">7</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)</span><br><span class="line">            dp[i] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">5</span>; j++) &#123;</span><br><span class="line">                sum += dp[j];</span><br><span class="line">                dp[j] = sum;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)</span><br><span class="line">            ans += dp[i];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="整数拆分"><a href="https://leetcode-cn.com/problems/integer-break/" target="_blank" rel="noopener">343. 整数拆分</a></h3>
+<h4 id="题解-3">题解</h4>
+<p><span class="math inline">\(dp[i]\)</span>表示对于整数<span class="math inline">\(i\)</span>拆分成若干整数之后的最大乘积，那么显然的，<span class="math inline">\(dp[i] = max(dp[i],dp[i - k] * k)(1\leq k\leq i - 1)\)</span>；但是这不包括所有情况，<span class="math inline">\(dp[6] = dp[3] * 3 = 6\)</span>，而<span class="math inline">\(dp[6] = 3 * (6 - 3) = 9\)</span>更大；即<span class="math inline">\(dp[i] = max(dp[i], j * (i - j))\)</span>；</p>
+<h4 id="code-10">code</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">integerBreak</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> dp[<span class="number">60</span>];</span><br><span class="line">        <span class="built_in">memset</span>(dp, <span class="number">0</span>, <span class="keyword">sizeof</span>(dp));</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; i; j++) &#123;</span><br><span class="line">                dp[i] = max(dp[i], max(j * (i - j), dp[j] * (i - j)));</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="环绕字符串中唯一的子字符串"><a href="https://leetcode-cn.com/problems/unique-substrings-in-wraparound-string/" target="_blank" rel="noopener">467. 环绕字符串中唯一的子字符串</a></h3>
+<h4 id="题解-4">题解</h4>
+<p>这题第一次做，把自己给绕进去了，甚至没读懂题目；</p>
+<p>题目让我们求<span class="math inline">\(p\)</span>中有多少个种连续的字符串，连续即题目中所谓的连续；</p>
+<p>如果不考虑多少种，仅仅问多少个，这就相当于问有多少个连续子区间，这个比较好求；但这里要求不重复；</p>
+<p>定义<span class="math inline">\(dp[i]\)</span>，表示以字符<span class="math inline">\(i\)</span>结尾的最大连续子串，这样就可以去除重复；比如对于<code>abcbc</code>，当遍历到第一个<code>c</code>，<span class="math inline">\(dp[&#39;c&#39;] = 6\)</span>，对于后面的<code>bc</code>，显然他已经包含在<code>dp['c']=6</code>的情况之内了；还可以尝试模拟这个字符串的情况：<code>abczab</code>；</p>
+<ol type="1">
+<li>这个题解里的图的变化情况解释的很好：https://leetcode-cn.com/problems/unique-substrings-in-wraparound-string/solution/dong-tai-gui-hua-c-by-lcoder55455-y3px/</li>
+<li>这篇博客对于滑动窗口写的很好：https://leetcode-cn.com/problems/unique-substrings-in-wraparound-string/solution/xi-fa-dai-ni-xue-suan-fa-yi-ci-gao-ding-qian-zhui-/</li>
+</ol>
+<h4 id="code-11">code</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findSubstringInWraproundString</span><span class="params">(<span class="built_in">string</span> p)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (p == <span class="string">""</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> dp[<span class="number">30</span>];</span><br><span class="line">        <span class="built_in">memset</span>(dp, <span class="number">0</span>, <span class="keyword">sizeof</span>(dp));</span><br><span class="line">        dp[p[<span class="number">0</span>] - <span class="string">'a'</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; p.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (p[i] == p[i - <span class="number">1</span>] + <span class="number">1</span> || p[i - <span class="number">1</span>] == p[i] + <span class="number">25</span>)</span><br><span class="line">                sum ++;</span><br><span class="line">            <span class="keyword">else</span> sum = <span class="number">1</span>;</span><br><span class="line">            dp[p[i] - <span class="string">'a'</span>] = max(dp[p[i] - <span class="string">'a'</span>], sum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++)</span><br><span class="line">            ans += dp[i];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="计算各个位数不同的数字个数"><a href="https://leetcode-cn.com/problems/count-numbers-with-unique-digits/" target="_blank" rel="noopener">357. 计算各个位数不同的数字个数</a></h3>
+<p>非常多种写法</p>
+<h3 id="矩阵区域和"><a href="https://leetcode-cn.com/problems/matrix-block-sum/" target="_blank" rel="noopener">1314. 矩阵区域和</a></h3>
+<h3 id="只有两个键的键盘"><a href="https://leetcode-cn.com/problems/2-keys-keyboard/" target="_blank" rel="noopener">650. 只有两个键的键盘</a></h3>
+<h3 id="填充书架"><a href="https://leetcode-cn.com/problems/filling-bookcase-shelves/" target="_blank" rel="noopener">1105. 填充书架</a></h3>
+<h4 id="题解-5">题解</h4>
+<p><span class="math inline">\(dp[i]\)</span>表示<span class="math inline">\(i\)</span>本书的最小高度，也就是以第<span class="math inline">\(i\)</span>本书作为最后一层最后一本书，达到的最小高度，我们已经知道前面<span class="math inline">\(1\)</span>到<span class="math inline">\(i-1\)</span>本书能达到的最小高度，只要枚举最后一层的书，最后一层一定是包含<span class="math inline">\(i\)</span>之前的若干本，并且厚度有上限，我们就可以从中更新出最小高度；</p>
+<h4 id="code-12">code</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minHeightShelves</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; books, <span class="keyword">int</span> shelf_width)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = books.size();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; dp(n+<span class="number">1</span>,<span class="number">1000</span>*<span class="number">1000</span>);</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;=n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> j = i;</span><br><span class="line">            <span class="keyword">int</span> tmpWidth = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> h = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(j) &#123;</span><br><span class="line">                tmpWidth += books[j - <span class="number">1</span>][<span class="number">0</span>];                </span><br><span class="line">                <span class="keyword">if</span>(tmpWidth &gt; shelf_width) <span class="keyword">break</span>;</span><br><span class="line">                h = max(h, books[j - <span class="number">1</span>][<span class="number">1</span>]);</span><br><span class="line">                dp[i] = min(dp[i], dp[j<span class="number">-1</span>] + h);</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/dp/" rel="tag"><i class="fa fa-tags"></i> dp</a>
+          
+            <a href="/tags/leetcode/" rel="tag"><i class="fa fa-tags"></i> leetcode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/10/ABC-172/" rel="next" title="[ABC 172]">
+                <i class="fa fa-chevron-left"></i> [ABC 172]
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/01/21/leetcode-树/" rel="prev" title="leetcode 树 简单题">
+                leetcode 树 简单题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/t4.jpg" alt="chagelo">
+            
+              <p class="site-author-name" itemprop="name">chagelo</p>
+              <div class="site-description motion-element" itemprop="description">life ends up with programming.</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">71</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">57</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/chagelo" title="GitHub &rarr; https://github.com/chagelo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:yuggup@foxmail.com" title="E-Mail &rarr; mailto:yuggup@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#零钱兑换"><span class="nav-number">1.</span> <span class="nav-text">322.零钱兑换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#code"><span class="nav-number">1.1.</span> <span class="nav-text">code</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最大子序和"><span class="nav-number">2.</span> <span class="nav-text">53. 最大子序和</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题解"><span class="nav-number">2.1.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#code-1"><span class="nav-number">2.2.</span> <span class="nav-text">code</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按摩师"><span class="nav-number">3.</span> <span class="nav-text">17.16. 按摩师</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#code-2"><span class="nav-number">3.1.</span> <span class="nav-text">code</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用最小花费爬楼梯"><span class="nav-number">4.</span> <span class="nav-text">746. 使用最小花费爬楼梯</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#code-3"><span class="nav-number">4.1.</span> <span class="nav-text">code</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一和零"><span class="nav-number">5.</span> <span class="nav-text">474. 一和零</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#code-4"><span class="nav-number">5.1.</span> <span class="nav-text">code</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最长递增子序列"><span class="nav-number">6.</span> <span class="nav-text">300. 最长递增子序列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题解-1"><span class="nav-number">6.1.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#code-5"><span class="nav-number">6.2.</span> <span class="nav-text">code</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最长等差数列"><span class="nav-number">7.</span> <span class="nav-text">1027. 最长等差数列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题解-2"><span class="nav-number">7.1.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#code-6"><span class="nav-number">7.2.</span> <span class="nav-text">code</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最长湍流子数组"><span class="nav-number">8.</span> <span class="nav-text">978. 最长湍流子数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#code-7"><span class="nav-number">8.1.</span> <span class="nav-text">code</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#k-站中转内最便宜的航班"><span class="nav-number">9.</span> <span class="nav-text">787. K 站中转内最便宜的航班</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#code-8"><span class="nav-number">9.1.</span> <span class="nav-text">code</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#统计字典序元音字符串的数目"><span class="nav-number">10.</span> <span class="nav-text">1641. 统计字典序元音字符串的数目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#code-9"><span class="nav-number">10.1.</span> <span class="nav-text">code</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整数拆分"><span class="nav-number">11.</span> <span class="nav-text">343. 整数拆分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题解-3"><span class="nav-number">11.1.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#code-10"><span class="nav-number">11.2.</span> <span class="nav-text">code</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环绕字符串中唯一的子字符串"><span class="nav-number">12.</span> <span class="nav-text">467. 环绕字符串中唯一的子字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题解-4"><span class="nav-number">12.1.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#code-11"><span class="nav-number">12.2.</span> <span class="nav-text">code</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算各个位数不同的数字个数"><span class="nav-number">13.</span> <span class="nav-text">357. 计算各个位数不同的数字个数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵区域和"><span class="nav-number">14.</span> <span class="nav-text">1314. 矩阵区域和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只有两个键的键盘"><span class="nav-number">15.</span> <span class="nav-text">650. 只有两个键的键盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#填充书架"><span class="nav-number">16.</span> <span class="nav-text">1105. 填充书架</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题解-5"><span class="nav-number">16.1.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#code-12"><span class="nav-number">16.2.</span> <span class="nav-text">code</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chagelo</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">238k</span>
+  
+
+  
+</div>
+
+<!-- 
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.1.1</div>
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
